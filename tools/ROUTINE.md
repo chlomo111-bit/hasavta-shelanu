@@ -125,6 +125,12 @@ voix dans media/AAAA-MM-JJ/voix.txt et l'envoient à Shlomo à 18:30 ; Shlomo en
 publie (21:00, samedi après Shabbat) et enregistre chaque vidéo sur le bureau du Mac (Desktop/Vidéos jeux/הסבתא שלנו/)
 et dans le chat, nommée « הסבתא שלנו – יום N ».
 
+## 📺 Règle de Shlomo (30/10/2026 14:02) — PAUSE « מזל חדשות » DANS CHAQUE VIDÉO
+- Au milieu de chaque vidéo quotidienne : pause de 6–8 s dans le studio TV « אולפן מזל חדשות » (dans le jeu, près de סבתא מזל). Présentatrice = סבתא מזל elle-même, style TV israélienne kitsch années 90.
+- Le grand écran affiche « התגובה של היום » = le commentaire le plus liké de la veille, avec son @auteur et ses ❤️ (fichier `data/comment_of_day.json` : {day, username, text, likes}). Le gagnant est sur scène avec une couronne. Mettre à jour ce fichier à chaque passage du soir.
+- Plans vidéo : capShot('studio') → capShot('studioCard') → capShot('studioWinner') + studioApplause(), puis retour à l'histoire.
+- Texte voix : toujours 2 lignes de סבתא מזל au milieu : « ועכשיו… מזל חדשות! התגובה של היום — תסתכלו על המסך! מחיאות כפיים! » puis « טוב, נחזור לסיפור. »
+
 ## Vidéo du jour (règle 1)
 - AVANT d'écrire : lire TOUS les commentaires du post/reel précédent ; le commentaire valable le plus liké
   décide de ce qui arrive. Raconter ce qui s'est passé dans le jeu (vrais joueurs tagués, vrais chiffres :
