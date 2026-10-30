@@ -122,8 +122,11 @@ samedi ~19:30 ; samedi : vidéo à 21:30.
 Les vidéos du jeu sont montées UNIQUEMENT dans le chat « הסבתא שלנו – vidéos » (session session_01K8i1w54KFPFJfEmEMXS7hR,
 celui qui a créé le jeu). Les automatisations ne montent ni ne publient plus de vidéo : elles préparent seulement le texte
 voix dans media/AAAA-MM-JJ/voix.txt et l'envoient à Shlomo à 18:30 ; Shlomo envoie les MP3 dans le chat vidéos, qui monte,
-publie (21:00, samedi après Shabbat) et enregistre chaque vidéo sur le bureau du Mac (Desktop/Vidéos jeux/הסבתא שלנו/)
+publie (21:00, samedi après Shabbat) et enregistre chaque vidéo sur le bureau du Mac (Desktop/Jeux/הסבתא שלנו/)
 et dans le chat, nommée « הסבתא שלנו – יום N ».
+
+## 📁 Règle de Shlomo (30/10/2026 15:31) — DOCUMENTS ET TÂCHES
+- Tout document (textes voix, routine, automatisations, listes) et toute création/modification de tâche programmée est envoyé dans le chat vidéos (session_01K8i1w54KFPFJfEmEMXS7hR) ET enregistré sur le Mac : Bureau → Jeux → הסבתא שלנו (sous-dossier Documents ; vidéos/voix/jeu dans le même dossier). Tenir tools/TACHES_PROGRAMMEES.md à jour.
 
 ## 📺 Règle de Shlomo (30/10/2026 14:02) — PAUSE « מזל חדשות » DANS CHAQUE VIDÉO
 - Au milieu de chaque vidéo quotidienne : pause de 6–8 s dans le studio TV « אולפן מזל חדשות » (dans le jeu, près de סבתא מזל). Présentateur = « מוטי חדשות », présentateur TV cubique en costume bleu marine et cravate dorée (voix ElevenLabs « James – Husky, Engaging and Bold », Eleven v3) — PAS la grand-mère. MP3 fixe réutilisé chaque jour : media/voix/moti-news.mp3 (8,8 s), style TV israélienne kitsch années 90.
