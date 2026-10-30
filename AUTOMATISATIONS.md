@@ -25,3 +25,13 @@ Seuil : 100 cœurs (cadeau caché + mot secret gardés, sans argent)
 | trig_01CKRu6aTLCyHxQjn1bZYJsZ | Jeux – passages du vendredi | ven. 7:50 · 13:50 | Déclenche ruche + savta |
 | trig_016xihjQtAaUGjNW17P6RXG2 | Jeux – décaler Shabbat | ven. 15:45 | Décale les ponctuels à sam. 18:30 |
 | trig_01SweqkEFqGvYW3p6ffWU83f | Jeux – rattrapage sortie de Shabbat | sam. 18:30 | Tirage du vendredi ruche + passages ruche/savta |
+
+## Mise à jour 30/10/2026 13:10 (rangement demandé par le directeur)
+- Textes complets des anciennes tâches copiés dans tools/ANCIENNES_TACHES.md.
+- Suppression refusée par les autorisations : trig_01UNY4RdyhimikYYvkkPf4Nx, trig_01Ram1iRCj8xn4QoKGLMqeRQ,
+  trig_0163DxMi7GFwk3SitHXmSuBW et trig_01WuqatMyWYSzrRBvM1hPMGk restent **désactivées** (ne tournent plus).
+- Chat d'automatisation du jeu : celui qui porte le réveil trig_01Age5P9L76NPzr2nsHLVr91
+  (« סבתא מזל – réveil sam. 18:30 rattrapage », samedi 31/10 18:30). C'est lui qui fait la sortie de Shabbat,
+  la loterie du vendredi + samedi, le passage et la vidéo « יום 2 » (texte : media/2026-10-31/voix.txt).
+- Story « The Noise arrive » samedi 19:11 : encore faite par trig_01PQqSuMg8PEQPSpNUJnnUca (une seule publication).
+  Si le chat d'automatisation la transfère en send_later, il doit désactiver cette tâche juste après.
