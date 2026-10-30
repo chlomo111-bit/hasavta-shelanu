@@ -196,6 +196,17 @@ body.playing.touch .card{bottom:calc(env(safe-area-inset-bottom,0px) + 150px)}
 #mission .mlist{margin:4px 0 16px}
 .ms-streak{margin:0 0 10px !important;font-size:14px !important;font-weight:800;color:var(--accent) !important}
 .ms-streak:empty{display:none}
+#evPill[hidden]{display:none}
+#lotPill{gap:3px;white-space:nowrap;padding:0 10px}
+@media (max-width:480px){#lotPill small .sep{display:none}#lotPill{font-size:13px}}
+#lotPill small{opacity:.85}
+#lotPill.ok{background:#2a6b3f;border-color:#7dffb0}
+.lot-bar{height:12px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;margin:4px 0 10px}
+.lot-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff5d8f,#FFC24B);transition:width .4s}
+.lot-list li .ck{display:inline-flex;align-items:center;justify-content:center}
+.modal p.lot-count{color:#fff;font-weight:800;margin:4px 0}
+.modal p.lot-last{color:var(--accent);font-weight:700}
+.modal p.lot-how{font-size:13px}
 #giftModal h3{line-height:1.35}
 .pc-grade{color:var(--accent) !important;font-weight:800}
 .pc-hint{font-size:13px !important;color:#fff !important;background:rgba(255,255,255,.07);border-radius:12px;padding:7px 10px}
@@ -247,6 +258,8 @@ body.cap #ui, body.cap #intro, body.cap #story, body.cap #toasts, body.cap .moda
   <div class="top">
     <div class="pill brand"><b id="brandTitle"></b><small id="clock">🕐 --:--</small></div>
     <div class="left">
+      <button class="pill" id="lotPill" title="ההגרלה של 20:00">❤️ <b id="lotHearts">?</b><small>/100<span class="sep"> ·</span> 🎟️<span id="lotTime">20:00</span></small></button>
+      <button class="pill icon" id="evPill" hidden title="האירוע של היום">✨</button>
       <button class="pill count" id="citCount" title="תושבים בעיר">🏙️ 0</button>
       <button class="pill icon" id="muteBtn" aria-label="השתקה">🔇</button>
     </div>
@@ -397,6 +410,39 @@ body.cap #ui, body.cap #intro, body.cap #story, body.cap #toasts, body.cap .moda
     <p class="gr-how">איך מטפסים? כותבים תגובות בפוסט של היום, מנצחים בהצבעה (התגובה עם הכי הרבה לייקים הופכת לפרק), ומוצאים את המילה הסודית במתנה הנסתרת בעיר.</p>
     <div class="row"><button class="pill primary" id="grClose">הבנתי</button></div>
     <p class="optout">רוצים לצאת מהעיר? <a target="_blank" rel="noopener" href="https://instagram.com/hasavta.shelanu">שלחו לנו הודעה באינסטגרם</a></p>
+  </div>
+</div>
+
+<div class="modal" id="lotModal" role="dialog" aria-modal="true" aria-labelledby="lotTitle">
+  <div class="box">
+    <h3 id="lotTitle">🎟️ <em>הגרלה של 20 ₪ כל ערב ב־20:00</em></h3>
+    <p class="lot-sub">2 תנאים כדי להשתתף בהגרלה של היום:</p>
+    <div class="lot-bar"><i id="lotBar"></i></div>
+    <ol class="mlist lot-list"><li id="lotC1"></li><li id="lotC2"></li></ol>
+    <p id="lotCount" class="lot-count"></p>
+    <p id="lotLast" class="lot-last" hidden></p>
+    <p id="lotHow" class="lot-how"></p>
+    <div class="row"><button class="pill primary ob-go" id="lotPlay">יאללה לאסוף לבבות ❤️</button><button class="pill" id="lotClose">סגירה</button></div>
+    <p class="optout">זוכה אחד בכל ערב (20 ₪ בביט). אין הגרלה בשבת. המבצע אינו קשור לאינסטגרם ואינו ממומן על ידה.</p>
+  </div>
+</div>
+
+<div class="modal" id="lotResult" role="dialog" aria-modal="true" aria-labelledby="lrTitle">
+  <div class="box" style="text-align:center">
+    <div class="ob-emoji">🎟️</div>
+    <h3 id="lrTitle"></h3>
+    <p id="lrText"></p>
+    <div class="row" style="justify-content:center"><button class="pill primary" id="lrClose">יש!</button></div>
+  </div>
+</div>
+
+<div class="modal" id="evModal" role="dialog" aria-modal="true" aria-labelledby="evTitle">
+  <div class="box" style="text-align:center">
+    <div class="ob-emoji">✨</div>
+    <h3 id="evTitle"></h3>
+    <p id="evText"></p>
+    <p id="evBy" class="lot-last" hidden></p>
+    <div class="row" style="justify-content:center"><button class="pill primary" id="evClose">וואו!</button></div>
   </div>
 </div>
 
@@ -1216,7 +1262,7 @@ const GRADES = [
 function rowExtra(row){ let x = row && row.extra; if (typeof x === 'string'){ try { x = JSON.parse(x); } catch(e){ x = null; } } return x && typeof x === 'object' ? x : {}; }
 function gradeOf(p){
   if (!p || !p.commenter) return 0;
-  if (p.crown) return 4;
+  if (p.angel !== undefined ? p.angel : p.crown) return 4;
   if (p.writer || p.chapters >= 1) return 3;
   if (p.comments >= 5) return 2;
   return 1;
@@ -1320,7 +1366,7 @@ function mergeResidents(rows, fol){
   (fol || []).forEach(f => { const u = cleanUser(f && (f.u || f.username)); if (!u) return; const r = add(u); r.follower = true; if (f.t && !r.joined) r.joined = f.t; });
   (rows || []).forEach(row => {
     const u = cleanUser(row.username); if (!u) return; const x = rowExtra(row), r = add(u);
-    Object.assign(r, { commenter: true, joined: r.joined || row.joined_at || null, chapters: +row.chapters || 0, writer: !!row.writer, comments: Math.max(1, +x.comments || 0), crown: !!x.crown, streak: +x.streak || 0 });
+    Object.assign(r, { commenter: true, joined: r.joined || row.joined_at || null, chapters: +row.chapters || 0, writer: !!row.writer, comments: Math.max(1, +x.comments || 0), crown: !!x.crown || (!!x.best_until && Date.now() < Date.parse(x.best_until)), angel: !!x.crown, best: !!x.best_until && Date.now() < Date.parse(x.best_until), streak: +x.streak || 0 });
   });
 }
 function walkerFor(rec){ return Object.assign(citGen(rec.username), rec, { rec, pos: new THREE.Vector3(), sprite: null, glow: null, hidden: false, anon: false }); }
@@ -1893,7 +1939,7 @@ function showProfile(i){
   $('#pcChapters').textContent = 'פרקים שנכתבו: ' + p.chapters;
   $('#pcWriter').hidden = !(p.writer || p.chapters >= 1);
   const g = gradeOf(p);
-  $('#pcGrade').textContent = 'דרגה: ' + gradeLabel(g);
+  $('#pcGrade').textContent = 'דרגה: ' + gradeLabel(g) + (p.best ? ' · 👑 המגיב של היום' : '');
   $('#pcHint').hidden = false; $('#pcHint').textContent = gradeHint(p);
   $('#pcYou').hidden = true; $('#pcMe').hidden = true;
   openCard('profileCard');
@@ -2580,6 +2626,175 @@ function onResize(){ camera.aspect = innerWidth / innerHeight; camera.updateProj
 window.addEventListener('resize', onResize);
 
 /* =====================================================================
+   HEARTS ❤️ + LOTTERY 🎟️ 20:00 + EVENT OF THE DAY + BEST COMMENTER 👑
+   Backend: Supabase savta_* RPCs (savta_act, savta_state, savta_lottery_info).
+   Rules: 100 hearts today (Israel date) + a comment on the pinned POST OF THE DAY = 1 ticket.
+   One winner every evening at 20:00 (20 ₪). No draw during Shabbat (Fri 16:00 – Sat 18:30).
+   ===================================================================== */
+const HLOT = { url: 'https://ohvmnaymozoxfirkbntt.supabase.co', key: 'sb_publishable_kQz8LnmhYbK-8m79fAPe8Q_51MAcYgz', NEED: 100,
+  st: null, info: null, busy: false, items: [], day: '', lastSync: 0, dailyFor: '', shownResult: '', event: null, bringAt: 0, failN: 0 };
+async function lotRpc(fn, body){
+  const r = await fetchT(HLOT.url + '/rest/v1/rpc/' + fn, { method: 'POST', headers: { apikey: HLOT.key, 'Content-Type': 'application/json' }, body: JSON.stringify(body || {}) }, 8000);
+  if (!r.ok) throw new Error(fn + ' ' + r.status);
+  return r.json();
+}
+function ilParts(t){
+  try {
+    const f = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Jerusalem', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', weekday: 'short', hour12: false });
+    const o = {}; f.formatToParts(new Date(t || Date.now())).forEach(p => o[p.type] = p.value);
+    return { day: `${o.year}-${o.month}-${o.day}`, h: +o.hour % 24, m: +o.minute, s: +o.second, wd: o.weekday };
+  } catch(e){ const d = new Date((t || Date.now()) + 2 * 3600e3); return { day: d.toISOString().slice(0, 10), h: d.getUTCHours(), m: d.getUTCMinutes(), s: d.getUTCSeconds(), wd: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getUTCDay()] }; }
+}
+function lotShabbat(p){ return (p.wd === 'Fri' && p.h >= 16) || (p.wd === 'Sat' && (p.h < 18 || (p.h === 18 && p.m < 30))); }
+// 5 hidden hearts per day — same spots for everyone (deterministic from the Israel date)
+function heartSpots(day){
+  const out = [];
+  for (let i = 0; i < 5; i++){
+    const r = mulberry(hashStr('heart|' + day + '|' + i));
+    let x = 6 + i * 3, z = 30;
+    for (let k = 0; k < 300; k++){
+      const b = blocks[Math.floor(r() * blocks.length)];
+      const gx = b.cx + (r() * 2 - 1) * 11.5, gz = b.cz + (r() * 2 - 1) * 11.5;
+      if (Math.abs(gx) > 84 || Math.abs(gz) > 84) continue;
+      if (Math.hypot(gx - SPOT.x, gz - SPOT.z) < 12) continue;
+      if (gift && Math.hypot(gx - gift.x, gz - gift.z) < 6) continue;
+      if (out.some(o => Math.hypot(o.x - gx, o.z - gz) < 14)) continue;
+      if (!walkable(gx, gz, 0.6)) continue;
+      x = gx; z = gz; break;
+    }
+    out.push({ x, z, i });
+  }
+  return out;
+}
+function buildHeartItems(){
+  HLOT.items.forEach(it => scene.remove(it.g)); HLOT.items = [];
+  if (CAP) return;
+  HLOT.day = ilParts().day;
+  heartSpots(HLOT.day).forEach(sp => {
+    const g = new THREE.Group();
+    const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: heartTex, transparent: true, depthWrite: false })); s.scale.set(1.1, 1.1, 1); s.position.y = .9; g.add(s);
+    const gl = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false, color: 0xff5d8f })); gl.scale.set(2.2, 2.2, 1); gl.position.y = .9; g.add(gl);
+    g.position.set(sp.x, surfY(sp.x, sp.z), sp.z); scene.add(g);
+    HLOT.items.push({ i: sp.i, x: sp.x, z: sp.z, g, s, gl, near: false });
+  });
+}
+const got = k => !!(HLOT.st && HLOT.st.got && HLOT.st.got[k]);
+function lotApplyState(st){
+  if (!st) return;
+  const before = HLOT.st ? HLOT.st.hearts : null;
+  HLOT.st = st; lotRender();
+  if (before != null && before < HLOT.NEED && st.hearts >= HLOT.NEED){ confetti(); Audio.chime && Audio.chime(); toast('🎟️ אספתם 100 לבבות! עכשיו תגובה בפוסט של היום = כרטיס להגרלה של 20:00'); }
+}
+async function lotAct(action, arg){
+  if (!player || HLOT.busy) return null;
+  HLOT.busy = true;
+  try {
+    const r = await lotRpc('savta_act', { h: player.name, action, arg: arg || 0 });
+    HLOT.failN = 0;
+    if (r && r.added > 0){ toast(`+${r.added} ❤️`); Audio.coin && Audio.coin(); }
+    if (r && r.new_missions && r.new_missions.length) toast('🏅 בונוס משימה! עוד לבבות');
+    if (r && r.state) lotApplyState(r.state);
+    return r;
+  } catch(e){ if (++HLOT.failN === 1) toast('הלבבות לא נשמרו כרגע — נסו שוב בעוד רגע', true); return null; }
+  finally { HLOT.busy = false; }
+}
+async function lotSync(){
+  HLOT.lastSync = Date.now();
+  try {
+    const [info, st] = await Promise.all([lotRpc('savta_lottery_info', { h: player ? player.name : '' }), player ? lotRpc('savta_state', { h: player.name }) : Promise.resolve(null)]);
+    HLOT.info = info; if (st) lotApplyState(st); else lotRender();
+    if (player && HLOT.dailyFor !== player.name + '|' + info.day){ HLOT.dailyFor = player.name + '|' + info.day; lotAct('daily'); }
+    lotCheckResult();
+  } catch(e){ /* offline: keep the last values */ }
+}
+function lotCountdown(){
+  const p = ilParts();
+  if (lotShabbat(p)) return 'שבת שלום 🕯️';
+  const sec = (20 * 3600) - (p.h * 3600 + p.m * 60 + p.s);
+  if (sec <= 0) return (HLOT.info && HLOT.info.result_today) ? 'מחר ב־20:00' : 'מגרילים…';
+  const h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60;
+  return h ? `${h}:${String(m).padStart(2, '0')}` : `${m}:${String(s).padStart(2, '0')}`;
+}
+function lotRender(){
+  const h = HLOT.st ? HLOT.st.hearts : 0;
+  $('#lotHearts').textContent = player ? Math.min(h, 999) : '?';
+  $('#lotPill').classList.toggle('ok', !!(HLOT.info && HLOT.info.eligible));
+  if (!$('#lotModal').classList.contains('show')) return;
+  const inf = HLOT.info || {};
+  const pc = !!inf.post_comment, hh = player ? h : 0;
+  $('#lotBar').style.width = Math.min(100, hh / HLOT.NEED * 100) + '%';
+  $('#lotC1').innerHTML = `<span class="ck">${hh >= HLOT.NEED ? '✓' : ''}</span>אספו 100 לבבות בעיר היום — <b>${player ? Math.min(hh, HLOT.NEED) : 0}/100</b> ❤️`;
+  $('#lotC2').innerHTML = `<span class="ck">${pc ? '✓' : ''}</span><a class="ig-link" href="${IG_URL}" target="_blank" rel="noopener">כתבו תגובה בפוסט של היום (המוצמד בפרופיל)</a>`;
+  $('#lotC1').classList.toggle('done', hh >= HLOT.NEED); $('#lotC2').classList.toggle('done', pc);
+  $('#lotCount').textContent = `🎟️ ${inf.eligible_today || 0} משתתפים עד עכשיו · ההגרלה: ${lotCountdown()}`;
+  const res = inf.result_today || null, last = inf.last || null;
+  let tx = '';
+  if (res) tx = res.winner ? `🎉 הזוכה של הערב: <b dir="ltr">@${esc(res.winner)}</b> (20 ₪)` : 'הערב אף אחד לא השלים את 2 התנאים… מחר זה אתם? 💪';
+  else if (last && last.winner) tx = `הזוכה האחרון: <b dir="ltr">@${esc(last.winner)}</b>`;
+  const best = res && res.best ? res.best : last && last.best ? last.best : null;
+  if (best) tx += `<br>👑 המגיב של היום: <b dir="ltr">@${esc(best)}</b> — הוא מחליט מה עוד יקרה מחר!`;
+  $('#lotLast').innerHTML = tx; $('#lotLast').hidden = !tx;
+  $('#lotHow').textContent = player ? 'איך אוספים לבבות? 5 לבבות מוסתרים בעיר (מצאו והביאו אותם לסבתא), עזרו לה ❤️, וסיימו את המשימות.' : 'כדי לאסוף לבבות — היכנסו לעיר עם שם המשתמש שלכם (כפתור 🚶 שחקו).';
+}
+function lotCheckResult(){
+  const inf = HLOT.info; if (!inf || !inf.result_today) return;
+  const key = inf.day + '|' + (inf.result_today.winner || '-');
+  if (HLOT.shownResult === key || lsGet('savta_lot_seen', '') === key) return;
+  HLOT.shownResult = key; lsSet('savta_lot_seen', key);
+  const w = inf.result_today.winner;
+  $('#lrTitle').innerHTML = w ? `🎉 הזוכה של הערב: <em dir="ltr">@${esc(w)}</em>` : '🎟️ ההגרלה של הערב';
+  $('#lrText').textContent = w ? `${inf.result_today.entrants} משתתפים · 20 ₪ בדרך ל־@${w}!${player && player.name === w ? '\nזה אתם!!! 🥳 שלחו לנו הודעה באינסטגרם' : ''}\nמחר עוד הגרלה ב־20:00 — 100 לבבות + תגובה בפוסט של היום.` : 'אף אחד לא השלים את 2 התנאים הערב… מחר ב־20:00 זה יכול להיות אתם!';
+  $('#lotResult').classList.add('show'); if (w) confetti();
+}
+function lotUpdate(t){
+  if (CAP) return;
+  const p = ilParts();
+  if (p.day !== HLOT.day && blocks.length) buildHeartItems();
+  HLOT.items.forEach(it => {
+    const f = got('find' + it.i);
+    it.g.visible = !f;
+    if (!f){ it.g.position.y = surfY(it.x, it.z) + Math.sin(t * 2.4 + it.i) * .18; it.gl.material.opacity = .55 + Math.sin(t * 3 + it.i) * .25; }
+    if (player && mode === 'play' && HLOT.st && !f){
+      const d = Math.hypot(player.x - it.x, player.z - it.z);
+      if (d < 1.5 && !it.near){ it.near = true; lotAct('find', it.i).then(r => { if (r && r.added > 0) toast('מצאתם לב! ❤️ הביאו אותו לסבתא מזל = עוד 10'); }); }
+      else if (d > 2.5) it.near = false;
+    }
+  });
+  // bring the found hearts back to grandma
+  if (player && mode === 'play' && HLOT.st && !HLOT.busy && Date.now() - HLOT.bringAt > 1500 && Math.hypot(player.x - SPOT.x, player.z - SPOT.z) < FIND_R){
+    for (let i = 0; i < 5; i++){ if (got('find' + i) && !got('bring' + i)){ HLOT.bringAt = Date.now(); lotAct('bring', i).then(r => { if (r && r.added > 0){ doHappy(); toast(`${NAME} קיבלה את הלב! ❤️`); } }); break; } }
+  }
+  const sinceSync = Date.now() - HLOT.lastSync;
+  const nearDraw = p.h === 20 && p.m < 30;
+  if (sinceSync > (nearDraw ? 20000 : 90000)) lotSync();
+  if (Math.floor(t) !== lotUpdate.sec){ lotUpdate.sec = Math.floor(t); $('#lotTime').textContent = lotCountdown(); if ($('#lotModal').classList.contains('show')) lotRender(); }
+}
+$('#lotPill').onclick = () => { $('#lotModal').classList.add('show'); lotRender(); lotSync(); };
+$('#lotClose').onclick = () => $('#lotModal').classList.remove('show');
+$('#lrClose').onclick = () => $('#lotResult').classList.remove('show');
+$('#lotPlay').onclick = () => { $('#lotModal').classList.remove('show'); if (!player){ const b = $('#playBtn'); if (b && !b.hidden) b.click(); } };
+// help button = hearts (server limits: +5, max 10 per day, every 14 s)
+const _helpOrig = helpSavta;
+$('#helpBtn').onclick = $('#nearHelp').onclick = function(){ _helpOrig(); if (player && mode === 'play' && Math.hypot(player.x - SPOT.x, player.z - SPOT.z) < FIND_R + .5) lotAct('help'); };
+// event of the day (data/event.json, written by the morning automation)
+(async function loadEvent(){
+  try {
+    const r = await fetchT('data/event.json?v=' + Math.floor(Date.now() / 60000), {}, 8000); if (!r.ok) return;
+    const ev = await r.json(); const today = ilParts().day;
+    if (!ev || !ev.title || (ev.day && ev.day !== today && ev.day !== prevDay(today))) return;
+    HLOT.event = ev;
+    $('#evTitle').innerHTML = '✨ <em>' + esc(ev.title) + '</em>'; $('#evText').textContent = ev.text || '';
+    $('#evBy').textContent = ev.by ? 'בזכות @' + String(ev.by).replace(/^@+/, '') : ''; $('#evBy').hidden = !ev.by;
+    const k = 'savta_ev_' + (ev.day || '') + '_' + hashStr(ev.title);
+    if (lsGet(k, '') !== '1'){ setTimeout(() => { if (!anyModal()){ $('#evModal').classList.add('show'); lsSet(k, '1'); } }, 9000); }
+    $('#evPill').hidden = false;
+  } catch(e){}
+})();
+$('#evPill').onclick = () => $('#evModal').classList.add('show');
+$('#evClose').onclick = () => $('#evModal').classList.remove('show');
+lotSync();
+
+/* =====================================================================
    LOOP  (started BEFORE data loads)
    ===================================================================== */
 const clock = new THREE.Clock();
@@ -2588,6 +2803,7 @@ function step(dt){
   updateWorld(simTime, dt);
   updatePlayer(simTime, dt);
   updateGift(simTime);
+  lotUpdate(simTime);
   updateCamera(simTime, dt);
   if (!CAP && radar.open && radar.shown && simTime - radar.last > 0.1){ radar.last = simTime; drawRadar(simTime); }
   skyGroup.position.copy(camera.position);
