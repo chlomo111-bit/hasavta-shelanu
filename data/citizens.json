@@ -1,83 +1,95 @@
 [
-  {
-    "username": "hakaveret_shelanu",
-    "joined_at": "2026-10-29T21:02:57+0000",
-    "chapters": 0,
-    "writer": false,
-    "extra": {
-      "comments": 1
-    }
-  },
-  {
-    "username": "yanai_nisim_lavi",
-    "joined_at": "2026-10-30T03:49:05+0000",
-    "chapters": 1,
-    "writer": true,
-    "extra": {
-      "comments": 1,
-      "day_comments": {
-        "2026-10-30": 1
-      }
-    }
-  },
-  {
-    "username": "bdvy214",
-    "joined_at": "2026-10-30T05:57:54+0000",
-    "chapters": 0,
-    "writer": false,
-    "extra": {
-      "comments": 1,
-      "day_comments": {
-        "2026-10-30": 1
-      }
-    }
-  },
-  {
-    "username": "scndpwa",
-    "joined_at": "2026-10-30T06:40:42+0000",
-    "chapters": 0,
-    "writer": false,
-    "extra": {
-      "comments": 1,
-      "day_comments": {
-        "2026-10-30": 1
-      }
-    }
-  },
-  {
-    "username": "evyataragami8",
-    "joined_at": "2026-10-30T06:55:15+0000",
-    "chapters": 0,
-    "writer": false,
-    "extra": {
-      "comments": 1,
-      "day_comments": {
-        "2026-10-30": 1
-      }
-    }
-  },
-  {
-    "username": "uni.t.ed",
-    "joined_at": "2026-10-30T09:42:33+0000",
-    "chapters": 0,
-    "writer": false,
-    "extra": {
-      "comments": 1,
-      "day_comments": {
-        "2026-10-30": 1
-      }
-    }
-  },
-  {
-    "username": "eitan24_",
-    "joined_at": "2026-10-30T10:39:57+0000",
-    "chapters": 0,
-    "writer": false,
-    "extra": {
-      "comments": 1,
-      "day_comments": {
-        "2026-10-30": 1
-      }
-    }
+ {
+  "username": "hakaveret_shelanu",
+  "joined_at": "2026-10-29T21:02:57+0000",
+  "chapters": 0,
+  "writer": false,
+  "extra": {
+   "comments": 1
   }
+ },
+ {
+  "username": "yanai_nisim_lavi",
+  "joined_at": "2026-10-30T03:49:05+0000",
+  "chapters": 1,
+  "writer": true,
+  "extra": {
+   "comments": 1,
+   "day_comments": {
+    "2026-10-30": 1
+   }
+  }
+ },
+ {
+  "username": "bdvy214",
+  "joined_at": "2026-10-30T05:57:54+0000",
+  "chapters": 0,
+  "writer": false,
+  "extra": {
+   "comments": 1,
+   "day_comments": {
+    "2026-10-30": 1
+   }
+  }
+ },
+ {
+  "username": "scndpwa",
+  "joined_at": "2026-10-30T06:40:42+0000",
+  "chapters": 0,
+  "writer": false,
+  "extra": {
+   "comments": 1,
+   "day_comments": {
+    "2026-10-30": 1
+   }
+  }
+ },
+ {
+  "username": "evyataragami8",
+  "joined_at": "2026-10-30T06:55:15+0000",
+  "chapters": 0,
+  "writer": false,
+  "extra": {
+   "comments": 1,
+   "day_comments": {
+    "2026-10-30": 1
+   }
+  }
+ },
+ {
+  "username": "uni.t.ed",
+  "joined_at": "2026-10-30T09:42:33+0000",
+  "chapters": 0,
+  "writer": false,
+  "extra": {
+   "comments": 1,
+   "day_comments": {
+    "2026-10-30": 1
+   }
+  }
+ },
+ {
+  "username": "eitan24_",
+  "joined_at": "2026-10-30T10:39:57+0000",
+  "chapters": 0,
+  "writer": false,
+  "extra": {
+   "comments": 1,
+   "day_comments": {
+    "2026-10-30": 1
+   }
+  }
+ },
+ {
+  "username": "shellydor20",
+  "joined_at": "2026-10-30T11:17:53Z",
+  "chapters": 0,
+  "writer": false,
+  "extra": {
+   "comments": 2,
+   "day_comments": {
+    "2026-10-30": 2
+   }
+  }
+ }
 ]
