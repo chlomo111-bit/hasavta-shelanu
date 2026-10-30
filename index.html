@@ -606,9 +606,12 @@ function redrawTextures(){ texReg.forEach(r => { try { r.ctx.clearRect(0, 0, r.c
 function rr(ctx, x, y, w, h, r){ ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }
 
 /* ---- instancing helper: every instance gets setMatrixAt AND setColorAt ---- */
+// GHOST: while true, the city generator still consumes the same random numbers but builds nothing
+// (keeps the whole city identical while freeing the TV studio lot)
+let GHOST = false;
 class Batch {
   constructor(geo, mat, opt){ this.geo = geo; this.mat = mat; this.opt = opt || {}; this.items = []; }
-  add(x, y, z, sx, sy, sz, color, rx, ry, rz){ this.items.push([x, y, z, sx, sy, sz, color, rx || 0, ry || 0, rz || 0]); return this.items.length - 1; }
+  add(x, y, z, sx, sy, sz, color, rx, ry, rz){ if (GHOST) return -1; this.items.push([x, y, z, sx, sy, sz, color, rx || 0, ry || 0, rz || 0]); return this.items.length - 1; }
   build(parent){
     if (!this.items.length) return null;
     const m = new THREE.InstancedMesh(this.geo, this.mat, this.items.length);
@@ -731,7 +734,7 @@ const canopies = [];  // tree crowns [x, z, r, y0, y1] — the follow camera sta
 const obsCirc = [];   // small round obstacles (trees, lamps) for player collision
 function addTree(x, z, s, base){
   base = base == null ? 0.22 : base;
-  if (Math.abs(x) < 100 && Math.abs(z) < 100){ obsCirc.push([x, z, 0.3 * s + 0.1]); canopies.push([x, z, 0.95 * s + 0.25, base + 1.2 * s, base + 3.4 * s]); }
+  if (!GHOST && Math.abs(x) < 100 && Math.abs(z) < 100){ obsCirc.push([x, z, 0.3 * s + 0.1]); canopies.push([x, z, 0.95 * s + 0.25, base + 1.2 * s, base + 3.4 * s]); }
   B.trunk.add(x, base + 0.8 * s, z, 0.34 * s, 1.6 * s, 0.34 * s, '#7a5232');
   const g = pick(['#4caf50', '#5cbf60', '#3f9e4a', '#6cc96a']);
   B.leaf.add(x, base + 1.95 * s, z, 1.7 * s, 1.25 * s, 1.7 * s, g, 0, rnd(), 0);
@@ -756,7 +759,7 @@ function addBench(x, z, ry){
 const bldRects = [];   // ground footprints (x0, z0, x1, z1) — used for player collision, gift spots and the radar
 function addBuilding(x, z, w, d, h, color, fs, shopName, isFront){
   const base = 0.22, top = base + h;
-  bldRects.push([x - w / 2 - 0.06, z - d / 2 - 0.06, x + w / 2 + 0.06, z + d / 2 + 0.06]);
+  if (!GHOST) bldRects.push([x - w / 2 - 0.06, z - d / 2 - 0.06, x + w / 2 + 0.06, z + d / 2 + 0.06]);
   B.bld.add(x, base + h / 2, z, w, h, d, color);
   B.bld.add(x, base + 1.8, z, w + 0.08, 3.6, d + 0.08, shade(color, -.14));
   for (let f = 1; f * 3 + 3.6 < h; f++) B.bld.add(x, base + 3.6 + f * 3 - 0.05, z, w + 0.12, 0.12, d + 0.12, shade(color, .12));
@@ -774,7 +777,7 @@ function addBuilding(x, z, w, d, h, color, fs, shopName, isFront){
         const t = -L / 2 + sp * (k + 0.5);
         const px = ry === 0 || ry === Math.PI ? x + t : x + ox + Math.sign(ox) * 0.03;
         const pz = ry === 0 || ry === Math.PI ? z + oz + Math.sign(oz) * 0.03 : z + t;
-        winItems.push({ x: px, y, z: pz, ry, r: rnd() });
+        const wr = rnd(); if (!GHOST) winItems.push({ x: px, y, z: pz, ry, r: wr });
       }
     }
   });
@@ -817,6 +820,7 @@ function addBuilding(x, z, w, d, h, color, fs, shopName, isFront){
   signBatches[shopName].add(x, base + 3.3, fz + fs * 0.06, Math.min(w * 0.6, 4.4), Math.min(w * 0.6, 4.4) / 4, 1, '#ffffff', 0, fs > 0 ? 0 : Math.PI, 0);
 }
 
+const STUDIO_LOT = { bi: -1, bj: 0 };   // TV studio lot: street side (+z) of block (-1, 0), same street as her, ~36 m west
 const blocks = [];
 for (let bi = -2; bi <= 2; bi++) for (let bj = -2; bj <= 2; bj++){
   const cx = bi * P, cz = bj * P, park = bi === 0 && bj === 1;
@@ -826,6 +830,7 @@ for (let bi = -2; bi <= 2; bi++) for (let bj = -2; bj <= 2; bj++){
   if (park) continue;
   [-1, 1].forEach(sz => {
     const isFront = bi === 0 && bj === 0 && sz === 1;
+    GHOST = bi === STUDIO_LOT.bi && bj === STUDIO_LOT.bj && sz === 1;   // the TV studio « מזל חדשות » stands here
     if (!isFront && rnd() < 0.22){
       const h = pick([12, 15, 18, 21, 24]);
       addBuilding(cx, cz + sz * 4.75, 18.4, 8.4, h, pick(PASTELS), sz, pick(SHOP_NAMES));
@@ -838,6 +843,7 @@ for (let bi = -2; bi <= 2; bi++) for (let bj = -2; bj <= 2; bj++){
         addBuilding(cx + sx * 4.75, cz + sz * 4.75 + (sz * (8.4 - d) / 2), w, d, h, col, sz, shopName);
       });
     }
+    GHOST = false;
   });
   // street furniture
   const sides = [[0, 1], [0, -1], [1, 0], [-1, 0]];
@@ -852,8 +858,10 @@ for (let bi = -2; bi <= 2; bi++) for (let bj = -2; bj <= 2; bj++){
       if (front && o === 0) return;
       if (rnd() < 0.25) return;
       const tx = ax ? cx + ax * 13.0 : cx + o, tz = az ? cz + az * 13.0 : cz + o;
+      GHOST = bi === STUDIO_LOT.bi && bj === STUDIO_LOT.bj && az === 1 && o === 0;   // keep the studio entrance clear
       B.ground.add(tx, 0.225, tz, 1.1, 0.02, 1.1, '#8b6a4a');
       addTree(tx, tz, 0.85 + rnd() * 0.25);
+      GHOST = false;
     });
   });
 }
@@ -2064,8 +2072,11 @@ function sanitizeUser(s){ return String(s || '').replace(/[@\s‎‏]/g, '').toL
 const BOUND = 97.3;
 const SAVTA_BLOCK = [[SPOT.x - 2.95, SPOT.z - 1.25, SPOT.x - 0.75, SPOT.z + 0.1]];  // cardboard shelter
 const SAVTA_CIRC = [[SPOT.x, SPOT.z, 0.62], [SPOT.x + 1.32, SPOT.z + 0.5, 0.42], [SPOT.x - 0.95, SPOT.z + 0.62, 0.32], [SPOT.x + 0.6, SPOT.z + 0.8, 0.18]];
+const STUDIO_OBS = [];   // TV studio furniture: [x0, z0, x1, z1] rects or [x, z, r] circles (walk only, not camera)
 function walkable(x, z, rad){
   rad = rad == null ? P_RAD : rad;
+  for (let i = 0; i < STUDIO_OBS.length; i++){ const o = STUDIO_OBS[i];
+    if (o.length === 4 ? (x > o[0] - rad && x < o[2] + rad && z > o[1] - rad && z < o[3] + rad) : Math.hypot(x - o[0], z - o[1]) < o[2] + rad) return false; }
   if (Math.abs(x) > BOUND - rad || Math.abs(z) > BOUND - rad) return false;
   for (let i = 0; i < bldRects.length; i++){ const b = bldRects[i]; if (x > b[0] - rad && x < b[2] + rad && z > b[1] - rad && z < b[3] + rad) return false; }
   for (let i = 0; i < SAVTA_BLOCK.length; i++){ const b = SAVTA_BLOCK[i]; if (x > b[0] - rad && x < b[2] + rad && z > b[1] - rad && z < b[3] + rad) return false; }
@@ -2499,6 +2510,10 @@ function drawRadar(t){
   for (let i = 0; i < cit.n; i++){ const p = cit.list[i]; if (!p.hidden) dot(p.pos.x, p.pos.z, p.commenter ? '#ffffff' : 'rgba(255,255,255,.55)', p.commenter ? 1.5 : 1); }
   if (gift && mission.done[2]){ const [gx, gy] = toS(gift.x, gift.z); if (Math.hypot(gx - C, gy - C) < Rr - 6){ ctx.font = '12px sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('🎁', gx, gy); } }
   if (gift && mission.done[0] && !mission.done[2]){ ctx.font = '800 9px Heebo, sans-serif'; }
+  // TV studio 📺 (clamped to the edge too)
+  { let [tx, ty] = toS(STUDIO.x, STUDIO.zc); const td = Math.hypot(tx - C, ty - C);
+    if (td > Rr - 8){ tx = C + (tx - C) / td * (Rr - 8); ty = C + (ty - C) / td * (Rr - 8); }
+    ctx.font = (td > Rr - 8 ? 10 : 13) + 'px sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('📺', tx, ty); }
   // grandma (always visible, clamped to the edge)
   let [sx, sy] = toS(SPOT.x, SPOT.z); const dd = Math.hypot(sx - C, sy - C), out = dd > Rr - 7;
   if (out){ sx = C + (sx - C) / dd * (Rr - 7); sy = C + (sy - C) / dd * (Rr - 7); }
@@ -2795,6 +2810,456 @@ $('#evClose').onclick = () => $('#evModal').classList.remove('show');
 lotSync();
 
 /* =====================================================================
+   TV STUDIO « מזל חדשות » 📺 — kitsch 90s Israeli TV show, presenter = the anchor « מוטי חדשות »
+   (the street grandma is untouched). The big screen shows data/comment_of_day.json
+   {"day","username","text","likes"}; the winner (same look generator as the citizens) stands on
+   the stage with a gold crown + confetti. Capture: capShot('studio' | 'studioCard' | 'studioWinner'),
+   window.studioApplause(), window.studioSetComment(obj), window.studioReady (promise).
+   ===================================================================== */
+const STUDIO = { x: STUDIO_LOT.bi * P, zb: STUDIO_LOT.bj * P + 0.55, zf: STUDIO_LOT.bj * P + 8.95, hw: 9.2, H: 7.6 };
+STUDIO.zc = (STUDIO.zb + STUDIO.zf) / 2; STUDIO.z0 = STUDIO.zb + 0.35;          // z0 = inner face of the back wall
+const SD = STUDIO.zf - STUDIO.z0, SH = STUDIO.H;                                     // inner depth, wall height
+const studio = new THREE.Group(); studio.position.set(STUDIO.x, 0.22, STUDIO.z0); scene.add(studio);
+const SW = (x, z) => [STUDIO.x + x, STUDIO.z0 + z];                                  // local (x, z) -> world
+const stu = { card: null, win: null, applauseT: -99, burstT: -99, nextAuto: 16, inside: false, welcomed: false, bulbT: -1 };
+const basicMat = hex => new THREE.MeshBasicMaterial({ color: LC(hex), toneMapped: false });
+function sbox(parent, mat, w, h, d, x, y, z, ry){
+  const m = new THREE.Mesh(BOX, typeof mat === 'string' ? M(mat) : mat);
+  m.scale.set(w, h, d); m.position.set(x, y, z); if (ry) m.rotation.y = ry; parent.add(m); return m;
+}
+function splane(parent, mat, w, h, x, y, z, ry){ const m = new THREE.Mesh(PLANE, mat); m.scale.set(w, h, 1); m.position.set(x, y, z); if (ry) m.rotation.y = ry; parent.add(m); return m; }
+function redrawOne(tex){ const r = texReg.find(q => q.t === tex); if (!r) return; r.ctx.clearRect(0, 0, r.c.width, r.c.height); r.draw(r.ctx, r.c.width, r.c.height); r.t.needsUpdate = true; }
+function fitFont(ctx, txt, weight, size, maxW, min){ let s = size; ctx.font = `${weight} ${s}px Heebo, sans-serif`; while (ctx.measureText(txt).width > maxW && s > (min || 18)){ s -= 2; ctx.font = `${weight} ${s}px Heebo, sans-serif`; } return s; }
+function wrapLines(ctx, txt, maxW, maxL){
+  const words = String(txt).split(/\s+/).filter(Boolean), lines = []; let cur = '';
+  for (let i = 0; i < words.length; i++){
+    const t = cur ? cur + ' ' + words[i] : words[i];
+    if (ctx.measureText(t).width <= maxW || !cur) cur = t; else { lines.push(cur); cur = words[i]; }
+  }
+  if (cur) lines.push(cur);
+  if (lines.length > maxL){ const keep = lines.slice(0, maxL); let last = keep[maxL - 1] + '…'; while (ctx.measureText(last).width > maxW && last.length > 2) last = last.slice(0, -2) + '…'; keep[maxL - 1] = last; return { lines: keep, cut: true }; }
+  return { lines, cut: false };
+}
+
+/* ---- shell: floor, walls, roof, facade ---- */
+const studioTop = new THREE.Group(); studio.add(studioTop);   // roof + facade header (hidden while you're inside)
+{
+  const EXT = '#ffc2dc', MINT = '#86e0d6';
+  const chk = canvasTex(128, 128, (ctx) => { for (let i = 0; i < 2; i++) for (let j = 0; j < 2; j++){ ctx.fillStyle = (i + j) % 2 ? '#fbf1ff' : '#2a2045'; ctx.fillRect(i * 64, j * 64, 64, 64); } });
+  chk.wrapS = chk.wrapT = THREE.RepeatWrapping; chk.repeat.set(17.7 / 1.6, SD / 1.6);
+  const floor = splane(studio, new THREE.MeshStandardMaterial({ map: chk, roughness: .2, metalness: .15 }), 17.7, SD, 0, .008, SD / 2);
+  floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true;
+  // red carpet onto the sidewalk
+  const carpet = splane(studio, M('#c81d3a', { roughness: .95 }), 3.2, 2.4, 0, .012, SD + .9); carpet.rotation.x = -Math.PI / 2;
+  // walls (pastel outside) + inner panels
+  sbox(studio, EXT, 18.4, SH, .35, 0, SH / 2, -.175);
+  [-1, 1].forEach(s => sbox(studio, EXT, .35, SH, SD + .35, s * (STUDIO.hw - .175), SH / 2, SD / 2 - .175));
+  [-1, 1].forEach(s => { sbox(studio, '#ffd23f', .42, .3, SD + .42, s * (STUDIO.hw - .175), 1.1, SD / 2 - .175); sbox(studio, '#ff5d8f', .42, .14, SD + .42, s * (STUDIO.hw - .175), 1.45, SD / 2 - .175); });
+  const wallTex = canvasTex(256, 256, (ctx, w, h) => {
+    ctx.fillStyle = '#3b2470'; ctx.fillRect(0, 0, w, h);
+    const r = mulberry(90), cols = ['#ff5d8f', '#2ec4b6', '#FFC24B', '#86b8ff'];
+    ctx.lineWidth = 6; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    for (let i = 0; i < 8; i++){ const x = 20 + r() * (w - 90), y = 20 + r() * (h - 40); ctx.strokeStyle = cols[i % 4]; ctx.beginPath(); ctx.moveTo(x, y); for (let k = 1; k < 5; k++) ctx.lineTo(x + k * 13, y + (k % 2 ? -10 : 10)); ctx.stroke(); }
+    for (let i = 0; i < 9; i++){ ctx.fillStyle = cols[(i + 1) % 4]; const x = 14 + r() * (w - 28), y = 14 + r() * (h - 28); ctx.beginPath(); ctx.moveTo(x, y - 9); ctx.lineTo(x + 9, y + 7); ctx.lineTo(x - 9, y + 7); ctx.closePath(); ctx.fill(); }
+    for (let i = 0; i < 26; i++){ ctx.fillStyle = 'rgba(255,255,255,.5)'; ctx.fillRect(r() * w, r() * h, 4, 4); }
+  });
+  wallTex.wrapS = wallTex.wrapT = THREE.RepeatWrapping; wallTex.repeat.set(17.7 / 3.4, SH / 3.4);
+  splane(studio, new THREE.MeshStandardMaterial({ map: wallTex, roughness: .9, emissive: LC('#ffffff'), emissiveMap: wallTex, emissiveIntensity: .22 }), 17.7, SH, 0, SH / 2, .006);
+  const sideMat = new THREE.MeshStandardMaterial({ color: LC('#ff8fc0'), roughness: .85, emissive: LC('#ff8fc0'), emissiveIntensity: .12 });
+  [-1, 1].forEach(s => splane(studio, sideMat, SD, SH, -s * 8.844, SH / 2, SD / 2, s * Math.PI / 2));
+  // roof (underside = dark ceiling) + front header with the big lit sign
+  sbox(studioTop, '#e9a3c4', 18.6, .3, SD + .55, 0, SH + .15, SD / 2 - .1);
+  splane(studioTop, M('#241a38'), 17.7, SD, 0, SH - .005, SD / 2).rotation.x = Math.PI / 2;
+  sbox(studioTop, MINT, 18.6, 2.5, .5, 0, SH + .55, SD - .25);
+  sbox(studioTop, '#ff5d8f', 18.7, .16, .56, 0, SH - .62, SD - .25);
+  const signTex2 = canvasTex(1024, 205, (ctx, w, h) => {
+    const g = ctx.createLinearGradient(0, 0, w, 0); g.addColorStop(0, '#5b2a9e'); g.addColorStop(.5, '#8338ec'); g.addColorStop(1, '#5b2a9e');
+    ctx.fillStyle = g; rr(ctx, 4, 4, w - 8, h - 8, 40); ctx.fill();
+    ctx.lineWidth = 10; ctx.strokeStyle = '#FFC24B'; rr(ctx, 14, 14, w - 28, h - 28, 32); ctx.stroke();
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl';
+    const txt = 'מזל חדשות 📺'; fitFont(ctx, txt, 900, 132, w - 120);
+    ctx.lineWidth = 14; ctx.strokeStyle = '#ff2d7a'; ctx.strokeText(txt, w / 2, h / 2 + 8);
+    ctx.fillStyle = '#FFC24B'; ctx.fillText(txt, w / 2, h / 2 + 8);
+  });
+  splane(studioTop, new THREE.MeshBasicMaterial({ map: signTex2, toneMapped: false }), 10.6, 2.12, 0, SH + .62, SD + .012);
+  // blade sign (seen from her corner, down the street)
+  const bladeTex = canvasTex(512, 200, (ctx, w, h) => {
+    ctx.fillStyle = '#ff2d7a'; rr(ctx, 3, 3, w - 6, h - 6, 30); ctx.fill();
+    ctx.lineWidth = 8; ctx.strokeStyle = '#FFC24B'; rr(ctx, 12, 12, w - 24, h - 24, 24); ctx.stroke();
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl';
+    const txt = 'מזל חדשות 📺'; fitFont(ctx, txt, 900, 80, w - 60); ctx.fillStyle = '#ffffff'; ctx.fillText(txt, w / 2, h / 2 + 6);
+  });
+  const blade = new THREE.Group(); blade.position.set(STUDIO.hw - .3, 5.6, SD + 1.55); studio.add(blade);
+  sbox(blade, '#2b2d42', .12, .12, 3.2, 0, .82, -.05);
+  const bm = new THREE.MeshBasicMaterial({ map: bladeTex, toneMapped: false });
+  splane(blade, bm, 2.9, 1.13, .035, 0, 0, Math.PI / 2); splane(blade, bm, 2.9, 1.13, -.035, 0, 0, -Math.PI / 2);
+  sbox(blade, '#ffd23f', .05, 1.23, 3.0, 0, 0, 0);
+  // front pillars with candy stripes
+  [-1, 1].forEach(s => { for (let k = 0; k < 8; k++) sbox(studio, k % 2 ? '#ffffff' : '#ff5d8f', .5, SH / 8, .5, s * (STUDIO.hw - .2), SH / 16 + k * SH / 8, SD + .05); });
+}
+// marquee bulbs around the sign (one InstancedMesh, setColorAt on every instance)
+const BULBS = [];
+{
+  const W2 = 5.6, H2 = 1.3, cy = SH + .62, step = .42;
+  for (let x = -W2; x <= W2 + 1e-6; x += step){ BULBS.push([x, cy + H2]); BULBS.push([x, cy - H2]); }
+  for (let y = -H2 + step; y < H2 - 1e-6; y += step){ BULBS.push([-W2, cy + y]); BULBS.push([W2, cy + y]); }
+}
+const bulbMesh = new THREE.InstancedMesh(BOX, new THREE.MeshBasicMaterial({ color: 0xffffff, toneMapped: false }), BULBS.length);
+{ const d = new THREE.Object3D(); BULBS.forEach((b, i) => { d.position.set(b[0], b[1], SD + .06); d.scale.set(.16, .16, .1); d.updateMatrix(); bulbMesh.setMatrixAt(i, d.matrix); bulbMesh.setColorAt(i, LC(i % 2 ? '#fff3c4' : '#FFC24B')); }); }
+bulbMesh.instanceMatrix.needsUpdate = true; bulbMesh.frustumCulled = false; studioTop.add(bulbMesh);
+const BULB_ON = [LC('#fff6d0'), LC('#FFC24B'), LC('#ff6fae')], BULB_OFF = LC('#6a5030');
+
+/* ---- neon, TV wall, desk, cameras, armchairs, lights ---- */
+{
+  const neon = (hex, w, h, d, x, y, z) => sbox(studio, basicMat(hex), w, h, d, x, y, z);
+  [-1, 1].forEach(s => [['#ff4fa3', 6.85], ['#33e6ff', 6.5], ['#ffe14d', 6.15]].forEach(([c, y]) => neon(c, .07, .08, SD - .5, s * 8.8, y, SD / 2)));
+  [[-4.3, '#ff4fa3'], [-4.75, '#33e6ff'], [4.3, '#33e6ff'], [4.75, '#ff4fa3']].forEach(([x, c]) => neon(c, .09, 4.4, .06, x, 4.75, .07));
+  neon('#33e6ff', 17.6, .07, .07, 0, .12, .07);
+  [-1, 1].forEach(s => neon('#ffe14d', .07, .07, SD - .3, s * 8.8, .12, SD / 2));
+}
+// giant retro TV = the big screen
+const cardTex = canvasTex(1024, 768, drawCard);
+{
+  const tv = new THREE.Group(); tv.position.set(0, 4.8, .36); studio.add(tv);
+  sbox(tv, '#ff6fae', 6.5, 4.75, .7, 0, 0, 0);
+  sbox(tv, '#2a1d3a', 5.75, 4.3, .06, 0, 0, .35);
+  splane(tv, new THREE.MeshBasicMaterial({ map: cardTex, toneMapped: false }), 5.4, 4.05, 0, 0, .385);
+  const nm = basicMat('#ffe14d');
+  [[0, 2.47, 6.7, .09], [0, -2.47, 6.7, .09]].forEach(a => sbox(tv, nm, a[2], a[3], .08, a[0], a[1], .36));
+  [[-3.3, 0], [3.3, 0]].forEach(a => sbox(tv, nm, .09, 4.95, .08, a[0], a[1], .36));
+  [-1.6, 1.6].forEach(x => sbox(tv, '#ffd23f', .5, .3, .5, x, -2.5, -.05));     // little feet
+}
+// applause sign « מחיאות כפיים »
+const applTex = canvasTex(512, 150, (ctx, w, h) => {
+  ctx.fillStyle = '#d0102e'; rr(ctx, 3, 3, w - 6, h - 6, 22); ctx.fill();
+  ctx.lineWidth = 7; ctx.strokeStyle = '#ffe6a0'; rr(ctx, 12, 12, w - 24, h - 24, 16); ctx.stroke();
+  for (let i = 0; i < 14; i++){ ctx.fillStyle = '#fff3c4'; ctx.beginPath(); ctx.arc(30 + i * (w - 60) / 13, 8 + 0, 0, 0, 7); ctx.fill(); }
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl';
+  fitFont(ctx, 'מחיאות כפיים 👏', 900, 70, w - 60); ctx.fillStyle = '#ffffff'; ctx.fillText('מחיאות כפיים 👏', w / 2, h / 2 + 4);
+});
+const applMat = new THREE.MeshBasicMaterial({ map: applTex, toneMapped: false, color: 0x3a2a2e });
+{
+  const ap = new THREE.Group(); ap.position.set(4.95, 6.45, .3); studio.add(ap);
+  sbox(ap, '#2b2d42', 2.9, .95, .4, 0, 0, 0);
+  splane(ap, applMat, 2.7, .79, 0, 0, .205);
+  sbox(ap, '#2b2d42', .06, 1.3, .06, -1, 1.1, 0); sbox(ap, '#2b2d42', .06, 1.3, .06, 1, 1.1, 0);
+}
+// curved presenter desk (pink / yellow)
+const DESK_Z = 2.15;
+{
+  const desk = new THREE.Group(); desk.position.set(0, 0, DESK_Z); studio.add(desk);
+  const n = 11, R = 1.6, A = 1.2, chord = 2 * R * Math.sin(A / (n - 1)) + .05;
+  const dk = new Batch(BOX, new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: .35, metalness: .05 }));
+  for (let i = 0; i < n; i++){
+    const a = -A + 2 * A * i / (n - 1), sx = Math.sin(a), cz = Math.cos(a);
+    dk.add(sx * R, .52, cz * R, chord, .98, .3, '#ff5d8f', 0, a, 0);
+    dk.add(sx * (R + .02), .78, cz * (R + .02), chord + .01, .1, .3, '#ffd23f', 0, a, 0);
+    dk.add(sx * (R + .02), .25, cz * (R + .02), chord + .01, .07, .3, '#33e6ff', 0, a, 0);
+    dk.add(sx * (R - .14), 1.06, cz * (R - .14), chord + .06, .09, .66, '#ffd23f', 0, a, 0);
+  }
+  dk.build(desk);
+  const logo = canvasTex(512, 128, (ctx, w, h) => {
+    ctx.fillStyle = '#ffffff'; rr(ctx, 4, 4, w - 8, h - 8, 60); ctx.fill();
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl';
+    fitFont(ctx, 'מזל חדשות', 900, 84, w - 70); ctx.fillStyle = '#d6246e'; ctx.fillText('מזל חדשות', w / 2, h / 2 + 5);
+  });
+  splane(desk, new THREE.MeshBasicMaterial({ map: logo, toneMapped: false, transparent: true }), 1.15, .29, 0, .52, R + .155);
+  // name plate on the desk top
+  const np = canvasTex(512, 128, (ctx, w, h) => { ctx.fillStyle = '#1f2a55'; rr(ctx, 4, 4, w - 8, h - 8, 18); ctx.fill(); ctx.strokeStyle = '#FFC24B'; ctx.lineWidth = 8; rr(ctx, 12, 12, w - 24, h - 24, 12); ctx.stroke(); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl'; fitFont(ctx, 'מוטי חדשות', 900, 80, w - 70); ctx.fillStyle = '#FFC24B'; ctx.fillText('מוטי חדשות', w / 2, h / 2 + 5); });
+  const plate = new THREE.Group(); plate.position.set(-.45, 1.19, R - .3); plate.rotation.x = -.35; desk.add(plate);
+  sbox(plate, '#1f2a55', .82, .22, .06, 0, 0, -.01); splane(plate, new THREE.MeshBasicMaterial({ map: np, toneMapped: false }), .8, .2, 0, 0, .025);
+  // a mug of tea on the desk
+  const mug = new THREE.Mesh(CYL, M('#ffffff')); mug.scale.set(.13, .15, .13); mug.position.set(.75, 1.18, R - .35); desk.add(mug);
+}
+// retro TV cameras on tripods
+function tvCam(x, z, tx, tz){
+  const g = new THREE.Group(); g.position.set(x, 0, z); g.rotation.y = Math.atan2(-(tx - x), -(tz - z)); studio.add(g);
+  for (let k = 0; k < 3; k++){ const a = k * 2.094, leg = sbox(g, '#2b2d42', .05, 1.3, .05, Math.sin(a) * .28, .6, Math.cos(a) * .28); leg.rotation.set(Math.cos(a) * .42, 0, -Math.sin(a) * .42); }
+  sbox(g, '#2b2d42', .08, .4, .08, 0, 1.3, 0);
+  const head = new THREE.Group(); head.position.set(0, 1.62, 0); head.rotation.x = -.08; g.add(head);
+  sbox(head, '#dfe3ea', .52, .5, .9, 0, 0, 0);
+  sbox(head, '#ff5d8f', .54, .12, .92, 0, .1, 0);
+  const lens = new THREE.Mesh(CYL, M('#1b1b1b', { roughness: .3 })); lens.scale.set(.32, .4, .32); lens.rotation.x = Math.PI / 2; lens.position.set(0, -.02, -.62); head.add(lens);
+  splane(head, basicMat('#3a6df0'), .24, .24, 0, -.02, -.825, Math.PI);
+  sbox(head, basicMat('#ff1f3d'), .1, .07, .07, .16, .29, -.36);
+  sbox(head, '#2b2d42', .2, .16, .26, .36, .08, .2);
+  sbox(head, '#2b2d42', .05, .05, .6, -.2, -.2, .62).rotation.x = .5;
+  sbox(head, '#2b2d42', .05, .05, .6, .2, -.2, .62).rotation.x = .5;
+  return g;
+}
+tvCam(-2.8, 6.7, 0, DESK_Z); tvCam(4.9, 6.5, 1.6, 2.8);
+// two red armchairs + a little table with plastic flowers
+function armchair(x, z, ry){
+  const g = new THREE.Group(); g.position.set(x, 0, z); g.rotation.y = ry; studio.add(g);
+  const red = M('#d62839', { roughness: .55 }), redD = M('#a51c2c', { roughness: .55 });
+  sbox(g, red, 1.05, .42, .95, 0, .36, 0); sbox(g, redD, 1.05, 1.0, .26, 0, .86, -.4);
+  sbox(g, red, .22, .6, .95, -.54, .5, 0); sbox(g, red, .22, .6, .95, .54, .5, 0);
+  sbox(g, '#ffd23f', 1.07, .06, .97, 0, .14, 0);
+  [[-.42, -.36], [.42, -.36], [-.42, .36], [.42, .36]].forEach(([lx, lz]) => sbox(g, '#c9a227', .08, .14, .08, lx, .07, lz));
+}
+armchair(-5.3, 3.5, .45); armchair(-7.3, 3.9, .25);
+{
+  const t = new THREE.Mesh(CYL, M('#ffd23f', { roughness: .4 })); t.scale.set(.8, .06, .8); t.position.set(-6.25, .55, 4.35); studio.add(t);
+  const leg = new THREE.Mesh(CYL, M('#2b2d42')); leg.scale.set(.08, .55, .08); leg.position.set(-6.25, .27, 4.35); studio.add(leg);
+  const vase = new THREE.Mesh(CYL, M('#33c8ff', { roughness: .2 })); vase.scale.set(.18, .3, .18); vase.position.set(-6.25, .73, 4.35); studio.add(vase);
+  ['#ff5d8f', '#FFC24B', '#ff8c42', '#b388ff'].forEach((c, i) => sbox(studio, c, .14, .14, .14, -6.25 + (i - 1.5) * .09, 1.0 + (i % 2) * .1, 4.35 + (i % 2 ? .05 : -.05)));
+}
+// lighting truss + spot cans (with glow) + one warm point light for the whole studio
+const studioGlows = [];
+{
+  sbox(studio, M('#8a8f99', { metalness: .6, roughness: .35 }), 14, .14, .14, 0, SH - .45, 5.4);
+  sbox(studio, M('#8a8f99', { metalness: .6, roughness: .35 }), 14, .14, .14, 0, SH - .45, 2.0);
+  [[-5.2, '#ff8fd0', 5.4], [-2.4, '#ffffff', 5.4], [0, '#fff1b0', 5.4], [2.4, '#ffffff', 5.4], [5.2, '#8ff0ff', 5.4], [-3.6, '#ff8fd0', 2.0], [3.6, '#8ff0ff', 2.0]].forEach(([x, c, z]) => {
+    const g = new THREE.Group(); g.position.set(x, SH - .75, z); g.rotation.x = z > 3 ? -.75 : .55; studio.add(g);
+    const can = new THREE.Mesh(CYL, M('#2b2d42', { metalness: .4, roughness: .4 })); can.scale.set(.34, .5, .34); g.add(can);
+    const lensD = splane(g, basicMat(c), .26, .26, 0, -.255, 0); lensD.rotation.x = Math.PI / 2;
+    const gl = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, color: new THREE.Color(c), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false }));
+    gl.scale.set(1.3, 1.3, 1); gl.position.y = -.35; g.add(gl); studioGlows.push(gl);
+  });
+}
+const studioLight = new THREE.PointLight(0xfff0f6, 1.05, 17, 1.4); studioLight.position.set(0, SH - 1.4, 4.6); studio.add(studioLight);
+
+/* ---- presenter: « מוטי חדשות », a cubic TV anchor man (grey hair, big smile, navy suit, gold tie) ---- */
+const PRES = (() => {
+  const g = new THREE.Group(); g.position.set(0, 0, DESK_Z + .05); studio.add(g);
+  const SK = '#f1c9a5', NAVY = '#1f2a55', NAVY_D = '#161e40', GREY = '#c9ced8', GREY_D = '#a9b0bd';
+  const gold = new THREE.MeshStandardMaterial({ color: LC('#ffcf3a'), emissive: LC('#9a6a00'), emissiveIntensity: .55, metalness: .75, roughness: .22 });
+  [-1, 1].forEach(s => { sbox(g, NAVY_D, .26, .95, .28, s * .15, .48, 0); sbox(g, '#1b1b1b', .28, .1, .36, s * .15, .05, .04); });
+  const torso = new THREE.Group(); torso.position.set(0, .95, 0); g.add(torso);
+  sbox(torso, NAVY, .74, .82, .42, 0, .41, 0);                              // jacket
+  sbox(torso, '#ffffff', .24, .52, .02, 0, .52, .212);                      // shirt V
+  [-1, 1].forEach(s => { const l = sbox(torso, NAVY_D, .12, .5, .03, s * .13, .5, .222); l.rotation.z = s * .28; });   // lapels
+  sbox(torso, gold, .1, .44, .03, 0, .46, .228);                            // shiny gold tie
+  sbox(torso, gold, .14, .09, .04, 0, .72, .23);                            // knot
+  sbox(torso, '#ff5d8f', .1, .06, .02, .24, .62, .222);                     // pocket square
+  sbox(torso, '#ffd23f', .05, .05, .02, 0, .2, .222); sbox(torso, '#ffd23f', .05, .05, .02, 0, .08, .222);   // buttons
+  sbox(torso, '#ffffff', .3, .08, .3, 0, .84, .02);                         // collar
+  const head = new THREE.Group(); head.position.set(0, .86, .02); torso.add(head);
+  sbox(head, SK, .2, .12, .2, 0, .04, 0);                                   // neck
+  sbox(head, SK, .54, .54, .5, 0, .36, 0);                                  // head
+  sbox(head, SK, .06, .14, .1, -.29, .36, 0); sbox(head, SK, .06, .14, .1, .29, .36, 0);   // ears
+  sbox(head, GREY, .58, .14, .54, 0, .67, -.01);                            // neat grey hair
+  sbox(head, GREY, .58, .34, .12, 0, .5, -.22);
+  sbox(head, GREY, .06, .26, .44, -.285, .52, -.03); sbox(head, GREY, .06, .26, .44, .285, .52, -.03);
+  sbox(head, GREY_D, .2, .05, .5, -.12, .75, -.01);                         // side part
+  sbox(head, GREY, .4, .08, .1, .06, .63, .23);                             // combed front
+  [-1, 1].forEach(s => {
+    sbox(head, '#ffffff', .12, .1, .02, s * .12, .44, .251);
+    sbox(head, '#1b1b1b', .06, .07, .02, s * .12, .44, .262);
+    sbox(head, GREY_D, .15, .035, .02, s * .12, .53, .252).rotation.z = -s * .12;
+    sbox(head, '#ff9fb2', .09, .05, .01, s * .19, .3, .251);
+  });
+  sbox(head, '#e8b08c', .08, .1, .06, 0, .36, .27);                         // nose
+  const mouth = sbox(head, '#6b1d1d', .28, .09, .02, 0, .21, .252);         // big smile
+  sbox(head, '#ffffff', .24, .035, .02, 0, .235, .26);                      // teeth
+  sbox(head, '#6b1d1d', .05, .05, .02, -.155, .25, .252); sbox(head, '#6b1d1d', .05, .05, .02, .155, .25, .252);   // raised corners
+  const arm = s => { const pv = new THREE.Group(); pv.position.set(s * .44, .72, 0); torso.add(pv);
+    sbox(pv, NAVY, .19, .5, .21, 0, -.25, 0); sbox(pv, '#ffffff', .2, .07, .22, 0, -.52, 0); sbox(pv, SK, .16, .14, .16, 0, -.61, 0); return pv; };
+  const armR = arm(-1), armL = arm(1);
+  const mic = new THREE.Group(); mic.position.set(0, -.64, .03); armR.add(mic);
+  sbox(mic, '#1b1b1b', .07, .3, .07, 0, .1, 0);
+  sbox(mic, '#ff2d7a', .1, .06, .1, 0, .27, 0);
+  const ball = new THREE.Mesh(new THREE.SphereGeometry(.085, 12, 10), M('#c9ced6', { metalness: .7, roughness: .35 })); ball.position.y = .36; mic.add(ball);
+  const paperTex = canvasTex(128, 170, (ctx, w, h) => { ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, w, h); ctx.fillStyle = '#d6246e'; ctx.fillRect(14, 14, w - 28, 12); ctx.fillStyle = '#9aa3b5'; for (let y = 40; y < h - 10; y += 14) ctx.fillRect(14, y, w - 28 - (y % 28 ? 20 : 0), 5); });
+  const paper = new THREE.Group(); paper.position.set(0, -.66, .05); armL.add(paper);
+  const sheet = new THREE.Mesh(BOX, [M('#ffffff'), M('#ffffff'), M('#ffffff'), M('#ffffff'), new THREE.MeshStandardMaterial({ map: paperTex, roughness: .9 }), M('#ffffff')]);
+  sheet.scale.set(.34, .45, .012); sheet.position.y = .12; paper.add(sheet);
+  return { g, torso, head, armR, armL, mic, paper, mouth };
+})();
+const _sq = new THREE.Quaternion(), _sq2 = new THREE.Quaternion(), _se = new THREE.Euler();
+function orientWorld(obj, rx, ry, rz){   // set obj's WORLD rotation (studio is not rotated)
+  obj.parent.getWorldQuaternion(_sq); _sq2.setFromEuler(_se.set(rx, ry, rz)); obj.quaternion.copy(_sq.invert().multiply(_sq2));
+}
+
+/* ---- winner stage + winner ---- */
+const STAGE = { x: 3.15, z: 3.0, h: .4 };
+const stage = new THREE.Group(); stage.position.set(STAGE.x, 0, STAGE.z); studio.add(stage);
+{
+  const top = new THREE.Mesh(new THREE.CylinderGeometry(1.05, 1.15, STAGE.h, 20), M('#ffd23f', { metalness: .35, roughness: .3 })); top.position.y = STAGE.h / 2; stage.add(top);
+  const rim = new THREE.Mesh(new THREE.CylinderGeometry(1.1, 1.1, .08, 20), M('#ff5d8f', { roughness: .4 })); rim.position.y = STAGE.h - .06; stage.add(rim);
+  const sl = new THREE.InstancedMesh(BOX, new THREE.MeshBasicMaterial({ color: 0xffffff, toneMapped: false }), 14);
+  const d = new THREE.Object3D();
+  for (let i = 0; i < 14; i++){ const a = i / 14 * Math.PI * 2; d.position.set(Math.sin(a) * 1.13, .2, Math.cos(a) * 1.13); d.rotation.set(0, a, 0); d.scale.set(.1, .1, .04); d.updateMatrix(); sl.setMatrixAt(i, d.matrix); sl.setColorAt(i, LC(i % 2 ? '#fff3c4' : '#ff6fae')); }
+  sl.instanceMatrix.needsUpdate = true; sl.frustumCulled = false; stage.add(sl);
+  const star = canvasTex(64, 64, (ctx, w, h) => { const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32); g.addColorStop(0, 'rgba(255,240,180,.85)'); g.addColorStop(1, 'rgba(255,194,75,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h); });
+  const pool = new THREE.Mesh(new THREE.CircleGeometry(1.0, 24), new THREE.MeshBasicMaterial({ map: star, transparent: true, depthWrite: false, toneMapped: false, blending: THREE.AdditiveBlending })); pool.rotation.x = -Math.PI / 2; pool.position.y = STAGE.h + .012; stage.add(pool);
+}
+function winnerLabel(u){
+  const tex = canvasTex(512, 230, (ctx, w, h) => {
+    const label = '@' + u;
+    ctx.font = '800 54px Heebo, sans-serif'; ctx.direction = 'ltr';
+    let tw = Math.min(w - 16, ctx.measureText(label).width + 64); if (tw > w - 16) fitFont(ctx, label, 800, 54, w - 80);
+    ctx.fillStyle = 'rgba(12,14,24,.86)'; rr(ctx, (w - tw) / 2, 8, tw, 92, 46); ctx.fill();
+    ctx.strokeStyle = '#FFC24B'; ctx.lineWidth = 6; rr(ctx, (w - tw) / 2 + 3, 11, tw - 6, 86, 43); ctx.stroke();
+    ctx.fillStyle = '#ffffff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(label, w / 2, 56);
+    ctx.direction = 'rtl'; ctx.font = '900 38px Heebo, sans-serif';
+    const t2 = '👑 התגובה של היום', gw = ctx.measureText(t2).width + 40;
+    ctx.fillStyle = '#FFC24B'; rr(ctx, (w - gw) / 2, 116, gw, 60, 30); ctx.fill();
+    ctx.fillStyle = '#2a1d00'; ctx.fillText(t2, w / 2, 148);
+  });
+  const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, fog: false }));
+  s.scale.set(2.3, 2.3 * 230 / 512, 1); s.renderOrder = 11; return s;
+}
+function buildWinner(u){
+  if (stu.win){ stage.remove(stu.win.av.g); stage.remove(stu.win.label); stage.remove(stu.win.glow); freeSprite(stu.win.label); stu.win = null; }
+  if (!u || !USER_RE.test(u)) return;
+  const p = citGen(u), av = makeAvatar(p);
+  stage.add(av.g); av.g.position.set(0, STAGE.h, 0); av.g.rotation.y = -.42; av.disc.visible = false;
+  const add = (geo, mat, sx, sy, sz, x, y, z) => { const m = new THREE.Mesh(geo, mat); m.scale.set(sx, sy, sz); m.position.set(x, y, z); av.deco.add(m); return m; };
+  add(CROWN_GEO, crownMat, .44, .16, .44, 0, 1.66, 0);
+  for (let k = 0; k < 5; k++){ const an = k * 1.2566; add(SPIKE_GEO, crownMat, .08, .15, .08, Math.sin(an) * .19, 1.81, Math.cos(an) * .19); }
+  add(BOX, basicMat('#ff2d55'), .07, .07, .03, 0, 1.68, .225);
+  const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false })); glow.scale.set(2.2, 2.2, 1); glow.position.set(0, STAGE.h + 1.75 * p.hs, 0); stage.add(glow);
+  const label = winnerLabel(u); label.position.set(0, STAGE.h + 2.45 * p.hs, 0); stage.add(label);
+  stu.win = { u, p, av, label, glow };
+}
+
+/* ---- confetti (ambient around the stage + bursts) ---- */
+const CONF_A = 56, CONF_N = 196;
+const confMesh = new THREE.InstancedMesh(BOX, new THREE.MeshBasicMaterial({ color: 0xffffff, toneMapped: false }), CONF_N);
+{ const cols = ['#FFC24B', '#ff5d8f', '#2ec4b6', '#86b8ff', '#ffffff', '#b99cff', '#ff8c42']; for (let i = 0; i < CONF_N; i++) confMesh.setColorAt(i, LC(cols[i % cols.length])); }
+confMesh.frustumCulled = false; studio.add(confMesh);
+const _cd = new THREE.Object3D();
+function updateConfetti(t){
+  for (let i = 0; i < CONF_N; i++){
+    let vis = true;
+    if (i < CONF_A){
+      const k = (t * .2 * (.7 + h2(i, 21) * .6) + h2(i, 22)) % 1;
+      _cd.position.set(STAGE.x + (h2(i, 23) - .5) * 3 + Math.sin(t * 1.4 + i) * .15, SH - .9 - k * (SH - 1), STAGE.z + (h2(i, 24) - .5) * 2.4);
+      vis = !!stu.win;
+    } else {
+      const j = i - CONF_A, age = t - stu.burstT;
+      if (age >= 0 && age < 3.6){
+        const fromStage = j % 2 === 0, ox = fromStage ? STAGE.x : -1.2, oz = fromStage ? STAGE.z : DESK_Z + 1.4, oy = fromStage ? .6 : 1.2;
+        const vx = (h2(j, 31) - .5) * 5, vy = 5 + h2(j, 32) * 3.5, vz = (h2(j, 33) - .3) * 3.2, dr = 1.6;   // air drag-ish
+        const f = (1 - Math.exp(-dr * age)) / dr;
+        _cd.position.set(ox + vx * f, Math.max(.03, oy + vy * f - 2.6 * age * age * .5 - .9 * age), oz + vz * f);
+      } else vis = false;
+    }
+    const sc = vis ? 1 : 0;
+    _cd.rotation.set(t * (2 + h2(i, 25) * 3) + i, t * (1.5 + h2(i, 26) * 2), i * .7);
+    _cd.scale.set(.13 * sc, .08 * sc, .015 * sc); _cd.updateMatrix(); confMesh.setMatrixAt(i, _cd.matrix);
+  }
+  confMesh.instanceMatrix.needsUpdate = true;
+}
+
+/* ---- the big screen card « התגובה של היום » ---- */
+function drawCard(ctx, w, h){
+  const g = ctx.createLinearGradient(0, 0, w, h); g.addColorStop(0, '#ff4f9a'); g.addColorStop(.55, '#a73cf0'); g.addColorStop(1, '#5b2a9e');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  const r = mulberry(7); for (let i = 0; i < 40; i++){ ctx.fillStyle = ['rgba(255,226,120,.5)', 'rgba(120,240,255,.45)', 'rgba(255,255,255,.4)'][i % 3]; const x = r() * w, y = r() * h, s = 3 + r() * 6; ctx.fillRect(x, y, s, s); }
+  ctx.fillStyle = 'rgba(0,0,0,.06)'; for (let y = 0; y < h; y += 6) ctx.fillRect(0, y, w, 2);   // CRT scanlines
+  ctx.lineWidth = 16; ctx.strokeStyle = '#FFC24B'; rr(ctx, 14, 14, w - 28, h - 28, 34); ctx.stroke();
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl';
+  const title = '📰 התגובה של היום';
+  fitFont(ctx, title, 900, 84, w - 120);
+  ctx.lineWidth = 12; ctx.strokeStyle = '#3a0f4f'; ctx.strokeText(title, w / 2, 104); ctx.fillStyle = '#FFC24B'; ctx.fillText(title, w / 2, 104);
+  const c = stu.card;
+  if (!c){
+    ctx.fillStyle = '#ffffff'; rr(ctx, 70, 230, w - 140, 330, 40); ctx.fill();
+    ctx.font = '900 70px Heebo, sans-serif'; const wl = wrapLines(ctx, 'התגובה של היום תופיע כאן', w - 240, 3);
+    ctx.fillStyle = '#3a1b5c'; wl.lines.forEach((l, i) => ctx.fillText(l, w / 2, 395 + (i - (wl.lines.length - 1) / 2) * 86));
+    return;
+  }
+  // @username (ltr) in a cyan pill
+  ctx.direction = 'ltr'; const un = '@' + (c.username || '');
+  fitFont(ctx, un, 800, 62, w - 260); const uw = ctx.measureText(un).width + 70;
+  ctx.fillStyle = '#20d3e6'; rr(ctx, (w - uw) / 2, 168, uw, 84, 42); ctx.fill();
+  ctx.fillStyle = '#10202a'; ctx.fillText(un, w / 2, 212);
+  // the comment in a white speech bubble (rtl, wrapped, max 3 lines)
+  ctx.direction = 'rtl';
+  const bx = 62, by = 278, bw = w - 124, bh = 316;
+  ctx.fillStyle = '#ffffff'; rr(ctx, bx, by, bw, bh, 40); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(w / 2 - 30, by + 2); ctx.lineTo(w / 2, by - 26); ctx.lineTo(w / 2 + 30, by + 2); ctx.closePath(); ctx.fill();
+  let size = 74, wl;
+  for (;;){ ctx.font = `900 ${size}px Heebo, sans-serif`; wl = wrapLines(ctx, c.text || '…', bw - 90, 3); if (!wl.cut || size <= 52) break; size -= 4; }
+  const lh = size * 1.22, y0 = by + bh / 2 - (wl.lines.length - 1) * lh / 2 + 4;
+  ctx.fillStyle = '#24113a'; wl.lines.forEach((l, i) => ctx.fillText(l, w / 2, y0 + i * lh));
+  // likes
+  const n = c.likes | 0, lk = n === 1 ? '❤️ לייק אחד' : `❤️ ${n} לייקים`;
+  ctx.font = '900 56px Heebo, sans-serif'; const lw = ctx.measureText(lk).width + 80;
+  ctx.fillStyle = '#ff2d6f'; rr(ctx, (w - lw) / 2, 626, lw, 86, 43); ctx.fill();
+  ctx.lineWidth = 5; ctx.strokeStyle = '#ffe6f0'; rr(ctx, (w - lw) / 2 + 2.5, 628.5, lw - 5, 81, 40.5); ctx.stroke();
+  ctx.fillStyle = '#ffffff'; ctx.fillText(lk, w / 2, 671);
+}
+function setStudioCard(j){
+  const ok = j && typeof j === 'object' && (j.text || j.username);
+  stu.card = ok ? { day: String(j.day || ''), username: cleanUser(j.username), text: String(j.text || '').trim(), likes: Math.max(0, parseInt(j.likes, 10) || 0) } : null;
+  redrawOne(cardTex); buildWinner(stu.card && stu.card.username);
+  return !!stu.card;
+}
+window.studioSetComment = setStudioCard;
+window.studioReady = (async () => {
+  try {
+    const r = await fetchT('data/comment_of_day.json?v=' + Math.floor(Date.now() / 60000), {}, 8000);
+    if (!r.ok) throw new Error('no comment_of_day');
+    return setStudioCard(await r.json());
+  } catch(e){ return setStudioCard(null); }
+})();
+window.studioApplause = function(){ stu.applauseT = simTime; stu.burstT = simTime; if (!CAP && stu.inside){ try { Audio.chime && Audio.chime(); } catch(e){} } return true; };
+
+/* ---- collision: walls block walking + camera; furniture blocks walking only ---- */
+bldRects.push([STUDIO.x - STUDIO.hw - .06, STUDIO.zb - .06, STUDIO.x + STUDIO.hw + .06, STUDIO.z0 + .02]);
+bldRects.push([STUDIO.x - STUDIO.hw - .06, STUDIO.zb - .06, STUDIO.x - STUDIO.hw + .35, STUDIO.zf + .3]);
+bldRects.push([STUDIO.x + STUDIO.hw - .35, STUDIO.zb - .06, STUDIO.x + STUDIO.hw + .06, STUDIO.zf + .3]);
+{
+  const a = SW(-1.8, 0), b = SW(1.8, DESK_Z + 1.78); STUDIO_OBS.push([a[0], a[1], b[0], b[1]]);          // desk + presenter + TV
+  const s = SW(STAGE.x, STAGE.z); STUDIO_OBS.push([s[0], s[1], 1.18]);
+  const c1 = SW(-8.0, 2.8), c2 = SW(-4.6, 4.9); STUDIO_OBS.push([c1[0], c1[1], c2[0], c2[1]]);           // armchairs + table
+  [[-2.8, 6.7], [4.9, 6.5]].forEach(([x, z]) => { const q = SW(x, z); STUDIO_OBS.push([q[0], q[1], .5]); });
+  const ap = SW(4.95, 0); STUDIO_OBS.push([ap[0] - 1.5, ap[1], ap[0] + 1.5, ap[1] + .5]);
+}
+function studioRoof(v){ studioTop.visible = v; }
+
+/* ---- per-frame ---- */
+function updateStudio(t, dt){
+  // presenter
+  const ap = t - stu.applauseT, applause = ap >= 0 && ap < 3.2;
+  const pg = PRES;
+  pg.g.position.y = applause && ap < 1.6 ? Math.abs(Math.sin(ap / .4 * Math.PI)) * .12 : 0;
+  pg.head.rotation.y = Math.sin(t * .7) * .22 + Math.sin(t * .23) * .08;
+  pg.head.rotation.x = -.06 + Math.sin(t * 1.7) * .04;
+  const talk = (Math.sin(t * .9) > -.3) ? Math.abs(Math.sin(t * 11)) : 0;
+  pg.mouth.scale.y = .09 + talk * .06; pg.mouth.position.y = .21 - talk * .03;
+  pg.armR.rotation.set(-1.62 + Math.sin(t * 1.3) * .05, 0, .62);
+  pg.armL.rotation.set(-1.0 + Math.sin(t * .9 + 1) * .05, 0, -.12);
+  orientWorld(pg.mic, -.15, 0, 0);
+  orientWorld(pg.paper, -.75, -.25, 0);
+  // applause sign
+  const lit = applause && (Math.floor(ap * 5) % 2 === 0 || ap > 2.6);
+  applMat.color.setHex(lit ? 0xffffff : 0x3a2a2e);
+  // marquee bulbs chase
+  const bt = Math.floor(t * 5);
+  if (bt !== stu.bulbT){ stu.bulbT = bt; for (let i = 0; i < BULBS.length; i++) bulbMesh.setColorAt(i, (i + bt) % 3 === 0 ? BULB_OFF : BULB_ON[i % 3]); bulbMesh.instanceColor.needsUpdate = true; }
+  studioGlows.forEach((g, i) => { g.material.opacity = .6 + Math.sin(t * 2 + i) * .15 + (lit ? .25 : 0); });
+  // winner: little celebration dance
+  if (stu.win){
+    const av = stu.win.av, wv = Math.sin(t * 6);
+    av.armL.rotation.set(0, 0, -2.5 + wv * .25); av.armR.rotation.set(0, 0, 2.5 - wv * .25);
+    av.body.position.y = Math.abs(Math.sin(t * 3)) * .08 + (applause && ap < 1.6 ? Math.abs(Math.sin(ap / .4 * Math.PI)) * .2 : 0);
+    av.g.rotation.y = -.42 + Math.sin(t * .8) * .12;
+    const pulse = 1 + Math.sin(t * 4) * .07; av.ring.scale.set(pulse, pulse, 1);
+    stu.win.glow.material.opacity = .55 + Math.sin(t * 2) * .2;
+    stu.win.label.position.y = STAGE.h + 2.45 * stu.win.p.hs + Math.sin(t * 2) * .04;
+  }
+  updateConfetti(t);
+  if (CAP) return;
+  // inside? hide the roof so the follow camera sees in; welcome once; occasional applause
+  const inside = !!(player && mode === 'play' && player.x > STUDIO.x - STUDIO.hw && player.x < STUDIO.x + STUDIO.hw && player.z > STUDIO.zb && player.z < STUDIO.zf);
+  if (inside !== stu.inside){ stu.inside = inside; studioRoof(!inside); if (inside && !stu.welcomed){ stu.welcomed = true; toast('📺 ברוכים הבאים לאולפן « מזל חדשות »!'); setTimeout(() => window.studioApplause(), 600); } }
+  if (t > stu.nextAuto){ stu.nextAuto = t + 22; window.studioApplause(); }
+}
+// capture presets (world coordinates; [pos, target, fov]) — 9:16 framing
+const STUDIO_SHOTS = (() => {
+  const w = (x, y, z) => [STUDIO.x + x, .22 + y, STUDIO.z0 + z];
+  return {
+    studio:       [w(1.6, 3.3, 10.55), w(1.6, 3.05, 2.4), 76],
+    studioCard:   [w(0, 4.3, 10.25), w(0, 4.15, .74), 58],
+    studioWinner: [w(1.75, 2.85, 10.6), w(1.65, 2.55, 2.6), 60]
+  };
+})();
+
+/* =====================================================================
    LOOP  (started BEFORE data loads)
    ===================================================================== */
 const clock = new THREE.Clock();
@@ -2804,6 +3269,7 @@ function step(dt){
   updatePlayer(simTime, dt);
   updateGift(simTime);
   lotUpdate(simTime);
+  updateStudio(simTime, dt);
   updateCamera(simTime, dt);
   if (!CAP && radar.open && radar.shown && simTime - radar.last > 0.1){ radar.last = simTime; drawRadar(simTime); }
   skyGroup.position.copy(camera.position);
@@ -2830,9 +3296,12 @@ const SHOTS = {
   cloud: [[0.9, 2.3, 15.4], [0, 3.15, 10.6]],
   crowd: [[-11, 6.5, 25], [0, 1, 13.5]]
 };
+Object.assign(SHOTS, STUDIO_SHOTS);
 window.capShot = function(name){
   const s = SHOTS[name] || SHOTS.wide;
   flight = null; follow = false; introDone = true;
+  const fov = s[2] || 48; if (camera.fov !== fov){ camera.fov = fov; camera.updateProjectionMatrix(); }
+  studioRoof(true);
   camera.position.set(s[0][0], s[0][1], s[0][2]); controls.target.set(s[1][0], s[1][1], s[1][2]); camera.lookAt(controls.target);
   skyGroup.position.copy(camera.position);
   renderer.render(scene, camera);
