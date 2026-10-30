@@ -1,3 +1,5 @@
+⚠️ NOTE POUR LE CHAT D'AUTOMATISATION (30/10 15:30) : les MP3 du jour 2 sont arrivés dans le chat vidéos (session_01K8i1w54KFPFJfEmEMXS7hR). La vidéo « יום 2 » y est montée et y sera publiée samedi 31/10 à 19:30 sur @hasavta.shelanu. Ce reel = post du jour du samedi. NE PAS monter de vidéo, NE PAS publier de reel, NE PAS créer de post du jour image pour samedi. Pour le passage de 19:55 / loterie, prendre l'id du reel « יום 2 » publié après 19:00. Pense à mettre à jour data/comment_of_day.json (écran du studio מזל חדשות) au passage.
+
 יום 2 — מוצאי שבת ~19:30 — 2 קולות (קריין = Nimrod · סבתא מזל)
 
 קריין: [excited] אתמול לסבתא מזל לא היה כלום. היום? יש לה חבר. ויש לה בית!
