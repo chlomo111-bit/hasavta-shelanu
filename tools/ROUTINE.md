@@ -118,6 +118,13 @@ samedi ~19:30 ; samedi : vidéo à 21:30.
    Sans gagnant : une ligne.
 7. Commit + push (citizens.json, media/).
 
+## ⚠️ Règle de Shlomo (30/10/2026 13:34) — VIDÉOS
+Les vidéos du jeu sont montées UNIQUEMENT dans le chat « הסבתא שלנו – vidéos » (session session_01K8i1w54KFPFJfEmEMXS7hR,
+celui qui a créé le jeu). Les automatisations ne montent ni ne publient plus de vidéo : elles préparent seulement le texte
+voix dans media/AAAA-MM-JJ/voix.txt et l'envoient à Shlomo à 18:30 ; Shlomo envoie les MP3 dans le chat vidéos, qui monte,
+publie (21:00, samedi après Shabbat) et enregistre chaque vidéo sur le bureau du Mac (Desktop/Vidéos jeux/הסבתא שלנו/)
+et dans le chat, nommée « הסבתא שלנו – יום N ».
+
 ## Vidéo du jour (règle 1)
 - AVANT d'écrire : lire TOUS les commentaires du post/reel précédent ; le commentaire valable le plus liké
   décide de ce qui arrive. Raconter ce qui s'est passé dans le jeu (vrais joueurs tagués, vrais chiffres :
