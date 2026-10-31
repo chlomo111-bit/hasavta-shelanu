@@ -1,5 +1,10 @@
 # ROUTINE — « הסבתא שלנו » (@hasavta.shelanu · savta.hakaveret.online)
 
+**Règle de Shlomo (31/10/2026 22:07) : plus de vrai argent.** Samedi 31/10 = dernière fois 20 ₪ par Bit. Depuis
+dimanche 1/11, le gagnant de la loterie de 20:00 reçoit 100 מטבעות זהב dans le jeu (automatique, `savta_run_lottery`)
++ un bonus : il décide d'un אירוע מטורף en plus qui arrivera dans la ville le lendemain. Plus aucun message à
+Shlomo pour payer. Mêmes 2 conditions. Pas de loterie pendant Shabbat (inchangé).
+
 Règles décidées par Shlomo le 30/10/2026 (obligatoires pour tous ses jeux). Réponses à Shlomo en français ;
 tout ce qui est joueurs / Instagram en hébreu, chaleureux et drôle. Autonomie complète, économie.
 
@@ -28,7 +33,9 @@ est publiée samedi soir.
    le mot en commentaire → `extra.crown=true` (grade מלאך שומר). Pas d'argent pour le cadeau.
 3. Grades (calculés par le site) : תושב (abonné) · שכן (a commenté) · חבר משפחה (≥ 5 commentaires) ·
    כותב (writer) · מלאך שומר (extra.crown).
-4. LOTERIE 20 ₪ chaque soir à 20:00 (un seul gagnant, Shlomo paie par Bit). 2 conditions :
+4. LOTERIE chaque soir à 20:00 (un seul gagnant ; depuis le 1/11/2026 : +100 מטבעות זהב dans le jeu, crédités
+   automatiquement dans `savta_players.coins` par `savta_run_lottery`, + il choisit un אירוע מטורף en plus pour
+   le lendemain ; plus de vrai argent). 2 conditions :
    (a) commenter le POST DU JOUR épinglé, (b) avoir **100 cœurs ❤️ dans la journée** (date d'Israël).
    Pas de condition d'abonnement.
 5. « המגיב של היום » : à 20:00, le joueur avec le plus de commentaires valables de la journée (tous les posts,
@@ -45,7 +52,7 @@ est publiée samedi soir.
   dernier gagnant, meilleur commentateur. À 20:00 le site interroge `savta_lottery_info` toutes les 20 s et
   affiche le résultat (tirage « en direct »).
 - `savta_daily_commenters(day, username, post_id)` = commentateurs du POST DU JOUR (rempli par les passages).
-- `savta_run_lottery(d date)` (réservée au service, idempotente) → `{winner, entrants, list}` et ligne dans
+- `savta_run_lottery(d date)` (réservée au service, idempotente) → `{winner, entrants, list, coins}` (+100 dans `savta_players.coins` du gagnant) et ligne dans
   `savta_lottery(day, winner, entrants, entrants_list, best, best_comments, best_wish)`.
 - Contrôle : `select savta_lottery_info('<username>')`.
 
@@ -54,7 +61,7 @@ est publiée samedi soir.
   best_days, day_comments:{"AAAA-MM-JJ": n}}}` — ne jamais supprimer d'entrée ni baisser un compteur.
   `extra.best_until` (ISO) = couronne « המגיב של היום » visible jusqu'à cette date.
 - data/replied.json : liste des comment_id déjà traités (anti-doublon). data/stats.json : abonnés.
-- data/event.json : `{day, title, text, by}` = événement extraordinaire du jour (popup ✨ dans le jeu).
+- data/event.json : `{day, title, text, by, bonus?}` = événement extraordinaire du jour (popup ✨ dans le jeu) ; `bonus: {title, text, by}` = l'événement en plus choisi par le gagnant de la loterie de la veille.
 - data/post_du_jour.json : `{"AAAA-MM-JJ": {"id": "...", "permalink": "..."}}`.
 - data/episodes.json, data/news.json, data/followers.json.
 
@@ -72,7 +79,8 @@ samedi ~19:30 ; samedi : vidéo à 21:30.
 1. Shabbat ? stop. Vérifier le compte Instagram.
 2. POST DU JOUR (jamais l'oublier) : image 4:5 (1080×1350, style du jeu : capture du jeu ou fond, Heebo très
    gras blanc + #FFC24B), hébergée dans media/AAAA-MM-JJ/post.jpg. Légende : hook du jour (l'événement
-   extraordinaire) + « 🎟️ הגרלה של 20 ₪ הערב ב־20:00! 2 תנאים: 1) הגיבו כאן 👇 2) אספו 100 לבבות ❤️ בעיר של
+   extraordinaire) + « 🎟️ הגרלה הערב ב־20:00! הזוכה מקבל 100 מטבעות זהב 🪙 בעיר + מחליט על אירוע מטורף
+   שיקרה בעיר מחר! 2 תנאים: 1) הגיבו כאן 👇 2) אספו 100 לבבות ❤️ בעיר של
    סבתא מזל (הלינק בביו) » + « 👑 מי שכותב הכי הרבה תגובות היום מחליט מה יקרה מחר » + « הגיבו כאן 👇 » +
    « המבצע אינו קשור לאינסטגרם ואינו ממומן על ידה » + 5 hashtags. Publier, puis commentaire du compte
    « 👇 הגיבו כאן כדי להיכנס להגרלה של 20:00 ». L'API ne permet pas d'épingler : si le post n'est pas épinglé,
@@ -100,6 +108,10 @@ samedi ~19:30 ; samedi : vidéo à 21:30.
    valable → le mettre en place dans le jeu (data/event.json `by` + changement) et le noter dans
    `savta_lottery.best_wish` de la veille. Refuser insultant / sexuel / vraie personne / impossible en lui
    proposant une version proche. Sans réponse à 12:00 : rien.
+   Gagnant de la loterie de la veille : même chose avec sa réponse « איזה אירוע מטורף יקרה מחר בעיר? »
+   (avant 12:00) → si valable, l'ajouter comme événement EN PLUS dans data/event.json, champ
+   `bonus: {title, text, by}` (affiché dans le popup ✨ « בונוס של הזוכה בהגרלה »). Sans réponse à 12:00 :
+   la production du matin du lendemain l'intègre si elle arrive plus tard, sinon rien.
 4. data/stats.json (abonnés). Vérifier que le post du jour existe (sinon le créer comme le matin).
 5. Commit « Passage HH:MM (+N réponses) » + push seulement si quelque chose a changé.
 
@@ -112,10 +124,15 @@ samedi ~19:30 ; samedi : vidéo à 21:30.
    `update savta_lottery set best=..., best_comments=... where day=...` ; citizens.json :
    `extra.best_until` = demain 20:00 heure d'Israël (ISO), `extra.best_days` += date. Lui répondre sous son
    dernier commentaire : « 👑 אתם המגיבים של היום! מה יקרה מחר בזכותך? כתבו לנו עד 12:00 ».
-5. Story résultat : « 🎉 הזוכה של הערב: @x · 20 ₪ » + « 👑 המגיב של היום: @y — מה יקרה מחר בזכותך? »
+   Les 100 מטבעות sont crédités automatiquement par `savta_run_lottery` (champ `coins` du résultat ;
+   contrôle : `select coins from savta_players where username='x'`). Rien à payer, aucun message à Shlomo.
+5. Story résultat : « 🎉 הזוכה של הערב: @x · 100 מטבעות + הוא מחליט מה יקרה מחר בעיר! »
+   + « 👑 המגיב של היום: @y — מה יקרה מחר בזכותך? »
    + « מחר ב־20:00 עוד הגרלה · 100 לבבות + תגובה בפוסט של היום » (ou « אף אחד לא השלים את 2 התנאים… »).
-6. Message à Shlomo (SendUserMessage + PushNotification) : gagnant @x, participants, « 20 ₪ à payer par Bit ».
-   Sans gagnant : une ligne.
+6. Répondre sous le commentaire du gagnant sur le post du jour : « 🎉 זכיתם! 100 מטבעות זהב 🪙 כבר אצלכם בעיר.
+   ועכשיו הבונוס: איזה אירוע מטורף יקרה מחר בעיר? כתבו לנו כאן עד 12:00 👇 ». Le vœu (avant 12:00 le
+   lendemain) devient l'événement bonus de data/event.json (`bonus`, cf. passages règle 3 ; ou production du
+   matin s'il est déjà là). Sans gagnant : rien.
 7. Commit + push (citizens.json, media/).
 
 ## ⚠️ Règle de Shlomo (30/10/2026 13:34) — VIDÉOS

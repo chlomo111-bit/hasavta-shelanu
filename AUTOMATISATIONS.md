@@ -5,7 +5,9 @@ Les textes complets des tâches restent consultables dans les tâches désactiv�
 la logique détaillée est dans tools/ROUTINE.md.
 
 Règles communes (30/10) : vidéo du jour (le commentaire le plus liké décide), un événement extraordinaire par jour,
-loterie 20 ₪ à 20:00 (commentaire sur le post du jour + seuil de monnaie, pas d'abonnement obligatoire),
+loterie à 20:00 (commentaire sur le post du jour + seuil de monnaie, pas d'abonnement obligatoire) ;
+règle de Shlomo 31/10/2026 22:07 : plus de vrai argent depuis le 1/11 — le gagnant reçoit 100 מטבעות זהב dans le
+jeu (automatique, savta_run_lottery) + choisit un אירוע מטורף en plus pour le lendemain (data/event.json `bonus`),
 « המגיב של היום » (badge + pouvoir de choisir un événement le lendemain), passages 6:00 / 12:00 / 17:00 / 19:55,
 Shabbat : rien de vendredi 16:00 à samedi 18:30, tout est décalé à samedi 18:30.
 
