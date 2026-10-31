@@ -6,7 +6,7 @@ Shabbat : rien du vendredi 16:00 au samedi 18:30.
 | Quand (heure d'Israël) | Tâche | Où elle tourne | ID |
 |---|---|---|---|
 | sam. 31/10 18:30 | Rattrapage sortie de Shabbat : loterie du vendredi, passage complet, crée le réveil 19:55 (passage + story « 5 דקות להגרלה! » + loterie samedi 20:00) | chat d'automatisation du jeu | trig_01Age5P9L76NPzr2nsHLVr91 |
-| sam. 31/10 19:11 | Story + actu « סבתא מזל va à The Noise » (une seule fois) | tâche autonome | trig_01PQqSuMg8PEQPSpNUJnnUca |
+| ~~sam. 31/10 19:11~~ | DÉSACTIVÉE : story The Noise + actu publiées à 17:45 à la demande de Shlomo (avec story teaser יום 2 + story loterie) | — | trig_01PQqSuMg8PEQPSpNUJnnUca (désactivée) |
 | sam. 31/10 19:25 | Publication du reel « יום 2 » (avec pause מזל חדשות) + commentaire CTA + post du jour | chat vidéos | trig_0188w7BmmvWoxovEpiJgoHME |
 | sam. 31/10 20:00 | Loterie du samedi (20 ₪) | créée à 18:30 par le chat d'automatisation | — |
 | sam. 31/10 20:40 | Contrôle : réveils de dimanche présents, loteries faites, story The Noise unique ; crée ce qui manque sans doublon | chat vidéos | trig_01TzpFgt2zKbY3SSfB986uYz |
