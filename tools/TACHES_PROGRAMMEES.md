@@ -1,4 +1,4 @@
-# הסבתא שלנו — tâches programmées (état au ven. 30/10/2026 15:30)
+# הסבתא שלנו — tâches programmées (état au sam. 31/10/2026 20:40)
 
 Règle : les vidéos se font UNIQUEMENT dans le chat vidéos (session_01K8i1w54KFPFJfEmEMXS7hR) ; tout document / vidéo / liste de tâches est envoyé dans ce chat ET enregistré sur le Mac : Bureau → Jeux → הסבתא שלנו.
 Shabbat : rien du vendredi 16:00 au samedi 18:30.
@@ -10,6 +10,10 @@ Shabbat : rien du vendredi 16:00 au samedi 18:30.
 | sam. 31/10 19:25 | Publication du reel « יום 2 » (avec pause מזל חדשות) + commentaire CTA + post du jour | chat vidéos | trig_0188w7BmmvWoxovEpiJgoHME |
 | sam. 31/10 20:00 | Loterie du samedi (20 ₪) | créée à 18:30 par le chat d'automatisation | — |
 | sam. 31/10 20:40 | Contrôle : réveils de dimanche présents, loteries faites, story The Noise unique ; crée ce qui manque sans doublon | chat vidéos | trig_01TzpFgt2zKbY3SSfB986uYz |
+| dim. 1/11 06:00 | Production du matin + passage (post du jour, événement, lecture des commentaires du reel יום 2, brouillon voix יום 3) ; programme la suite de la journée | chat d'automatisation du jeu | trig_012GPu6U6tcrakBr97Z1SkFa |
+| dim. 1/11 18:35 | Texte voix יום 3 envoyé à Shlomo ICI + contrôle que la loterie 19:55/20:00 existe | chat vidéos | trig_01FUYhbyazVdXS9sgsRPfvLF |
+
+Bilan sam. 31/10 : reel יום 2 publié 19:27 (18150990637619893) ; loterie ven. → gagnante @shahar_b.y ; loterie sam. → 0 participant ; stories OK, pas de doublon.
 
 Liées (autre jeu) : The Noise publie son reel collab sam. 19:00 (trig_015TyePiqqk3StF117wadcdd) avec tag @hasavta.shelanu.
 
