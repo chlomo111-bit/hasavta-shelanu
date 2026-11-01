@@ -5,6 +5,18 @@ dimanche 1/11, le gagnant de la loterie de 20:00 reçoit 100 מטבעות זהב
 + un bonus : il décide d'un אירוע מטורף en plus qui arrivera dans la ville le lendemain. Plus aucun message à
 Shlomo pour payer. Mêmes 2 conditions. Pas de loterie pendant Shabbat (inchangé).
 
+**Règle de Shlomo (01/11/2026 09:01) : PUBLICATIONS PAR JOUR.** Au maximum **1 post (image) + 1 reel par jour**,
+jamais plus (le reel de l'épisode compte comme le reel du jour ; s'il sert aussi de post du jour, pas d'autre post).
+Les **stories, en revanche, à volonté** : en faire beaucoup chaque jour pour faire vivre le jeu. Idées de stories
+(1080×1920, style du jeu : Heebo très gras, blanc + #FFC24B, image de סבתא מזל / de la ville) :
+- matin : « מה קרה בלילה בעיר? » (événement du jour) + story sondage/question liée à l'épisode ;
+- midi : le commentaire le plus liké pour l'instant (« זה מוביל עכשיו… »), un nouvel habitant / meilleur commentateur ;
+- après-midi : teaser du reel du soir (« הפרק עולה הערב ב-… »), rappel des 2 conditions de la loterie ;
+- 19:55 « 5 דקות להגרלה! », après 20:00 le résultat (100 מטבעות + אירוע מטורף) ;
+- dès qu'un reel/post sort : une story qui le partage (« פרק חדש! 👇 »).
+Chaque story : une vraie idée + un hook, texte court, jamais deux fois la même image le même jour. Anti-doublon
+(GET_IG_USER_STORIES) avant chaque story. Copie de chaque story dans Bureau → Jeux → הסבתא שלנו → Stories JJ-MM.
+
 Règles décidées par Shlomo le 30/10/2026 (obligatoires pour tous ses jeux). Réponses à Shlomo en français ;
 tout ce qui est joueurs / Instagram en hébreu, chaleureux et drôle. Autonomie complète, économie.
 
