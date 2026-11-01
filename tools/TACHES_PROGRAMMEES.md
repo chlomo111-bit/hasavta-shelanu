@@ -1,4 +1,4 @@
-# הסבתא שלנו — tâches programmées (état au sam. 31/10/2026 20:40)
+# הסבתא שלנו — tâches programmées (état au dim. 1/11/2026 18:40)
 
 Règle : les vidéos se font UNIQUEMENT dans le chat vidéos (session_01K8i1w54KFPFJfEmEMXS7hR) ; tout document / vidéo / liste de tâches est envoyé dans ce chat ET enregistré sur le Mac : Bureau → Jeux → הסבתא שלנו.
 Shabbat : rien du vendredi 16:00 au samedi 18:30.
@@ -12,6 +12,10 @@ Shabbat : rien du vendredi 16:00 au samedi 18:30.
 | sam. 31/10 20:40 | Contrôle : réveils de dimanche présents, loteries faites, story The Noise unique ; crée ce qui manque sans doublon | chat vidéos | trig_01TzpFgt2zKbY3SSfB986uYz |
 | dim. 1/11 06:00 | Production du matin + passage (post du jour, événement, lecture des commentaires du reel יום 2, brouillon voix יום 3) ; programme la suite de la journée | chat d'automatisation du jeu | trig_012GPu6U6tcrakBr97Z1SkFa |
 | dim. 1/11 18:35 | Texte voix יום 3 envoyé à Shlomo ICI + contrôle que la loterie 19:55/20:00 existe | chat vidéos | trig_01FUYhbyazVdXS9sgsRPfvLF |
+| dim. 1/11 19:30 | Publication du reel יום 3 « מוטי חדשות בבית הקרטון » + commentaire CTA + story de partage | chat vidéos | trig_019uNUYA57F5DeU7uEbrFwMu |
+| dim. 1/11 19:55 | Passage + story « 5 דקות להגרלה! » + loterie 20:00 (100 מטבעות + אירוע מטורף) ; programme lundi 6:00 | chat d'automatisation du jeu | trig_017Nfb8uTkG4Tjz5u8eHvpy8 |
+
+Règles : plus de vrai argent (31/10 22:07) ; max 1 post + 1 reel par jour, stories à volonté (1/11 09:01).
 
 Bilan sam. 31/10 : reel יום 2 publié 19:27 (18150990637619893) ; loterie ven. → gagnante @shahar_b.y ; loterie sam. → 0 participant ; stories OK, pas de doublon.
 
