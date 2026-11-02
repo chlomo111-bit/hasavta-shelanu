@@ -32,10 +32,11 @@
     "chapters": 0,
     "writer": false,
     "extra": {
-      "comments": 2,
+      "comments": 3,
       "day_comments": {
         "2026-10-30": 1,
-        "2026-11-01": 1
+        "2026-11-01": 1,
+        "2026-11-02": 1
       }
     }
   },
@@ -93,9 +94,10 @@
     "chapters": 0,
     "writer": false,
     "extra": {
-      "comments": 4,
+      "comments": 5,
       "day_comments": {
-        "2026-10-30": 4
+        "2026-10-30": 4,
+        "2026-11-02": 1
       },
       "best_until": "2026-10-31T18:00:00Z",
       "best_days": [
@@ -109,11 +111,12 @@
     "chapters": 1,
     "writer": true,
     "extra": {
-      "comments": 4,
+      "comments": 5,
       "day_comments": {
         "2026-10-30": 1,
         "2026-10-31": 2,
-        "2026-11-01": 1
+        "2026-11-01": 1,
+        "2026-11-02": 1
       },
       "best_until": "2026-11-02T18:00:00Z",
       "best_days": [
