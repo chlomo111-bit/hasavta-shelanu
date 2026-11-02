@@ -1,4 +1,4 @@
-# הסבתא שלנו — tâches programmées (état au dim. 1/11/2026 18:40)
+# הסבתא שלנו — tâches programmées (état au lun. 2/11/2026 21:15)
 
 Règle : les vidéos se font UNIQUEMENT dans le chat vidéos (session_01K8i1w54KFPFJfEmEMXS7hR) ; tout document / vidéo / liste de tâches est envoyé dans ce chat ET enregistré sur le Mac : Bureau → Jeux → הסבתא שלנו.
 Shabbat : rien du vendredi 16:00 au samedi 18:30.
@@ -15,7 +15,17 @@ Shabbat : rien du vendredi 16:00 au samedi 18:30.
 | dim. 1/11 19:30 | Publication du reel יום 3 « מוטי חדשות בבית הקרטון » + commentaire CTA + story de partage | chat vidéos | trig_019uNUYA57F5DeU7uEbrFwMu |
 | dim. 1/11 19:55 | Passage + story « 5 דקות להגרלה! » + loterie 20:00 (100 מטבעות + אירוע מטורף) ; programme lundi 6:00 | chat d'automatisation du jeu | trig_017Nfb8uTkG4Tjz5u8eHvpy8 |
 
-Règles : plus de vrai argent (31/10 22:07) ; max 1 post + 1 reel par jour, stories à volonté (1/11 09:01).
+## Mardi 3/11 (règle : rien publié avant 08:00)
+
+| Quand (heure d'Israël) | Tâche | Où elle tourne | ID |
+|---|---|---|---|
+| mar. 3/11 08:03 | Production du matin + passage (vœux du gagnant 2/11, commentaires du reel יום 4 → épisode 5, post du jour, programme 12:00) | chat d'automatisation du jeu | trig_01WBBs1cH64VJaWT3cmbkuHX |
+| mar. 3/11 15:30 | Texte voix יום 5 envoyé à Shlomo ICI + programmation publication 19:30 | chat vidéos | trig_013ARXb9ic5h94QAEUrvh6oZ |
+| mar. 3/11 19:30 | Publication reel יום 5 (créée à 15:30) | chat vidéos | — |
+
+Bilan lun. 2/11 : reel יום 4 « זואי מצילה את סבתא מזל » publié 19:51 (17941284636389509, https://www.instagram.com/reel/DfP4mmajoe2/) + commentaire CTA + story de partage. Contrôle 21:10 : aucun réveil savta de mardi avant 08:00.
+
+Règles : plus de vrai argent (31/10 22:07) ; max 1 post + 1 reel par jour, stories à volonté (1/11 09:01) ; rien publié avant 08:00 (2/11 07:19).
 
 Bilan sam. 31/10 : reel יום 2 publié 19:27 (18150990637619893) ; loterie ven. → gagnante @shahar_b.y ; loterie sam. → 0 participant ; stories OK, pas de doublon.
 
