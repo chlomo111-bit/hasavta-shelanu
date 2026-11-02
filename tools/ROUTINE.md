@@ -14,6 +14,12 @@ dimanche 1/11, le gagnant de la loterie de 20:00 reçoit 100 מטבעות זהב
 + un bonus : il décide d'un אירוע מטורף en plus qui arrivera dans la ville le lendemain. Plus aucun message à
 Shlomo pour payer. Mêmes 2 conditions. Pas de loterie pendant Shabbat (inchangé).
 
+**Règle de Shlomo (02/11/2026 07:19) : RIEN AVANT 08:00.** Aucune publication (post, reel, story, commentaire du compte)
+avant **08:00 heure d'Israël** : ça ne sert à rien, personne ne regarde. La production du matin peut tourner tôt
+(préparer l'image, la légende, l'événement, data/*.json), mais la mise en ligne du post du jour et la story du matin
+se font à partir de 08:00 (programmer un send_later 08:0x dans le même chat ; anti-doublon). Si une tâche se déclenche
+avant 08:00, elle prépare et programme, elle ne publie pas.
+
 **Règle de Shlomo (01/11/2026 09:01) : PUBLICATIONS PAR JOUR.** Au maximum **1 post (image) + 1 reel par jour**,
 jamais plus (le reel de l'épisode compte comme le reel du jour ; s'il sert aussi de post du jour, pas d'autre post).
 Les **stories, en revanche, à volonté** : en faire beaucoup chaque jour pour faire vivre le jeu. Idées de stories
