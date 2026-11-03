@@ -3,15 +3,17 @@
 ## 🆕 NOUVEAU RÈGLEMENT (Shlomo, 03/11/2026 04:59) — PRIORITAIRE sur tout ce qui suit
 Remplace « une vidéo du jour obligatoire chaque jour » et le créneau Shabbat fixe vendredi 16:00 → samedi 18:30.
 
+**0. Heure du reel (Shlomo, 03/11 05:02) : la vidéo est publiée TOUS LES SOIRS À 19:00** (texte voix envoyé à Shlomo vers 15:00 ; samedi : dès que possible après la sortie de Shabbat).
+
 **1. Alternance reel / post (identique pour tous les jeux).** Mar. 3/11 = REEL (1er du règlement), mer. 4/11 = POST,
 jeu. 5/11 = REEL, ven. 6/11 = POST (Shabbat), sam. 7/11 soir = REEL (toujours), dim. 8/11 = POST, puis l'alternance
 reprend (lun. reel, mar. post, mer. reel, jeu. post, ven. post, sam. soir reel…). Jamais deux reels de suite, plus
 aucune vidéo de remplissage.
 - **Jour POST** : post 4:5 du jour publié à partir de 08:00 (production du matin), pas de reel, pas de texte voix.
-- **Jour REEL** : PAS de post image ce jour-là ; le reel (19:30) est la publication du jour. Le matin, l'événement et
+- **Jour REEL** : PAS de post image ce jour-là ; le reel (19:00) est la publication du jour. Le matin, l'événement et
   les stories poussent à commenter la publication d'hier.
 - **Loterie 20:00** (inchangée : 100 🪙 + le gagnant décide d'un événement fou, jamais de vrai argent) : base = la
-  publication du jour. Jour post → commentateurs du post du jour. Jour reel → commentaires écrits aujourd'hui sous le
+  publication du jour. Jour post → commentateurs du post du jour. Jour reel (reel à 19:00) → commentaires écrits aujourd'hui sous le
   reel du jour OU sous le post d'hier (les deux comptent, une seule participation par personne).
 
 **2. Structure de chaque reel (chat vidéos)** : (1) 3–5 s d'explication du jeu : « כאן אתם כותבים את החיים של סבתא
