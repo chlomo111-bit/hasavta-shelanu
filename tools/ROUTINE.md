@@ -5,6 +5,8 @@ Remplace « une vidéo du jour obligatoire chaque jour » et le créneau Shabbat
 
 **0. Heure du reel (Shlomo, 03/11 05:02) : la vidéo est publiée TOUS LES SOIRS À 19:00** (texte voix envoyé à Shlomo vers 15:00 ; samedi : dès que possible après la sortie de Shabbat).
 
+**Texte voix (Shlomo, 03/11 17:45)** : TOUJOURS analyser le contenu précédent (la vidéo d'avant + tous ses commentaires + le post du jour) avant de proposer le texte. Claude ne génère jamais la voix : il donne le texte en 2 blocs (narrateur / סבתא מזל) avec les tags d'émotion Eleven v3, Shlomo génère.
+
 **1. Alternance reel / post (identique pour tous les jeux).** Mar. 3/11 = REEL (1er du règlement), mer. 4/11 = POST,
 jeu. 5/11 = REEL, ven. 6/11 = POST (Shabbat), sam. 7/11 soir = REEL (toujours), dim. 8/11 = POST, puis l'alternance
 reprend (lun. reel, mar. post, mer. reel, jeu. post, ven. post, sam. soir reel…). Jamais deux reels de suite, plus
