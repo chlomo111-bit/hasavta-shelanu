@@ -1,5 +1,46 @@
 # ROUTINE — « הסבתא שלנו » (@hasavta.shelanu · savta.hakaveret.online)
 
+## 🆕 NOUVEAU RÈGLEMENT (Shlomo, 03/11/2026 04:59) — PRIORITAIRE sur tout ce qui suit
+Remplace « une vidéo du jour obligatoire chaque jour » et le créneau Shabbat fixe vendredi 16:00 → samedi 18:30.
+
+**1. Alternance reel / post (identique pour tous les jeux).** Mar. 3/11 = REEL (1er du règlement), mer. 4/11 = POST,
+jeu. 5/11 = REEL, ven. 6/11 = POST (Shabbat), sam. 7/11 soir = REEL (toujours), dim. 8/11 = POST, puis l'alternance
+reprend (lun. reel, mar. post, mer. reel, jeu. post, ven. post, sam. soir reel…). Jamais deux reels de suite, plus
+aucune vidéo de remplissage.
+- **Jour POST** : post 4:5 du jour publié à partir de 08:00 (production du matin), pas de reel, pas de texte voix.
+- **Jour REEL** : PAS de post image ce jour-là ; le reel (19:30) est la publication du jour. Le matin, l'événement et
+  les stories poussent à commenter la publication d'hier.
+- **Loterie 20:00** (inchangée : 100 🪙 + le gagnant décide d'un événement fou, jamais de vrai argent) : base = la
+  publication du jour. Jour post → commentateurs du post du jour. Jour reel → commentaires écrits aujourd'hui sous le
+  reel du jour OU sous le post d'hier (les deux comptent, une seule participation par personne).
+
+**2. Structure de chaque reel (chat vidéos)** : (1) 3–5 s d'explication du jeu : « כאן אתם כותבים את החיים של סבתא
+מזל » ; (2) « אתמול סבתא מזל הייתה… והיום היא… » ; (3) le commentaire du jour (@auteur, likes) ; (4) ce qui s'est passé
+hier (gagnant de la loterie, vœu, paliers d'abonnés). La pause « מזל חדשות » reste au milieu. Fin : « מה יקרה עכשיו?
+התגובה עם הכי הרבה לייקים קובעת ».
+
+**3. Ton** : un épisode de série animée — émotion, humour, rebondissement, cliffhanger qui donne envie de la suite.
+
+**4. Paliers d'abonnés** (fichier data/paliers.json, contrôlé à chaque passage avec followers_count) :
+- tous les **+10 abonnés** : tous les habitants reçoivent **+20 🪙** (`update savta_players set coins = coins + 20`)
+  — ou, une fois sur deux, un billet de loterie en plus pour la loterie du soir — + story « 🎉 עברנו X עוקבים! כולם
+  קיבלו 20 מטבעות » ; noter le palier dans paliers.json (jamais deux fois le même) ;
+- tous les **+100 abonnés** : un GRAND événement dans la vie de סבתא מזל (dans le jeu + raconté dans le prochain reel).
+- Jamais de vrai argent.
+
+**5. Shabbat** (horaires de Tel-Aviv à vérifier chaque semaine, ex. kipa.co.il) : vendredi = post normal seulement +
+story « שבת שלום » 1 h avant l'entrée de Shabbat. Rien pendant Shabbat (de l'entrée à la sortie). Semaine du 6/11 :
+entrée 16:26 (story 15:26), sortie samedi 17:24. Loterie du vendredi faite samedi soir après la sortie.
+
+**6. Stories** : minimum **3 par jour en semaine**, sans maximum, en alternant photos et **petites vidéos-stories**
+(5–15 s, jeu filmé + musique/bruitages, SANS voix ElevenLabs). Les vidéos-stories sont faites par le chat vidéos ;
+les automatisations font les stories photo (matin, loterie, résultats, paliers). Cadrage vérifié, anti-doublon.
+
+**7. Priorité absolue** : samedi soir, juste après la sortie de Shabbat, il y a TOUJOURS un reel (texte voix envoyé à
+Shlomo le vendredi avant midi, plateau pré-filmé le vendredi ; montage et publication dès qu'il envoie les MP3 après
+Shabbat). Dimanche = post, puis l'alternance reprend.
+
+
 ## 🔁 OBJECTIF N°1 : FAIRE REPOSTER NOS REELS (Shlomo, 01/11/2026) — RÈGLE OBLIGATOIRE POUR TOUS LES JEUX
 But : que les utilisateurs repostent / partagent nos reels (story, envoi à des amis, repost). C'est la meilleure façon d'avoir de nouveaux visiteurs. Tout le contenu est pensé pour ça.
 1. **Reel pensé pour être partagé** : hook dès la 1re seconde, un moment drôle ou fou que les gens ont envie de montrer, et les vrais joueurs tagués (les gens repartagent quand ils se voient dans la vidéo).
