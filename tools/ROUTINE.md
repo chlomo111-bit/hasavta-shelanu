@@ -1,5 +1,22 @@
 # ROUTINE — « הסבתא שלנו » (@hasavta.shelanu · savta.hakaveret.online)
 
+## ✉️ CROSSOVER « L'ENVELOPPE » — samedi 07/11 19:00, les 5 jeux (brief complet : media/crossover/brief_savta.txt)
+- Coordinateur = chat השכנים (@hashchenim) : lui seul compte les partages, désigne les gagnants de l'énigme, annonce la révélation.
+- Notre part : אליה, le monstre violet, apporte l'enveloppe (papier crème, cachet rouge) à סבתא מזל — il était là pour ça
+  depuis le début. Lettre de l'énigme : **נ (4/5)**. Compte suivant : **@hashchenim**.
+- Expéditeur SECRET (ne jamais le dire ni le laisser deviner) ; le mot complet ne s'écrit NULLE PART avant la révélation.
+- Reel : 0–2 s gros plan enveloppe + « המכתב הגיע גם אלינו… ✉️ » ; puis hier/aujourd'hui + journal (commentaire le plus
+  liké, vote respecté) ; puis l'événement de la lettre ; 6 dernières secondes identiques aux 5 comptes : silhouette d'un
+  lapin blanc qui saute dans un portail (2 s, jamais nommé) ; carte « אות 4 מתוך 5: « נ » » ; « מי שולח את המכתבים? 5
+  עולמות, 5 אותיות 🔎 » ; « האות הבאה אצל @hashchenim » ; « שלחו לחבר שיעזור לכם לפתור 📩 ».
+- Légende : modèle du brief §4 (1re ligne savta, אות 4 מתוך 5: « נ », suivant @hashchenim, 5 comptes tagués, hashtags du brief).
+- Calendrier : vendredi 06/11 avant 15:00 reel monté + vérifié + programmé ; publication samedi 19:00 pile (anti-doublon) ;
+  passages samedi 19:40 et 20:36 ; dimanche 12:00 et 19:00 story « 📩 {total}/50 שיתופים – עוד קצת ונגלה מי שולח את
+  המכתבים! » en lisant media/crossover/status.json (champ shares) — ne jamais recompter ; lundi : révélation par השכנים si ≥ 50,
+  bonus dans NOTRE monnaie (pièces d'or) + on en parle dans le reel ; sinon prolongation jusqu'à mercredi.
+- Commentaires de l'énigme : répondre sans dire si c'est juste (« רשמנו 👀 נגלה בקרוב… ») ; ne jamais annoncer de gagnant.
+- Le samedi 07/11 remplace le créneau « sortie de Shabbat » du test horaire : reel à 19:00.
+
 ## 🎙️ VOIX GÉNÉRÉES PAR CLAUDE (Shlomo, 04/11/2026 20:53) — remplace « Shlomo génère les voix »
 Le chat vidéos génère lui-même les voix avec le connecteur ElevenLabs (creative_generate_speech, model eleven_v4,
 generations_count 1, puis creative_get_flow_run_status → télécharger content_url). Voix :
