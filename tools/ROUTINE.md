@@ -13,6 +13,8 @@ l'heure compte moins que les 3 premières secondes et les partages. Test sur 4 r
 avg watch time, shares) notée dans data/test_horaire.json : jeu. 5/11 18:00 · sam. 7/11 sortie de Shabbat (~18:30) ·
 lun. 9/11 20:30 · mer. 11/11 13:00. Ensuite on garde le meilleur créneau. Story teaser 30 min avant chaque reel.
 
+**Partage (Shlomo, 04/11)** : chaque reel contient un élément qui pousse à l'ENVOYER à quelqu'un (penser « qui envoie à qui ») + « תייגו חבר — הוא יהיה הדמות הבאה ». À chaque passage : compter les @ tagués dans les commentaires du dernier reel ; le plus tagué (compte Instagram réel, sans contenu déplacé) devient un personnage du jeu dans le reel suivant (data/citizens.json, `character=true`) et on lui répond qu'il entre dans la ville.
+
 **1. Alternance reel / post (identique pour tous les jeux).** Mar. 3/11 = REEL (1er du règlement), mer. 4/11 = POST,
 jeu. 5/11 = REEL, ven. 6/11 = POST (Shabbat), sam. 7/11 soir = REEL (toujours), dim. 8/11 = POST, puis l'alternance
 reprend (lun. reel, mar. post, mer. reel, jeu. post, ven. post, sam. soir reel…). Jamais deux reels de suite, plus
