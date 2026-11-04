@@ -1,0 +1,51 @@
+{
+ "but": "meilleur horaire reel",
+ "mesure": "reach/views/avg_watch_ms/shares a +24h",
+ "reference": [
+  {
+   "reel": "jour3",
+   "publie": "2026-11-01 19:31",
+   "reach": 161,
+   "views": 219,
+   "avg_watch_ms": 10457,
+   "shares": 0,
+   "duree_s": 60
+  },
+  {
+   "reel": "jour4",
+   "publie": "2026-11-02 19:51",
+   "reach": 217,
+   "views": 276,
+   "avg_watch_ms": 8464,
+   "shares": 1,
+   "duree_s": 60
+  },
+  {
+   "reel": "jour5",
+   "publie": "2026-11-03 19:44",
+   "reach": 138,
+   "views": 171,
+   "avg_watch_ms": 7273,
+   "shares": 1,
+   "duree_s": 79
+  }
+ ],
+ "tests": [
+  {
+   "date": "2026-11-05",
+   "heure": "18:00"
+  },
+  {
+   "date": "2026-11-07",
+   "heure": "sortie de Shabbat"
+  },
+  {
+   "date": "2026-11-09",
+   "heure": "20:30"
+  },
+  {
+   "date": "2026-11-11",
+   "heure": "13:00"
+  }
+ ]
+}

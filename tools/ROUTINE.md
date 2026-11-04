@@ -7,6 +7,12 @@ Remplace « une vidéo du jour obligatoire chaque jour » et le créneau Shabbat
 
 **Texte voix (Shlomo, 03/11 17:45)** : TOUJOURS analyser le contenu précédent (la vidéo d'avant + tous ses commentaires + le post du jour) avant de proposer le texte. Claude ne génère jamais la voix : il donne le texte en 2 blocs (narrateur / סבתא מזל) avec les tags d'émotion Eleven v3, Shlomo génère.
 
+**Test horaire (Shlomo, 04/11 17:54 : « trouver le meilleur moment pour devenir viral »)** — données : reels publiés
+19:26–20:59 → la portée baisse jour après jour (217 → 138) quelle que soit l'heure, et les gens décrochent après 7–10 s :
+l'heure compte moins que les 3 premières secondes et les partages. Test sur 4 reels, mesure à +24 h (reach, views,
+avg watch time, shares) notée dans data/test_horaire.json : jeu. 5/11 18:00 · sam. 7/11 sortie de Shabbat (~18:30) ·
+lun. 9/11 20:30 · mer. 11/11 13:00. Ensuite on garde le meilleur créneau. Story teaser 30 min avant chaque reel.
+
 **1. Alternance reel / post (identique pour tous les jeux).** Mar. 3/11 = REEL (1er du règlement), mer. 4/11 = POST,
 jeu. 5/11 = REEL, ven. 6/11 = POST (Shabbat), sam. 7/11 soir = REEL (toujours), dim. 8/11 = POST, puis l'alternance
 reprend (lun. reel, mar. post, mer. reel, jeu. post, ven. post, sam. soir reel…). Jamais deux reels de suite, plus
