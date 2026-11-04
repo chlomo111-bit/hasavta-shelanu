@@ -1,5 +1,27 @@
 # ROUTINE — « הסבתא שלנו » (@hasavta.shelanu · savta.hakaveret.online)
 
+## ✅ AMÉLIORATIONS VALIDÉES PAR SHLOMO (04/11/2026 19:58 « applique tout ») — PRIORITAIRES
+Constat : 2 334 abonnés mais 138–217 comptes touchés par reel, départ après 7–10 s, 0–1 partage, 2–4 joueurs actifs.
+1. **Reels de 25–30 s** : une seule scène forte, phrase choc à la 1re seconde, explication du jeu en 1 phrase,
+   journal מזל חדשות réduit à ~3 s (carte du commentaire + applaudissements, sans les 2 phrases de מוטי), fin cliffhanger.
+   Texte voix : ~4 lignes narrateur + ~3 lignes savta, phrases courtes.
+2. **Un prénom par épisode** : chaque épisode met en scène un prénom israélien courant (personnage, monstre, invité…)
+   + « יש לכם חבר בשם …? שלחו לו! » (vidéo, légende, commentaire du compte). Varier : נועה, איתי, יוסי, מיכל, אורי…
+3. **Loterie simplifiée (en vigueur dès le 04/11)** : 1 commentaire sous la publication du jour = 1 billet ; chaque ami
+   tagué (@) dans un commentaire = +1 billet (`select savta_add_ticket('AAAA-MM-JJ','auteur','@ami','tag')` à chaque
+   passage, un billet par ami différent). Plus de minimum de 100 cœurs. `savta_run_lottery` tire au sort parmi les
+   billets. Toutes les légendes / stories : « תגובה = כרטיס · כל חבר שתתייגו = עוד כרטיס ». Jamais de vrai argent.
+4. **Les joueurs fidèles deviennent des personnages** : @shahar_b.y, @abuksis6767 (puis les autres actifs et l'ami le
+   plus tagué) apparaissent dans le jeu (data/citizens.json `character=true`, nom au-dessus de la tête) et dans les
+   reels avec leur @ à l'écran. Leur répondre pour leur dire qu'ils sont dans l'épisode.
+5. **Nouveau public (fait par Shlomo, ~2 min)** : à chaque reel, le chat vidéos lui envoie la vidéo + rappel :
+   « invite en collaboration un autre compte de jeu (@the_noise_2026, @hakaveret_shelanu…) + poste la même vidéo sur
+   TikTok et YouTube Shorts ».
+6. **Story sondage quotidienne** : le chat vidéos prépare chaque jour (12:30) une image de story 1080×1920 avec une
+   question à 2 choix liée à l'épisode, et l'envoie à Shlomo dans le chat + Bureau (Stories JJ-MM) ; c'est LUI qui la
+   publie avec le sticker sondage (l'API ne permet pas les stickers). Les automatisations ne la publient pas.
+7. **Rythme** : on garde l'alternance reel / post ; les jours de post, une vidéo-story (13:00) pousse le post.
+
 ## 🆕 NOUVEAU RÈGLEMENT (Shlomo, 03/11/2026 04:59) — PRIORITAIRE sur tout ce qui suit
 Remplace « une vidéo du jour obligatoire chaque jour » et le créneau Shabbat fixe vendredi 16:00 → samedi 18:30.
 

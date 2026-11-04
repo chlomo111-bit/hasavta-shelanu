@@ -420,13 +420,13 @@ body.cap #ui, body.cap #intro, body.cap #story, body.cap #toasts, body.cap .moda
     <h3 id="lotTitle">🎟️ <em>הגרלה כל ערב ב־20:00</em></h3>
     <p class="lot-sub lot-prize">🏆 הפרס: <b>100 מטבעות זהב 🪙</b> בעיר + <b>הזוכה מחליט על אירוע מטורף</b> שיקרה בעיר מחר! (כן, גם אם זה פיל ורוד בתחנת האוטובוס 🐘)</p>
     <p id="lotMyCoins" class="lot-coins" hidden></p>
-    <p class="lot-sub">2 תנאים כדי להשתתף בהגרלה של היום:</p>
+    <p class="lot-sub">איך משתתפים? תגובה בפוסט של היום = כרטיס. כל חבר שתתייגו = עוד כרטיס!</p>
     <div class="lot-bar"><i id="lotBar"></i></div>
-    <ol class="mlist lot-list"><li id="lotC1"></li><li id="lotC2"></li></ol>
+    <ol class="mlist lot-list"><li id="lotC2"></li><li id="lotC1"></li></ol>
     <p id="lotCount" class="lot-count"></p>
     <p id="lotLast" class="lot-last" hidden></p>
     <p id="lotHow" class="lot-how"></p>
-    <div class="row"><button class="pill primary ob-go" id="lotPlay">יאללה לאסוף לבבות ❤️</button><button class="pill" id="lotClose">סגירה</button></div>
+    <div class="row"><button class="pill primary ob-go" id="lotPlay">יאללה לעיר של סבתא מזל 🏠</button><button class="pill" id="lotClose">סגירה</button></div>
     <p class="optout">זוכה אחד בכל ערב (100 מטבעות זהב במשחק + אירוע לבחירתו בעיר למחרת). אין הגרלה בשבת. המבצע אינו קשור לאינסטגרם ואינו ממומן על ידה.</p>
   </div>
 </div>
@@ -2781,7 +2781,7 @@ function lotApplyState(st){
   if (!st) return;
   const before = HLOT.st ? HLOT.st.hearts : null;
   HLOT.st = st; lotRender();
-  if (before != null && before < HLOT.NEED && st.hearts >= HLOT.NEED){ confetti(); Audio.chime && Audio.chime(); toast('🎟️ אספתם 100 לבבות! עכשיו תגובה בפוסט של היום = כרטיס להגרלה של 20:00'); }
+  if (before != null && before < HLOT.NEED && st.hearts >= HLOT.NEED){ confetti(); Audio.chime && Audio.chime(); toast('❤️ כל הכבוד! תגובה בפוסט של היום = כרטיס להגרלה של 20:00'); }
 }
 async function lotAct(action, arg){
   if (!player || HLOT.busy) return null;
@@ -2823,19 +2823,20 @@ function lotRender(){
   if (!$('#lotModal').classList.contains('show')) return;
   const inf = HLOT.info || {};
   const pc = !!inf.post_comment, hh = player ? h : 0;
-  $('#lotBar').style.width = Math.min(100, hh / HLOT.NEED * 100) + '%';
-  $('#lotC1').innerHTML = `<span class="ck">${hh >= HLOT.NEED ? '✓' : ''}</span>אספו 100 לבבות בעיר היום — <b>${player ? Math.min(hh, HLOT.NEED) : 0}/100</b> ❤️`;
+  $('#lotBar').style.width = (pc ? 100 : 0) + '%';
+  const tk = pc ? (inf.tickets || 1) : 0;
+  $('#lotC1').innerHTML = `<span class="ck">${tk > 1 ? '✓' : ''}</span>תייגו חבר בתגובה = עוד כרטיס! — <b>${tk}</b> 🎟️`;
   $('#lotC2').innerHTML = `<span class="ck">${pc ? '✓' : ''}</span><a class="ig-link" href="${IG_URL}" target="_blank" rel="noopener">כתבו תגובה בפוסט של היום (המוצמד בפרופיל)</a>`;
-  $('#lotC1').classList.toggle('done', hh >= HLOT.NEED); $('#lotC2').classList.toggle('done', pc);
+  $('#lotC1').classList.toggle('done', tk > 1); $('#lotC2').classList.toggle('done', pc);
   $('#lotCount').textContent = `🎟️ ${inf.eligible_today || 0} משתתפים עד עכשיו · ההגרלה: ${lotCountdown()}`;
   const res = inf.result_today || null, last = inf.last || null;
   let tx = '';
-  if (res) tx = res.winner ? `🎉 הזוכה של הערב: <b dir="ltr">@${esc(res.winner)}</b> — 100 🪙 + הוא מחליט מה יקרה מחר בעיר!` : 'הערב אף אחד לא השלים את 2 התנאים… מחר זה אתם? 💪';
+  if (res) tx = res.winner ? `🎉 הזוכה של הערב: <b dir="ltr">@${esc(res.winner)}</b> — 100 🪙 + הוא מחליט מה יקרה מחר בעיר!` : 'הערב אף אחד לא הגיב… מחר זה אתם? 💪';
   else if (last && last.winner) tx = `הזוכה האחרון: <b dir="ltr">@${esc(last.winner)}</b>`;
   const best = res && res.best ? res.best : last && last.best ? last.best : null;
   if (best) tx += `<br>👑 המגיב של היום: <b dir="ltr">@${esc(best)}</b> — הוא מחליט מה עוד יקרה מחר!`;
   $('#lotLast').innerHTML = tx; $('#lotLast').hidden = !tx;
-  $('#lotHow').textContent = player ? 'איך אוספים לבבות? 5 לבבות מוסתרים בעיר (מצאו והביאו אותם לסבתא), עזרו לה ❤️, וסיימו את המשימות.' : 'כדי לאסוף לבבות — היכנסו לעיר עם שם המשתמש שלכם (כפתור 🚶 שחקו).';
+  $('#lotHow').textContent = player ? 'בעיר אוספים לבבות ומטבעות, עוזרים לסבתא מזל ומשלימים משימות ❤️' : 'היכנסו לעיר עם שם המשתמש שלכם (כפתור 🚶 שחקו) כדי לראות את הכרטיסים שלכם.';
 }
 function lotCheckResult(){
   const inf = HLOT.info; if (!inf || !inf.result_today) return;
@@ -2844,7 +2845,7 @@ function lotCheckResult(){
   HLOT.shownResult = key; lsSet('savta_lot_seen', key);
   const w = inf.result_today.winner;
   $('#lrTitle').innerHTML = w ? `🎉 הזוכה של הערב: <em dir="ltr">@${esc(w)}</em>` : '🎟️ ההגרלה של הערב';
-  $('#lrText').textContent = w ? `${inf.result_today.entrants} משתתפים · 100 מטבעות זהב 🪙 נכנסו לכיס של @${w}, והוא מחליט על האירוע המטורף שיקרה מחר בעיר!${player && player.name === w ? '\nזה אתם!!! 🥳 שלחו לנו בתגובה/בהודעה מה יקרה מחר בעיר!' : ''}\nמחר עוד הגרלה ב־20:00 — 100 לבבות + תגובה בפוסט של היום.` : 'אף אחד לא השלים את 2 התנאים הערב… מחר ב־20:00 זה יכול להיות אתם!';
+  $('#lrText').textContent = w ? `${inf.result_today.entrants} משתתפים · 100 מטבעות זהב 🪙 נכנסו לכיס של @${w}, והוא מחליט על האירוע המטורף שיקרה מחר בעיר!${player && player.name === w ? '\nזה אתם!!! 🥳 שלחו לנו בתגובה/בהודעה מה יקרה מחר בעיר!' : ''}\nמחר עוד הגרלה ב־20:00 — תגובה בפוסט = כרטיס, כל חבר מתויג = עוד כרטיס.` : 'אף אחד לא הגיב הערב… מחר ב־20:00 זה יכול להיות אתם!';
   $('#lotResult').classList.add('show'); if (w) confetti();
 }
 function lotUpdate(t){
