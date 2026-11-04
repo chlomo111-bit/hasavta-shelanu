@@ -157,10 +157,11 @@
     "chapters": 0,
     "writer": false,
     "extra": {
-      "comments": 4,
+      "comments": 5,
       "day_comments": {
         "2026-11-01": 1,
-        "2026-11-02": 3
+        "2026-11-02": 3,
+        "2026-11-03": 1
       }
     }
   }
