@@ -1,5 +1,15 @@
 # ROUTINE — « הסבתא שלנו » (@hasavta.shelanu · savta.hakaveret.online)
 
+## 🎙️ VOIX GÉNÉRÉES PAR CLAUDE (Shlomo, 04/11/2026 20:53) — remplace « Shlomo génère les voix »
+Le chat vidéos génère lui-même les voix avec le connecteur ElevenLabs (creative_generate_speech, model eleven_v4,
+generations_count 1, puis creative_get_flow_run_status → télécharger content_url). Voix :
+- narrateur : « Nimrod - Warm and Confident » voice_id `ZiofZHcEBTn5sRySe5h8`
+- סבתא מזל : « mazal meme » voice_id `YJOuplmxlZRZei0YyoPu`
+Une génération par réplique (pas de découpage aux silences : les fichiers sont déjà séparés). On ne demande plus
+de MP3 à Shlomo et on ne lui envoie plus le texte à générer (le texte reste dans media/AAAA-MM-JJ/voix.txt + Bureau).
+Les stories peuvent maintenant aussi avoir de la parole (1–2 phrases de סבתא מזל, ~5 s) en plus de la musique.
+Ne jamais relancer une génération réussie (chaque appel coûte des crédits) ; ~11 crédits par seconde de voix.
+
 ## ✅ AMÉLIORATIONS VALIDÉES PAR SHLOMO (04/11/2026 19:58 « applique tout ») — PRIORITAIRES
 Constat : 2 334 abonnés mais 138–217 comptes touchés par reel, départ après 7–10 s, 0–1 partage, 2–4 joueurs actifs.
 1. **Reels de 25–30 s** : une seule scène forte, phrase choc à la 1re seconde, explication du jeu en 1 phrase,
