@@ -9,6 +9,20 @@
 5. **Maximum UN commentaire du compte « 👇 הגיבו כאן » par publication**, jamais plus.
 6. Réponse courte, humaine, utile : si elle n'apporte rien de nouveau, on ne l'envoie pas.
 
+## 🎮 REFONTE DU JEU (validée par Shlomo 05/11/2026 22:26 « oui ») — PRIORITAIRE
+Constat : 10 joueurs sur le site, 1–3 commentateurs/jour, loterie à 0–1 participant, toujours la même gagnante.
+1. **On joue dans les COMMENTAIRES Instagram** : vote (le plus liké décide), mot secret du jour (1er qui l'écrit = couronne
+   + 20 🪙), tag d'un ami = billet. Le site devient un bonus (ville, pièces, classement), jamais une condition.
+2. **Loterie équitable (active dans savta_run_lottery)** : 1 commentaire = 1 billet ; chaque ami tagué = +1 ; un NOUVEAU
+   commentateur (jamais commenté avant) = 3 billets ; le gagnant de la veille est exclu s'il y a d'autres participants (on le
+   félicite avec un titre « אלוף/ת אתמול »). Le dire dans les légendes : « חדשים מקבלים 3 כרטיסים! ».
+3. **Saisons de 7 épisodes avec un but clair.** Saison 1 (lun. 9/11 → dim. 15/11) : « האם סבתא מזל תמצא בית? » ;
+   finale le samedi soir, puis saison 2. Chaque reel rappelle « פרק X מתוך 7 ».
+4. **Générique** : fin de chaque reel = 1,5 s logo « הסבתא שלנו » + jingle court (toujours le même) ; phrase culte de סבתא
+   dans chaque épisode : « אוי ואבוי, נשמה! ». L'accroche du début ne change pas.
+5. **Reel « איך משחקים » 15 s** (fait par le chat vidéos dimanche 8/11) que Shlomo épingle en haut du profil.
+6. **Contenu enfant-friendly** : on adoucit toujours (pas de mort, pas de poison réel, pas de violence) — ex. le chat a 9 vies.
+
 **⚠️ Vendredi 6/11 : le POST du jour est le carrousel « איזו דמות אתם? » publié à 08:01 par le chat vidéos (media/2026-11-06/carrousel/). L'automatisation ne publie PAS d'autre post ce jour-là ; elle fait le passage, la loterie (base = ce carrousel) et la story שבת שלום 15:26.**
 
 ## 📈 STRATÉGIE (skill strategie-instagram-pro, 05/11/2026) — complète les AMÉLIORATIONS
