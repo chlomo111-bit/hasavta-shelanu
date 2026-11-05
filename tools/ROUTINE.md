@@ -9,6 +9,8 @@
 5. **Maximum UN commentaire du compte « 👇 הגיבו כאן » par publication**, jamais plus.
 6. Réponse courte, humaine, utile : si elle n'apporte rien de nouveau, on ne l'envoie pas.
 
+**⚠️ Vendredi 6/11 : le POST du jour est le carrousel « איזו דמות אתם? » publié à 08:01 par le chat vidéos (media/2026-11-06/carrousel/). L'automatisation ne publie PAS d'autre post ce jour-là ; elle fait le passage, la loterie (base = ce carrousel) et la story שבת שלום 15:26.**
+
 ## 📈 STRATÉGIE (skill strategie-instagram-pro, 05/11/2026) — complète les AMÉLIORATIONS
 Cible réelle (d'après les commentaires) : enfants / pré-ados israéliens (9–14 ans) qui jouent entre copains.
 « Qui envoie à qui ? » = un enfant l'envoie à son meilleur ami ou au groupe de la classe pour le taguer / le faire rire.
