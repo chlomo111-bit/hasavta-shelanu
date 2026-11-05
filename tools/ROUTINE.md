@@ -1,5 +1,14 @@
 # ROUTINE — « הסבתא שלנו » (@hasavta.shelanu · savta.hakaveret.online)
 
+## 🚫 ANTI-SPAM COMMENTAIRES (Shlomo, 05/11/2026) — RÈGLE OBLIGATOIRE POUR TOUS LES JEUX
+« Ça sert à rien de spammer les messages en commentaire. »
+1. **UNE seule réponse du compte par commentaire de joueur.** Avant de répondre, lire les réponses déjà présentes : si le compte a déjà répondu dans ce fil, on ne répond plus (sauf si le joueur pose une nouvelle question directe).
+2. **Ne pas répondre dans le fil d'un joueur pour annoncer autre chose** (gagnant du tirage, commentateur du jour, cadeau d'arrivée, pièces récoltées…). Ces annonces vont en story / dans le reel, ou en UN seul commentaire du compte sous le post — jamais dans le fil de chaque joueur.
+3. **Un joueur qui a gagné plusieurs choses = un seul message** qui regroupe tout.
+4. **Pas de réponse aux emojis seuls ou aux « קדימה » / « 🔥 »** : rien, ou un seul mot si c'est un nouveau joueur.
+5. **Maximum UN commentaire du compte « 👇 הגיבו כאן » par publication**, jamais plus.
+6. Réponse courte, humaine, utile : si elle n'apporte rien de nouveau, on ne l'envoie pas.
+
 ## ✉️ CROSSOVER « L'ENVELOPPE » — samedi 07/11 19:00, les 5 jeux (brief complet : media/crossover/brief_savta.txt)
 - Coordinateur = chat השכנים (@hashchenim) : lui seul compte les partages, désigne les gagnants de l'énigme, annonce la révélation.
 - Notre part : אליה, le monstre violet, apporte l'enveloppe (papier crème, cachet rouge) à סבתא מזל — il était là pour ça
