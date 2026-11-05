@@ -9,6 +9,20 @@
 5. **Maximum UN commentaire du compte « 👇 הגיבו כאן » par publication**, jamais plus.
 6. Réponse courte, humaine, utile : si elle n'apporte rien de nouveau, on ne l'envoie pas.
 
+## 📈 STRATÉGIE (skill strategie-instagram-pro, 05/11/2026) — complète les AMÉLIORATIONS
+Cible réelle (d'après les commentaires) : enfants / pré-ados israéliens (9–14 ans) qui jouent entre copains.
+« Qui envoie à qui ? » = un enfant l'envoie à son meilleur ami ou au groupe de la classe pour le taguer / le faire rire.
+1. **Jours POST = carrousel 5 slides 4:5** (plus de sauvegardes et de partages qu'une image) : slide 1 hook, slides
+   2–4 les personnages ou les choix, slide 5 « תייגו את ה… שלכם ». Ex. vendredi 6/11 « איזו דמות אתם? » (סבתא מזל, זואי,
+   אליה, נעם, נועה) + « תייגו חבר שהוא בדיוק אליה 😂 ». Commentaire = billet, tag = billet en plus.
+2. **Rendez-vous fixe « החבר של השבוע »** (chaque lundi, dans le reel) : l'ami le plus tagué de la semaine devient
+   personnage, avec son @ à l'écran → lui et ses amis partagent. Annoncer la règle dans chaque légende.
+3. **Coupe de 10–15 s de chaque reel** (le meilleur moment + hook écrit + « הפרק המלא בפרופיל ») : préparée par le
+   chat vidéos, envoyée à Shlomo pour TikTok / YouTube Shorts / reel d'essai (trial reel), et utilisée en story le
+   lendemain matin.
+4. **Fin qui boucle** : la dernière image du reel renvoie à la première (même plan / même phrase) pour revisionnage.
+5. **Mesure n°1** : partages, enregistrements, messages privés — notés chaque jour dans data/test_horaire.json.
+
 ## ✉️ CROSSOVER « L'ENVELOPPE » — samedi 07/11 19:00, les 5 jeux (brief complet : media/crossover/brief_savta.txt)
 - Coordinateur = chat השכנים (@hashchenim) : lui seul compte les partages, désigne les gagnants de l'énigme, annonce la révélation.
 - Notre part : אליה, le monstre violet, apporte l'enveloppe (papier crème, cachet rouge) à סבתא מזל — il était là pour ça
