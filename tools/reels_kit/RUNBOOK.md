@@ -46,9 +46,28 @@ Un univers, 5 mondes. Chaque compte a son rôle :
 | Vendredi | « השבוע בחמשת העולמות », sur les 5 comptes, plus une story « שבת שלום » sur chaque compte |
 | Samedi soir | השכנים |
 
-Chaque jour, chaque compte publie aussi une story de 6 à 8 s avec voix qui renvoie au reel du jour ou au vote en cours. Le dimanche, le reel « ברוכים הבאים » cite le nom des nouveaux commentateurs.
+Chaque jour, chaque compte publie aussi une story « famille » de 6 à 8 s avec voix qui renvoie au reel du jour ou au vote en cours. Le dimanche, le reel « ברוכים הבאים » cite le nom des nouveaux commentateurs.
 
-## Le reel : 10 à 15 s
+## Système v2 (12.11.2026) — prioritaire sur tout le reste
+Document complet : https://claude.ai/artifact/RhjDxLbCBHw2YZBMCwms1h
+
+**Règle n°1, la première seconde.** Avant de publier, vérifier chaque point. Un seul raté = refaire le début.
+1. Image 1 claire et lumineuse : pas de fond noir, pas de dégradé sombre (dans compose.py, mettre `vg` à 0 sur les 2 premières secondes).
+2. Gros plan : visage, objet ou action.
+3. 3 à 5 gros mots à l'écran dès 0,0 s, compréhensibles par un inconnu.
+4. Voix à 0,0 s, sans intro musicale.
+5. Aucun prénom ni mot interne (couronne, שלי…) dans l'accroche.
+6. Durée 7 à 12 s, surprise avant 5 s, question de fin affichée aussi au début (boucle).
+
+**Test de l'inconnu.** Si quelqu'un qui ne connaît pas le compte ne comprend pas en 2 s, ce n'est pas un reel mais une story. Votes, classements et prénoms vont dans les stories et les réponses ; dans le reel, seulement après l'accroche.
+
+**Rejoindre le jeu.** Chaque reel finit par « כתבו X ותיכנסו ». Le mot X : השכנים « שכן », ruche « דבורה », bateau « עולה », Noise « במה », סבתא « נכד/נכדה ». Le compte répond à chaque personne qui écrit le mot, et son prénom apparaît dans la story suivante.
+
+**Mesure.** Chaque vendredi, noter dans le journal pour chaque reel de la semaine : reels_skip_rate, ig_reels_avg_watch_time, shares. Objectifs : skip < 45 %, ≥ 10 partages par reel. Le format du reel qui a le skip le plus bas devient le modèle de la semaine suivante.
+
+**Jamais le même reel sur plusieurs comptes.**
+
+## Le reel : 7 à 12 s
 - La surprise ou la question dans les 2 premières secondes.
 - Un vrai joueur nommé, ou une vraie phrase tirée des commentaires.
 - Une fin avec une question à réponse courte, plus « שלחו לחבר… ».
