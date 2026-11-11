@@ -43,7 +43,7 @@ Un univers, 5 mondes. Chaque compte a son rôle :
 | Mardi | Bateau |
 | Mercredi | The Noise |
 | Jeudi | סבתא מזל |
-| Vendredi | « השבוע בחמשת העולמות », sur les 5 comptes, plus une story « שבת שלום » sur chaque compte |
+| Vendredi | Pas de reel. Sur chaque compte, sa propre story « שבת שלום » (au moins 1 h avant l'entrée), puis bilan de la semaine dans le journal |
 | Samedi soir | השכנים |
 
 Chaque jour, chaque compte publie aussi une story « famille » de 6 à 8 s avec voix qui renvoie au reel du jour ou au vote en cours. Le dimanche, le reel « ברוכים הבאים » cite le nom des nouveaux commentateurs.
@@ -66,6 +66,25 @@ Document complet : https://claude.ai/artifact/RhjDxLbCBHw2YZBMCwms1h
 **Mesure.** Chaque vendredi, noter dans le journal pour chaque reel de la semaine : reels_skip_rate, ig_reels_avg_watch_time, shares. Objectifs : skip < 45 %, ≥ 10 partages par reel. Le format du reel qui a le skip le plus bas devient le modèle de la semaine suivante.
 
 **Jamais le même reel sur plusieurs comptes.**
+
+## Ordres par jeu (12.11.2026) — chaque jeu séparément, jamais de vidéo mélangée
+| Jeu | Jour | Contenu du reel | Base 3D | Mot pour entrer | Fin |
+|---|---|---|---|---|---|
+| השכנים | dim. + sam. soir | UN secret derrière une porte, vote 1/2 ; samedi = résultat du vote + nouveau secret | `hashchenim_ep4.py` | שכן | « שלחו לשכן שלכם » |
+| Ruche | lun. | duel visuel simple (« 2 בנות, כתר אחד »), résultat avant 5 s | `capture_reel.py` + `couronne_1011.js` | דבורה | « שלחו לחברה שלכם » |
+| Bateau | mar. | chaque partage frappe la coque, compteur visible, événement spectaculaire compréhensible sans son | `reel_pirates.py` | עולה | « שלחו לחבר שלכם » |
+| The Noise | mer. | performance ratée et drôle + réaction du jury en gros plan (vraie note vocale seulement si envoyée pour le jeu) | `film_masque_1011.py` | במה | « שלחו לחבר שמזייף » |
+| סבתא מזל | jeu. | une phrase de grand-mère universelle, émouvante ou drôle ; public 25–34 ans ; voix de סבתא possible | `reel_anniv_1011.py` | נכד / נכדה | « שלחו לסבתא שלכם » |
+
+Stories « famille » du jour : uniquement sur le compte du jeu du jour (vote, classement, prénoms des nouveaux joueurs). Les autres comptes ne repartagent plus le reel d'un autre jeu.
+
+**Verrou anti-doublon.** Avant de fabriquer le reel d'un jeu, `git pull` puis regarde si `media/AAAA-MM-JJ/LOCK_<jeu>` existe. S'il existe, une autre séance fait déjà ce reel : fais seulement le passage commentaires de ce jeu et arrête. Sinon, crée ce fichier, commit et push tout de suite (si le push est refusé, pull et revérifie). Vérifie aussi avec `GET_IG_USER_MEDIA` qu'aucun reel n'a déjà été publié aujourd'hui sur ce compte.
+
+**Tâches programmées des jeux :**
+- « Jeux – contenu du jour (5 mondes) », dim.–ven. 09:47 : le jeu du jour selon le calendrier, en suivant les ordres ci-dessus.
+- « Jeux – סבתא מזל (jeu.) », jeu. 10:44.
+- « Jeux – השכנים (samedi soir) », sam. 18:19.
+- « Jeux – passage commentaires du soir », dim.–jeu. 19:47.
 
 ## Le reel : 7 à 12 s
 - La surprise ou la question dans les 2 premières secondes.
