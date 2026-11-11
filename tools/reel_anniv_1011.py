@@ -129,9 +129,13 @@ def main():
         pg.evaluate("try{window.__S.applyTime(19.2)}catch(e){};if(window.SHADOWS_OFF)window.__S.renderer.shadowMap.enabled=false;0")
         pg.evaluate(EXTRA + ";0")
         pg.evaluate("window.requestAnimationFrame=()=>0;0"); pg.wait_for_timeout(500)
+        if os.environ.get('NOTEXT'): pg.add_style_tag(content='#ov>div:not(#oF):not(#oD):not(#oV){display:none!important}')
         n = int(os.environ.get('MAXF') or round(TOTAL * FPS))
         for i in range(n):
             if i % SAMPLE: continue
+            if os.environ.get('RANGE'):
+                _a,_b=map(float,os.environ['RANGE'].split(','))
+                if not (_a <= i / FPS < _b): continue
             t = i / FPS
             o, key, top, mid, bot = plan(t)
             h = max([z for z in HITS if z <= t], default=-9); dt = t - h

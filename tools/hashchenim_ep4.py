@@ -141,9 +141,13 @@ def main():
         pg.add_init_script("Math.random=(()=>{let s=777;return()=>{s=(s*16807)%2147483647;return(s-1)/2147483646}})();")
         errs = []; pg.on('pageerror', lambda e: errs.append(str(e)))
         pg.goto('http://local/'); pg.wait_for_function('window.ready===true', timeout=60000); pg.wait_for_timeout(800)
+        if os.environ.get('NOTEXT'): pg.add_style_tag(content='#ov>div:not(#oF):not(#oD):not(#oV){display:none!important}')
         n = int(round(TOTAL * FPS))
         for i in range(n):
             if i % SAMPLE: continue
+            if os.environ.get('RANGE'):
+                _a,_b=map(float,os.environ['RANGE'].split(','))
+                if not (_a <= i / FPS < _b): continue
             t = i / FPS; o, key, top, mid, bot = plan(t)
             h = max([z for z in HITS if z <= t], default=-9); dt = t - h
             kick = math.exp(-dt * (5 if h in BIG else 9)) if dt < .4 else 0
