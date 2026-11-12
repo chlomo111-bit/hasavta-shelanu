@@ -67,6 +67,28 @@ Document complet : https://claude.ai/artifact/RhjDxLbCBHw2YZBMCwms1h
 
 **Jamais le même reel sur plusieurs comptes.**
 
+## Moteurs et comptes légers (12.11.2026 16:00, Shlomo : « applique tout ») — PRIORITAIRE
+**But de l'audience :** השכנים = la série phare (vers YouTube et des collaborations plus tard) ; les 4 autres jeux = portes d'entrée qui font connaître l'univers.
+
+| Compte | Statut | Séances (publication dans le fil + 2 stories) | Les autres jours |
+|---|---|---|---|
+| השכנים | MOTEUR | dim.–jeu. 09:17 + sam. soir | — |
+| Bateau | MOTEUR | dim.–jeu. 11:09 | — |
+| Ruche | léger | dim., lun., mer. 10:13 | 1 story image légère au passage du soir |
+| The Noise | léger | lun., mer., jeu. 12:21 | idem |
+| סבתא מזל | léger | dim., mar. 13:33 + jeu. 10:44 (grand reel) | idem |
+
+**Formats fixes (on ne réinvente plus chaque jour, on varie seulement le contenu) :**
+- השכנים : « une porte, un secret, vote 1 ou 2 » ; l'épisode suivant donne le résultat du vote. Scène concrète la nuit (on frappe, des traces, une ombre). Jamais de lettres ni de « 5 עולמות ».
+- Bateau : « un événement contre la coque + compteur de partages visible » (tempête, baleine, boulet de canon), question « מתי היא טובעת? ». Les comms viennent d'un événement concret.
+- The Noise : « un candidat masqué chante faux + gros plan de la réaction d'UN juge », 10 s. Format du 10.11 (skip 41 %, le meilleur).
+- סבתא מזל : « une phrase que toutes les grands-mères disent + un objet qui grossit » (ex. « אכלת משהו? » + tour d'assiettes). Public 25–34 ans.
+- Ruche : « 2 abeilles, 1 couronne » en visuel, SANS prénom ni score dans l'accroche ; prénoms seulement en story.
+
+**Règle d'arrêt (bilan du vendredi) :** pour chaque compte, noter abonnés, skip moyen, partages. Un compte léger qui ne gagne aucun abonné ET reste au-dessus de 60 % de skip pendant 3 vendredis de suite → le bilan propose de le mettre en pause (Shlomo décide). Un compte léger qui passe sous 45 % de skip avec des partages → il redevient moteur.
+
+**En attente de Shlomo :** ouvrir les comptes TikTok et YouTube de השכנים (la séance השכנים y reposte alors chaque reel) ; 5 à 10 proches qui écrivent le mot pour entrer la première semaine.
+
 ## Ordres par jeu (12.11.2026) — chaque jeu séparément, jamais de vidéo mélangée
 | Jeu | Jour | Contenu du reel | Base 3D | Mot pour entrer | Fin |
 |---|---|---|---|---|---|
@@ -83,9 +105,10 @@ Stories « famille » du jour : uniquement sur le compte du jeu du jour (vote, c
 **Chaque compte est indépendant (12.11, ordre de Shlomo) : chaque jour, sur CHAQUE compte, une publication dans le fil (reel ou carrousel, en alternance ; grand reel 3D le jour principal du jeu) + 2 stories.** Une séance par compte et par jour.
 
 **Tâches programmées des jeux :**
-- « Jeux – השכנים (chaque jour) » dim.–jeu. 09:17 · « Jeux – Ruche (chaque jour) » 10:13 · « Jeux – Bateau (chaque jour) » 11:09 · « Jeux – The Noise (chaque jour) » 12:21 · « Jeux – סבתא מזל (dim.–mer.) » 13:33 · « Jeux – סבתא מזל (jeu.) » jeudi 10:44.
-- « Jeux – השכנים (samedi soir) » sam. 18:19 · « Jeux – passage commentaires du soir » dim.–jeu. 19:47.
-- « Jeux – contenu du jour (5 mondes) » dim.–ven. 09:47 : du dimanche au jeudi, le reel du jour est déjà fait par la séance du compte (verrou) → cette séance fait seulement le passage commentaires du jeu du jour, sans rien publier. Le vendredi, elle fait les stories « שבת שלום » de chaque compte et le bilan de la semaine.
+- « Jeux – השכנים (chaque jour) » dim.–jeu. 09:17 · « Jeux – Bateau (chaque jour) » dim.–jeu. 11:09 · « Jeux – השכנים (samedi soir) » 18:19.
+- « Jeux – Ruche (dim., lun., mer.) » 10:13 · « Jeux – The Noise (lun., mer., jeu.) » 12:21 · « Jeux – סבתא מזל (dim., mar.) » 13:33 · « Jeux – סבתא מזל (jeu.) » 10:44.
+- « Jeux – passage commentaires du soir » dim.–jeu. 19:47 (+ story image légère des comptes légers sans séance).
+- « Jeux – contenu du jour (5 mondes) » dim.–ven. 09:47 : dim.–jeu., le verrou montre que le reel est déjà fait → seulement le passage commentaires du jeu du jour, rien publié. Vendredi : stories « שבת שלום » de chaque compte + bilan de la semaine avec la règle d'arrêt.
 
 ## Le reel : 7 à 12 s
 - La surprise ou la question dans les 2 premières secondes.
