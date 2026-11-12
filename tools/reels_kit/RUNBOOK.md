@@ -80,11 +80,12 @@ Stories « famille » du jour : uniquement sur le compte du jeu du jour (vote, c
 
 **Verrou anti-doublon.** Avant de fabriquer le reel d'un jeu, `git pull` puis regarde si `media/AAAA-MM-JJ/LOCK_<jeu>` existe. S'il existe, une autre séance fait déjà ce reel : fais seulement le passage commentaires de ce jeu et arrête. Sinon, crée ce fichier, commit et push tout de suite (si le push est refusé, pull et revérifie). Vérifie aussi avec `GET_IG_USER_MEDIA` qu'aucun reel n'a déjà été publié aujourd'hui sur ce compte.
 
+**Chaque compte est indépendant (12.11, ordre de Shlomo) : chaque jour, sur CHAQUE compte, une publication dans le fil (reel ou carrousel, en alternance ; grand reel 3D le jour principal du jeu) + 2 stories.** Une séance par compte et par jour.
+
 **Tâches programmées des jeux :**
-- « Jeux – contenu du jour (5 mondes) », dim.–ven. 09:47 : le jeu du jour selon le calendrier, en suivant les ordres ci-dessus.
-- « Jeux – סבתא מזל (jeu.) », jeu. 10:44.
-- « Jeux – השכנים (samedi soir) », sam. 18:19.
-- « Jeux – passage commentaires du soir », dim.–jeu. 19:47.
+- « Jeux – השכנים (chaque jour) » dim.–jeu. 09:17 · « Jeux – Ruche (chaque jour) » 10:13 · « Jeux – Bateau (chaque jour) » 11:09 · « Jeux – The Noise (chaque jour) » 12:21 · « Jeux – סבתא מזל (dim.–mer.) » 13:33 · « Jeux – סבתא מזל (jeu.) » jeudi 10:44.
+- « Jeux – השכנים (samedi soir) » sam. 18:19 · « Jeux – passage commentaires du soir » dim.–jeu. 19:47.
+- « Jeux – contenu du jour (5 mondes) » dim.–ven. 09:47 : du dimanche au jeudi, le reel du jour est déjà fait par la séance du compte (verrou) → cette séance fait seulement le passage commentaires du jeu du jour, sans rien publier. Le vendredi, elle fait les stories « שבת שלום » de chaque compte et le bilan de la semaine.
 
 ## Le reel : 7 à 12 s
 - La surprise ou la question dans les 2 premières secondes.
