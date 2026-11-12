@@ -31,7 +31,7 @@ def ov_at(t, pos):
         if o['pos'] == pos and o['t0'] <= t < o['t1']: best = o
     if not best: return '', {'s': 1, 'o': 1}
     e = t - best['t0']
-    if e < .28: k = e / .28; s = .5 + .65 * k if k < .6 else 1.15 - .15 * (k - .6) / .4; a = {'s': round(s, 3), 'o': round(min(1, k * 1.8), 3)}
+    if e < .28 and not best.get('np'): k = e / .28; s = .5 + .65 * k if k < .6 else 1.15 - .15 * (k - .6) / .4; a = {'s': round(s, 3), 'o': round(min(1, k * 1.8), 3)}
     else: a = {'s': 1, 'o': 1}
     return best['html'], a
 with sync_playwright() as p:
@@ -49,7 +49,7 @@ with sync_playwright() as p:
         u = (t - sg['t0']) / max(.01, sg['t1'] - sg['t0']); z = 1 + sg.get('zoom', .06) * u
         hits = [h for h in spec.get('hits', []) if h <= t]; fl = 0
         if hits and t - hits[-1] < .3: fl = math.exp(-(t - hits[-1]) * 9) * spec.get('flash', .35)
-        o = {'src': 'data:image/jpeg;base64,' + b64(cl[idx]), 'z': round(z, 4), 'fl': round(fl, 3), 'vg': 1}
+        o = {'src': 'data:image/jpeg;base64,' + b64(cl[idx]), 'z': round(z, 4), 'fl': round(fl, 3), 'vg': 0 if t < spec.get('novg', 0) else spec.get('vgmax', 1)}
         for k in 'TMB':
             h, a = ov_at(t, k); o[k] = h; o['a' + k] = a
         pg.evaluate(SET, o)
