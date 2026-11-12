@@ -33,6 +33,8 @@ with sync_playwright() as p:
         if s.get("video"):
             vd=f"{OUT}/{s['video']}";os.makedirs(vd,exist_ok=True)
             for i in range(s["video_n"]):
+                tl=[h for (t0,h) in s.get("tl",[]) if i/30>=t0]
+                if tl: pg.evaluate("h=>{const m=document.getElementById('my');if(m.dataset.h!==h){m.dataset.h=h;m.innerHTML=h}}",tl[-1])
                 pg.evaluate("loop()"); pg.screenshot(path=f"{vd}/f{i:04d}.jpg",type="jpeg",quality=90)
         else:
             pg.screenshot(path=f"{OUT}/{s.get('name','s%d'%n)}.jpg",type="jpeg",quality=92)
