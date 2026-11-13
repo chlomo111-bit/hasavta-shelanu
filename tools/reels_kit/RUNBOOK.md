@@ -85,6 +85,8 @@ Document complet : https://claude.ai/artifact/RhjDxLbCBHw2YZBMCwms1h
 - סבתא מזל : « une phrase que toutes les grands-mères disent + un objet qui grossit » (ex. « אכלת משהו? » + tour d'assiettes). Public 25–34 ans.
 - Ruche : « 2 abeilles, 1 couronne » en visuel, SANS prénom ni score dans l'accroche ; prénoms seulement en story.
 
+**Leçons du bilan du 13.11 (à appliquer) :** les carrousels n'atteignent presque personne (portée 8 à 22, contre 50 à 450 pour les reels) → sur השכנים et Bateau, faire un reel court (7–10 s) tous les jours, plus de carrousel ; sur les comptes légers, le carrousel reste possible au maximum 1 fois par semaine. Format modèle de la semaine : « UN personnage en gros plan qui rate quelque chose + sa réaction », 7–10 s. Chaque reel cite un vrai joueur dès qu'il en existe un (ex. @asaf.2509 pour סבתא).
+
 **Règle d'arrêt (bilan du vendredi) :** pour chaque compte, noter abonnés, skip moyen, partages. Un compte léger qui ne gagne aucun abonné ET reste au-dessus de 60 % de skip pendant 3 vendredis de suite → le bilan propose de le mettre en pause (Shlomo décide). Un compte léger qui passe sous 45 % de skip avec des partages → il redevient moteur.
 
 **En attente de Shlomo :** ouvrir les comptes TikTok et YouTube de השכנים (la séance השכנים y reposte alors chaque reel) ; 5 à 10 proches qui écrivent le mot pour entrer la première semaine.
