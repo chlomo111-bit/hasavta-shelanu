@@ -67,6 +67,28 @@ Document complet : https://claude.ai/artifact/RhjDxLbCBHw2YZBMCwms1h
 
 **Jamais le même reel sur plusieurs comptes.**
 
+## Audit du 15.11.2026 — PRIORITAIRE (Shlomo : « tu as l'autorisation de tout appliquer »)
+**Constat :** les 5 reels du samedi soir (14.11) : 36 à 130 vues, 0 partage, 68 à 78 % des gens partent avant 3 s, durée regardée 2,8 à 4,3 s. Le gros plan + texte au centre ne suffit pas : le problème reste les 3 premières secondes.
+
+**Règles qui changent :**
+1. **Plus aucun carrousel sur השכנים et Bateau** (portée 8 à 24). Comptes légers : 1 carrousel par semaine maximum.
+2. **Reels de 6 à 8 s** (plus 10–12) : la durée regardée moyenne est de 3 à 4 s ; un reel court qui boucle garde mieux.
+3. **Test de la 1re seconde, à faire tourner pendant 1 semaine** (noter le format A ou B dans le journal, avec le skip) :
+   - A = ACTION dès l'image 0 (quelque chose tombe, explose, quelqu'un crie ou court), texte en HAUT (zone T), petit (2 à 4 mots), le centre de l'image reste libre ;
+   - B = gros plan visage + texte au centre (format actuel).
+   Lundi, mercredi, vendredi = A ; dimanche, mardi, jeudi = B. Le bilan du vendredi garde le gagnant.
+4. **Une seule réponse par joueur et par publication**, même s'il commente 7 fois (cas shellydor20 « שלי » ×7 le 14.11).
+5. **URL des médias** : toujours `https://raw.githubusercontent.com/chlomo111-bit/<dépôt>/<SHA du commit>/<chemin>` (avec /main, 404 pendant quelques minutes).
+6. **Vitesse de rendu** : 10 images/s suffisent (compose.py `fps: 10`), DSF 1,2 à 1,5. 2 processeurs seulement : jamais plus de 2 rendus en parallèle.
+
+**Outils à jour :**
+- Bateau : `tovim-beyachad/tools/video_bateau_1411.py` (pirates qui tirent, 9:16, ciel clair). `reel_pirates.py` donne un bateau vide : ne plus l'utiliser.
+- השכנים : `hasavta-shelanu/tools/hashchenim_1411/` (film.py + specs.py + cut.py).
+- סבתא : `reel_akalt_1211.py` ou `reel_anniv_1011.py` avec `DSF=1.2`, échantillon 3 (10 i/s). Les pseudos des passants s'affichent : préférer des plans serrés sur סבתא.
+- Montage : copier `reels_kit/compose.py` ; `novg` = secondes sans dégradé sombre au début ; dans une pastille colorée, ne pas mettre de mot en jaune (invisible).
+
+**Joueurs entrés par le mot (à citer dans la prochaine story de leur jeu) :** @asaf.2509 (סבתא, 13.11) · @bdvy214 (Noise « במה », 14.11) · @hillimoshe7 (השכנים « שכן », 14.11). Commentaire sensible à garder en tête : @bdvy214 sous le reel סבתא « היא מתה לפני 8 שנים » → réponse de soutien faite ; ne jamais en faire un contenu.
+
 ## Moteurs et comptes légers (12.11.2026 16:00, Shlomo : « applique tout ») — PRIORITAIRE
 **But de l'audience :** השכנים = la série phare (vers YouTube et des collaborations plus tard) ; les 4 autres jeux = portes d'entrée qui font connaître l'univers.
 
