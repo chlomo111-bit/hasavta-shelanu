@@ -67,6 +67,15 @@ Document complet : https://claude.ai/artifact/RhjDxLbCBHw2YZBMCwms1h
 
 **Jamais le même reel sur plusieurs comptes.**
 
+## Vidéos fluides — anti-gel (15.11.2026, PRIORITAIRE)
+Shlomo a vu de petits gels dans les vidéos. Cause mesurée : le plateau 3D est filmé à 10 ou 15 i/s et la vidéo finale est à 30 i/s → chaque image est répétée 2 ou 3 fois (50 à 67 % d'images répétées), ce qui donne des saccades sur Instagram.
+- `reels_kit/compose.py` corrige maintenant tout seul : un plan dont `fps` < 30 est interpolé à 30 i/s (dossier `<plan>_i30`, ~1 min pour 80 images). Toujours indiquer le vrai `fps` du plan dans la spec.
+- **Avant CHAQUE publication (reel ou story vidéo)** : `python3 tools/reels_kit/check_fluide.py final.mp4`. S'il répond « SACCADÉ », ne pas publier : interpoler les images propres puis refaire le montage :
+  `ffmpeg -framerate 10 -i dossier/f%04d.jpg -vf "minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1" -q:v 3 dossier_i30/f%04d.jpg`
+  (remplacer 10 par la vraie cadence du tournage).
+- Les scripts qui montent eux-mêmes leur vidéo sans compose.py (stories, reel_akalt, etc.) passent aussi par ce contrôle.
+- Filmer chaque plan au moins aussi long que son segment : sinon compose.py le fait repartir à l'envers (message « [attention] »).
+
 ## Audit du 15.11.2026 — PRIORITAIRE (Shlomo : « tu as l'autorisation de tout appliquer »)
 **Constat :** les 5 reels du samedi soir (14.11) : 36 à 130 vues, 0 partage, 68 à 78 % des gens partent avant 3 s, durée regardée 2,8 à 4,3 s. Le gros plan + texte au centre ne suffit pas : le problème reste les 3 premières secondes.
 

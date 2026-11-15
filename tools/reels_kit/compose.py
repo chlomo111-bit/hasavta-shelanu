@@ -6,7 +6,28 @@ spec = json.load(open(sys.argv[1])); OUT = sys.argv[2]; os.makedirs(OUT, exist_o
 FPS = 30; D = spec['dur']
 F = ''+__import__('os').environ.get('THREE3','/root/three3')+'/node_modules/@fontsource/heebo/files/'
 b64 = lambda p: base64.b64encode(open(p, 'rb').read()).decode()
-CLIPS = {k: sorted(glob.glob(v['dir'] + '/f*.jpg')) for k, v in spec['clips'].items()}
+import subprocess, shutil
+def smooth(k, v):
+    """Anti-saccades (15.11.2026) : un plan filmé à moins de 30 i/s est interpolé à 30 i/s
+    (sinon chaque image est répétée 2-3 fois -> petits gels sur Instagram). Cache dans <dir>_i30."""
+    fps = v.get('fps', 30)
+    fs = sorted(glob.glob(v['dir'] + '/f*.jpg'))
+    if fps >= 30 or len(fs) < 2 or v.get('nointerp'):
+        return fs
+    out = v['dir'].rstrip('/') + '_i30'
+    if not os.path.isdir(out) or len(glob.glob(out + '/f*.jpg')) < 2:
+        tmp = out + '_tmp'; shutil.rmtree(tmp, ignore_errors=True); os.makedirs(tmp)
+        lst = tmp + '/list.txt'
+        with open(lst, 'w') as fh:
+            for f in fs: fh.write(f"file '{os.path.abspath(f)}'\nduration {1/fps:.6f}\n")
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', lst, '-vf',
+                        f'fps={fps},minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1',
+                        '-q:v', '3', tmp + '/f%04d.jpg'], check=True)
+        os.remove(lst); shutil.rmtree(out, ignore_errors=True); os.rename(tmp, out)
+    v['fps'] = 30
+    print(f'[fluide] {k}: {len(fs)} images a {fps} i/s -> interpolees a 30 i/s')
+    return sorted(glob.glob(out + '/f*.jpg'))
+CLIPS = {k: smooth(k, v) for k, v in spec['clips'].items()}
 HTML = f"""<html><head><meta charset=utf-8><style>
 @font-face{{font-family:H;font-weight:900;src:url(data:font/woff2;base64,{b64(F+'heebo-hebrew-900-normal.woff2')})}}
 @font-face{{font-family:H;font-weight:900;src:url(data:font/woff2;base64,{b64(F+'heebo-latin-900-normal.woff2')});unicode-range:U+0000-00FF}}
@@ -34,6 +55,7 @@ def ov_at(t, pos):
     if e < .28 and not best.get('np'): k = e / .28; s = .5 + .65 * k if k < .6 else 1.15 - .15 * (k - .6) / .4; a = {'s': round(s, 3), 'o': round(min(1, k * 1.8), 3)}
     else: a = {'s': 1, 'o': 1}
     return best['html'], a
+WARNED = {}
 with sync_playwright() as p:
     b = p.chromium.launch(); pg = b.new_page(viewport={'width': 540, 'height': 960}, device_scale_factor=2)
     pg.set_content(HTML); pg.wait_for_timeout(300)
@@ -45,6 +67,10 @@ with sync_playwright() as p:
         idx = int((t - sg['t0'] + sg.get('off', 0)) * cf * sg.get('speed', 1))
         L = len(cl) - 1
         if L > 0:
+            if L < idx <= L * 1.1:
+                idx = L  # quelques images manquantes : on tient la dernière au lieu de repartir à l'envers
+            if idx > L and not WARNED.get(sg['clip']):
+                WARNED[sg['clip']] = 1; print(f"[attention] plan '{sg['clip']}' trop court pour le segment : il repart a l'envers (filmer plus long)")
             idx = idx % (2 * L); idx = idx if idx <= L else 2 * L - idx
         u = (t - sg['t0']) / max(.01, sg['t1'] - sg['t0']); z = 1 + sg.get('zoom', .06) * u
         hits = [h for h in spec.get('hits', []) if h <= t]; fl = 0
