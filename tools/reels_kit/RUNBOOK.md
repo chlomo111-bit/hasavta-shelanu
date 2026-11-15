@@ -132,7 +132,7 @@ Stories « famille » du jour : uniquement sur le compte du jeu du jour (vote, c
 - « Jeux – השכנים (chaque jour) » dim.–jeu. 09:17 · « Jeux – Bateau (chaque jour) » dim.–jeu. 11:09 · « Jeux – השכנים (samedi soir) » 18:19.
 - « Jeux – Ruche (dim., lun., mer.) » 10:13 · « Jeux – The Noise (lun., mer., jeu.) » 12:21 · « Jeux – סבתא מזל (dim., mar.) » 13:33 · « Jeux – סבתא מזל (jeu.) » 10:44.
 - « Jeux – passage commentaires du soir » dim.–jeu. 19:47 (+ story image légère des comptes légers sans séance).
-- « Jeux – contenu du jour (5 mondes) » dim.–ven. 09:47 : dim.–jeu., le verrou montre que le reel est déjà fait → seulement le passage commentaires du jeu du jour, rien publié. Vendredi : stories « שבת שלום » de chaque compte + bilan de la semaine avec la règle d'arrêt.
+- « Jeux – vendredi (שבת שלום + bilan) » vendredi 09:47 seulement (depuis le 15.11) : story « שבת שלום » propre à chaque compte, passage commentaires, bilan de la semaine (format A/B gagnant, règle d'arrêt), message de 5 lignes à Shlomo.
 
 ## Le reel : 7 à 12 s
 - La surprise ou la question dans les 2 premières secondes.
