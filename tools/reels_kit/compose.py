@@ -31,7 +31,7 @@ CLIPS = {k: smooth(k, v) for k, v in spec['clips'].items()}
 HTML = f"""<html><head><meta charset=utf-8><style>
 @font-face{{font-family:H;font-weight:900;src:url(data:font/woff2;base64,{b64(F+'heebo-hebrew-900-normal.woff2')})}}
 @font-face{{font-family:H;font-weight:900;src:url(data:font/woff2;base64,{b64(F+'heebo-latin-900-normal.woff2')});unicode-range:U+0000-00FF}}
-body{{margin:0;width:540px;height:960px;overflow:hidden;background:#000;font-family:H;direction:rtl;position:relative}}
+html{{overflow:hidden}}body{{margin:0;width:540px;height:960px;overflow:hidden;background:#000;font-family:H;direction:rtl;position:relative}}
 #bg{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 45%}}
 .t{{position:absolute;left:0;right:0;text-align:center;color:#fff;text-shadow:0 3px 16px rgba(0,0,0,.95);padding:0 14px}}
 .y{{color:#FFC24B}}.p{{color:#FF8FB8}}.b{{color:#8FD3FF}}
@@ -44,7 +44,7 @@ SET = r"""o=>{const bg=document.getElementById('bg');if(bg.dataset.src!==o.src){
 bg.style.transform=`scale(${o.z})`;
 for(const k of ['T','M','B']){const e=document.getElementById(k);const h=o[k]||'';if(e.dataset.h!==h){e.dataset.h=h;e.innerHTML=h}
  const a=o['a'+k];e.style.transform=`scale(${a.s})`;e.style.opacity=a.o}
-document.getElementById('fl').style.opacity=o.fl;document.getElementById('vg').style.opacity=o.vg??1;
+document.getElementById('fl').style.opacity=o.fl;window.scrollTo(0,0);document.documentElement.scrollLeft=0;document.body.scrollLeft=0;document.getElementById('vg').style.opacity=o.vg??1;
 return new Promise(r=>bg.complete?r():bg.onload=()=>r())}"""
 def ov_at(t, pos):
     best = None
