@@ -48,6 +48,25 @@ Un univers, 5 mondes. Chaque compte a son rôle :
 
 Chaque jour, chaque compte publie aussi une story « famille » de 6 à 8 s avec voix qui renvoie au reel du jour ou au vote en cours. Le dimanche, le reel « ברוכים הבאים » cite le nom des nouveaux commentateurs.
 
+## Stratégie virale du 18.11.2026 — PRIORITAIRE SUR TOUT (y compris l'audit du 15.11)
+Shlomo, 18.11 : « je m'en fous des crédits, je veux un maximum de vues », « on peut faire beaucoup mieux » → validé (« parfait ») : SÉRIES À SUSPENSE décidées par les commentaires + formats tendance + collaboration influenceur. Les 5 comptes restent à fond. Pas de TikTok/YouTube pour l'instant.
+Constat 15–18.11 : reels de 7 s = 0 partage sur 15 reels, 62–85 % partent tout de suite, 2,5–4,5 s regardées, plafond ~150 vues ; les meilleurs reels de l'histoire des comptes duraient 12–15 s et racontaient une vraie histoire (השכנים ép. 4 : 538 vues, 6 partages ; bateau « סערה » : 673 vues, 19 comm. ; סבתא ép. 7 : 663 vues, 14 s regardées).
+
+1. DURÉE : reels de 12 à 15 s (fini les 6–8 s). Stories vidéo : 6–8 s, inchangé.
+2. LA 1re SECONDE parle à un INCONNU : une situation que tout le monde reconnaît ou un choc visuel, jamais un mot interne du jeu (pas de nom de jeu, de score, de « 5 עולמות »). Test : quelqu'un qui n'a jamais vu le compte comprend-il en 1 s ? Sinon refaire.
+3. SÉRIE : chaque reel = « פרק N » d'une histoire continue par compte (numéro discret en haut). Structure : 0–1 s choc/situation universelle → 1–2 s « בפרק הקודם… » ultra-court (résultat du vote précédent) → 2–10 s l'action monte (quelque chose change toutes les 1–2 s) → 10–13 s CLIFFHANGER (on coupe juste avant la révélation) → fin : « אתם מחליטים: 1 או 2? בתגובות 👇 ». La suite du lendemain applique VRAIMENT le choix majoritaire des commentaires (et le dit en citant un vrai joueur). Jamais de faux vote : 0 voix → la séance choisit et ne prétend pas que c'est un vote.
+4. FORMATS TENDANCE avec nos personnages 3D (un par semaine minimum et par compte, en alternance avec l'épisode) : « POV: … », « תייגו חבר ש… », « מה הייתם עושים? », « אף אחד: / סבתא: », avant/après, classement « 3 סוגים של… ». Musique rythmée style tendance (music.py, montée + drop calé sur le choc). Jamais de son protégé.
+5. PARTAGE : chaque reel contient UNE raison claire d'envoyer à quelqu'un (« שלחו לסבתא שלכם », « תייגו את השכן הכי רועש »…) — écrire avant le rendu « qui envoie à qui, pourquoi ».
+6. CONCEPT par compte (la série suit ce thème) :
+   - סבתא : « דברים שכל סבתא אומרת » + feuilleton de sa vie (la famille, le נכד qui ne rappelle pas…), drôle, jamais triste en accroche.
+   - השכנים : les voisins qu'on a tous (bruit à minuit, place de parking, odeur de cuisine) + le mystère des portes/lapins comme fil rouge.
+   - Ruche : « איזה סוג של חברה את? » / drames d'amies dans la ruche, pour taguer sa copine.
+   - Bateau : « את מי אתם מצילים ראשון? », dilemmes et catastrophes, cliffhanger avant le naufrage.
+   - The Noise : les pires fausses notes (mariage, karaoké, douche) + juge qui réagit.
+7. Le reste ne change pas : plateau 3D filmé, anti-gel (check_fluide), voix eleven_v4 1 prise, sous-titres calés, couverture lisible, 1 publication fil/jour, 2 stories, vrai joueur cité, aucun vrai argent, rien avant 08:00 ni pendant Shabbat.
+8. Mesure : chaque vendredi, garder les formats au skip < 55 % ou avec partages, abandonner les autres.
+9. Collaboration influenceur : préparée par Shlomo (message prêt dans la conversation de direction) ; les séances ne contactent personne.
+
 ## Système v2 (12.11.2026) — prioritaire sur tout le reste
 Document complet : https://claude.ai/artifact/RhjDxLbCBHw2YZBMCwms1h
 
@@ -76,7 +95,7 @@ Shlomo a vu de petits gels dans les vidéos. Cause mesurée : le plateau 3D est 
 - Les scripts qui montent eux-mêmes leur vidéo sans compose.py (stories, reel_akalt, etc.) passent aussi par ce contrôle.
 - Filmer chaque plan au moins aussi long que son segment : sinon compose.py le fait repartir à l'envers (message « [attention] »).
 
-## Audit du 15.11.2026 — PRIORITAIRE (Shlomo : « tu as l'autorisation de tout appliquer »)
+## Audit du 15.11.2026 — remplacé en partie par la « Stratégie virale du 18.11 » (durée 12–15 s) (Shlomo : « tu as l'autorisation de tout appliquer »)
 **Constat :** les 5 reels du samedi soir (14.11) : 36 à 130 vues, 0 partage, 68 à 78 % des gens partent avant 3 s, durée regardée 2,8 à 4,3 s. Le gros plan + texte au centre ne suffit pas : le problème reste les 3 premières secondes.
 
 **Règles qui changent :**
