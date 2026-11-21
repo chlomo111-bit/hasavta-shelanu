@@ -48,7 +48,32 @@ Un univers, 5 mondes. Chaque compte a son rôle :
 
 Chaque jour, chaque compte publie aussi une story « famille » de 6 à 8 s avec voix qui renvoie au reel du jour ou au vote en cours. Le dimanche, le reel « ברוכים הבאים » cite le nom des nouveaux commentateurs.
 
-## Stratégie virale du 18.11.2026 — PRIORITAIRE SUR TOUT (y compris l'audit du 15.11)
+## Stratégie « RECORD DU MONDE » du 21.11.2026 — PRIORITAIRE SUR TOUT (remplace les épisodes « 1 או 2 » du 18.11)
+Shlomo, 21.11 22:32, après analyse du reel viral de @lifeofhyro (« THE BIGGEST BAND IN THE WORLD? ») : « applique tout, fais de nos chaînes des comptes viraux ». Constat : nos vidéos demandent au spectateur de SUIVRE une histoire ; les siennes lui demandent de PARTICIPER à un record. Le spectateur devient un joueur. Ce qui reste valable du 18.11 : contrôle viral (point 0), 1re seconde pour un inconnu, plateau 3D filmé, anti-gel, voix 1 prise, rien avant 08:00 ni pendant Shabbat, aucun vrai argent.
+
+1. UN OBJECTIF GÉANT PAR COMPTE, compris en 1 seconde par un inconnu (titre en haut de l'écran, toute la vidéo) :
+   - Bateau @tovim_beyachad : « הספינה הכי גדולה בעולם? » — objectif 10,000 נוסעים → à 10,000 la ספינה coule (fin de saison). Commentaire demandé : « כתבו מה אתם לוקחים איתכם לספינה 👇 ».
+   - Ruche @hakaveret_shelanu : « הכוורת הכי גדולה בעולם? » — 10,000 דבורים. Commentaire : « כתבו איזה תפקיד אתם רוצים בכוורת 👇 » (מלכה, שומרת, מכינה דבש, עצלנית…).
+   - The Noise @the_noise_2026 : « המקהלה הכי מזייפת בעולם? » — 10,000 זמרים. Commentaire : « כתבו איזה כלי אתם מנגנים (או איזה שיר אתם מזייפים) 👇 ».
+   - השכנים @hashchenim : « הבניין הכי גבוה בעולם? » — 10,000 דיירים (le bâtiment monte d'un étage tous les 100). Commentaire : « כתבו מה השכנים שומעים מהדירה שלכם 👇 ».
+   - סבתא @hasavta.shelanu : « הסבתא עם הכי הרבה נכדים בעולם? » — 10,000 נכדים. Commentaire : « כתבו משפט שסבתא שלכם תמיד אומרת 👇 ».
+2. LE COMPTEUR EST RÉEL, jamais inventé. Départ 0 le 22.11.2026 pour chaque compte. Points = somme, sur toutes les publications du fil publiées depuis le 22.11 : like_count ×1 + commentaires d'autres personnes que le compte ×3 + saved ×5 + shares ×10 (GET_IG_USER_MEDIA + GET_IG_MEDIA_INSIGHTS). La séance recalcule, écrit la valeur dans tools/reels_kit/RECORD.json (compte, date, points, détail) et dans JOURNAL.md. Dans la vidéo, le compteur monte de la valeur du reel précédent à la valeur réelle d'aujourd'hui (jamais au-delà). Si rien n'a bougé, il reste fixe avec « עזרו לנו לעבור את X! ». Petit chiffre = on l'assume : « התחלנו מאפס – כל לייק זה עוד נוסע ».
+3. LE BARÈME À L'ÉCRAN dans chaque reel et chaque story : « לייק +1 · תגובה +3 · שמירה +5 · שיתוף +10 » (bandeau du bas, icônes). Le partage vaut le plus : c'est voulu.
+4. TOP 5 : les 5 commentaires les plus likés du reel précédent (égalité → le plus ancien ; jamais les commentaires du compte) apparaissent dans le reel suivant : pseudo réel + ce qu'ils ont écrit, sur un personnage du plateau (le passager avec son objet, la dabora avec son rôle, le musicien avec son instrument, le voisin à sa fenêtre, le petit-enfant à la table de סבתא qui répète la phrase). Moins de 5 → seulement les vrais ; 0 → « המקומות פנויים – תהיו הראשונים ». Jamais de pseudo inventé. Écran de fin : « 5 התגובות הכי טובות נכנסות לפרק הבא 🏆 ».
+5. STRUCTURE DU REEL (15 à 20 s, numéro discret « חלק N ») :
+   0–1 s : titre-question + plan large spectaculaire (foule, bateau énorme, bâtiment géant) + compteur visible.
+   1–4 s : la voix annonce l'objectif (« אנחנו בונים את הספינה הכי גדולה בעולם… ») — UN gros mot à l'écran à la fois (Heebo 900, blanc, mots clés #FFC24B, zone centrale), coupe toutes les 1 s.
+   4–10 s : le barème joué en images (לייק → un personnage arrive ; תגובה → 3 ; שיתוף → une foule de 10), le compteur monte jusqu'à la vraie valeur.
+   10–14 s : le Top 5 du reel précédent entre dans le monde (pseudos lisibles).
+   14–18 s : « כתבו ___ 👇 » + barème + « 5 התגובות הכי טובות נכנסות לפרק הבא ». Fin qui boucle avec le début (pas d'écran noir, pas de gel).
+   Musique rythmée qui monte (music.py), drop au moment où le compteur bondit.
+6. RÉPONSES AUX COMMENTAIRES : chaque commentateur reçoit une réponse qui confirme ses points (« +3 נוסעים בזכותך! 🚢 », varier) et, s'il est dans le Top 5, « אתה בפרק הבא! ». Plus de vote 1/2, plus de mots d'entrée (שכן, דבורה…) : le commentaire demandé au point 1 les remplace.
+7. STORIES : (a) le compteur du jour + barème + « שתפו את הריל = +10 », (b) le Top 5 en cours (pseudos réels) ou la question du point 1. Toujours bien centrées.
+8. PALIERS : à chaque centaine franchie (100, 200…), un événement visible dans le monde au reel suivant (nouvel étage, nouveau pont, nouvelle rangée de chanteurs…) et annoncé en story. Jamais de récompense en argent.
+9. COLLAB : si Shlomo fournit un créateur partenaire, « ft. @pseudo » en haut, comme la référence. Les séances ne contactent personne.
+10. CONTRÔLE VIRAL (point 0 du 18.11) : en plus des 3 questions, vérifier : objectif compris en 1 s ? barème visible ? compteur réel ? Top 5 réel ? Sinon on ne publie pas.
+
+## Stratégie virale du 18.11.2026 — remplacée en partie par « RECORD DU MONDE » du 21.11 (le point 0, la 1re seconde et le point 7 restent valables ; les épisodes « 1 או 2 » et les formats tendance sont remplacés)
 Shlomo, 18.11 : « je m'en fous des crédits, je veux un maximum de vues », « on peut faire beaucoup mieux » → validé (« parfait ») : SÉRIES À SUSPENSE décidées par les commentaires + formats tendance + collaboration influenceur. Les 5 comptes restent à fond. Pas de TikTok/YouTube pour l'instant.
 Constat 15–18.11 : reels de 7 s = 0 partage sur 15 reels, 62–85 % partent tout de suite, 2,5–4,5 s regardées, plafond ~150 vues ; les meilleurs reels de l'histoire des comptes duraient 12–15 s et racontaient une vraie histoire (השכנים ép. 4 : 538 vues, 6 partages ; bateau « סערה » : 673 vues, 19 comm. ; סבתא ép. 7 : 663 vues, 14 s regardées).
 

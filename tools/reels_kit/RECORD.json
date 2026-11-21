@@ -1,0 +1,11 @@
+{
+  "regle": "Compteur réel depuis le 22.11.2026 : like x1 + commentaire (hors compte) x3 + saved x5 + shares x10, sur les publications du fil publiées depuis le 22.11. Voir RUNBOOK « RECORD DU MONDE ».",
+  "objectif": 10000,
+  "comptes": {
+    "bateau":  {"compte": "@tovim_beyachad",   "unite": "נוסעים", "points": 0, "maj": "2026-11-22", "top5": []},
+    "ruche":   {"compte": "@hakaveret_shelanu", "unite": "דבורים", "points": 0, "maj": "2026-11-22", "top5": []},
+    "noise":   {"compte": "@the_noise_2026",   "unite": "זמרים",  "points": 0, "maj": "2026-11-22", "top5": []},
+    "hash":    {"compte": "@hashchenim",       "unite": "דיירים", "points": 0, "maj": "2026-11-22", "top5": []},
+    "savta":   {"compte": "@hasavta.shelanu",  "unite": "נכדים",  "points": 0, "maj": "2026-11-22", "top5": []}
+  }
+}
