@@ -76,6 +76,18 @@ Shlomo, 21.11 22:32, après analyse du reel viral de @lifeofhyro (« THE BIGGEST
 13. COMPTE TOUJOURS ACTIF (Shlomo, 22.11.2026 : « il faut qu'il y ait toujours une story pour montrer que le compte est actif ») : chaque compte doit avoir EN PERMANENCE au moins une story de moins de 24 h (le rond coloré autour de la photo de profil). Toute séance et tout passage vérifie INSTAGRAM_GET_IG_USER_STORIES du compte : si la dernière story a plus de 20 h ou s'il n'y en a pas, publier une story (compteur réel + barème, ou Top 5, ou question du compte) — légère, bien centrée, jamais pendant Shabbat. Vendredi : les stories « שבת שלום » sortent le plus tard possible (vers 14:00) pour couvrir le samedi. Samedi soir : le passage de 21:17 remet une story sur les 5 comptes.
 10. CONTRÔLE VIRAL (point 0 du 18.11) : en plus des 3 questions, vérifier : objectif compris en 1 s ? barème visible ? compteur réel ? Top 5 réel ? Sinon on ne publie pas.
 
+## Correction du 22.11.2026 (bilan jour 1) — PRIORITAIRE sur les concepts de ruche / bateau / Noise / סבתא
+
+Constat : השכנים = 38+28 partages, skip 47 % (situation que TOUT LE MONDE connaît : « ce que les voisins entendent »). Ruche / bateau / Noise = 0 partage, skip 58–82 % (concept abstrait : un chiffre qui monte).
+Règle : le compteur RECORD reste, mais il n'est plus le sujet du reel. Le sujet = UNE SITUATION UNIVERSELLE reconnaissable en 1 seconde, qui donne envie de taguer quelqu'un. Le compteur et le Top 5 viennent après.
+- Test avant publication (en plus du viral check) : « à qui je l'envoie en le reconnaissant ? ». Pas de personne précise = on change la situation.
+- Ruche : situations d'amies/famille (robe identique, retard, groupe WhatsApp). Taguer l'amie.
+- Bateau : dilemmes « qui tu sauves en premier ? » / « qui prend la dernière place sur le canot ? ». Taguer la personne choisie.
+- The Noise : le cousin au micro du mariage, le chanteur sous la douche, le karaoké en famille. Taguer le faux chanteur de la famille.
+- סבתא : donner une raison d'envoyer — « שלחו את זה לסבתא שלכם » / grand-mère de la vraie vie reconnue. Elle a le meilleur skip (43,9 %) mais 0 partage.
+- השכנים : on garde exactement la formule (voisins, bruits, situations d'immeuble), 2 reels/jour tant que les partages tiennent.
+- Ne jamais promettre ni évoquer d'argent réel (les bios de ruche/bateau/Noise en contiennent encore : à corriger par Shlomo dans l'appli, l'API ne le permet pas).
+
 ## Stratégie virale du 18.11.2026 — remplacée en partie par « RECORD DU MONDE » du 21.11 (le point 0, la 1re seconde et le point 7 restent valables ; les épisodes « 1 או 2 » et les formats tendance sont remplacés)
 Shlomo, 18.11 : « je m'en fous des crédits, je veux un maximum de vues », « on peut faire beaucoup mieux » → validé (« parfait ») : SÉRIES À SUSPENSE décidées par les commentaires + formats tendance + collaboration influenceur. Les 5 comptes restent à fond. Pas de TikTok/YouTube pour l'instant.
 Constat 15–18.11 : reels de 7 s = 0 partage sur 15 reels, 62–85 % partent tout de suite, 2,5–4,5 s regardées, plafond ~150 vues ; les meilleurs reels de l'histoire des comptes duraient 12–15 s et racontaient une vraie histoire (השכנים ép. 4 : 538 vues, 6 partages ; bateau « סערה » : 673 vues, 19 comm. ; סבתא ép. 7 : 663 vues, 14 s regardées).
