@@ -5,65 +5,71 @@
     "bateau": {
       "compte": "@tovim_beyachad",
       "unite": "נוסעים",
-      "points": 0,
+      "points": 10,
       "maj": "2026-11-22",
       "top5": [],
-      "detail": "22.11 19:30 : 0 publication du fil depuis le 22.11 avant le reel חלק 1 (dernière : 19.11) -> 0 like, 0 comm., 0 saved, 0 share = 0 point. Prochaine mesure : חלק 1 DgDSIqDhtYY.",
+      "detail": "22.11 21:20 (passage du soir) : חלק 1 DgDSIqDhtYY -> 2 likes + 1 comm. hors compte (@the_noise_2026, emoji) x3 + 1 saved x5 + 0 share = 2+3+5 = 10 points. 17 vues.",
       "dernier_reel": "18094158854691748"
     },
     "ruche": {
       "compte": "@hakaveret_shelanu",
       "unite": "דבורים",
-      "points": 0,
+      "points": 13,
       "maj": "2026-11-22",
       "top5": [],
-      "detail": "22.11 18:30 : 0 publication du fil depuis le 22.11 avant le reel חלק 1 (DgDPHd2mZSE, 16:29 UTC) -> 0 like, 0 comm., 0 saved, 0 share = 0 point. Prochaine mesure : חלק 1.",
+      "detail": "22.11 21:20 (passage du soir) : חלק 1 DgDPHd2mZSE -> 3 likes x1 + 0 comm. x3 + 2 saved x5 + 0 share = 13 points. 32 vues, reach 26.",
       "dernier_reel": "17993784564080074"
     },
     "noise": {
       "compte": "@the_noise_2026",
       "unite": "זמרים",
-      "points": 0,
+      "points": 1,
       "maj": "2026-11-22",
       "top5": [],
-      "detail": "22.11 20:00 : aucune publication du fil depuis le 22.11 avant חלק 1 (dernier reel 19.11) -> 0 like, 0 comm., 0 saved, 0 share = 0 point. Top 5 vide (seul commentaire récent « יאללה לוחץץ » = vote de l'ancien jeu, déjà répondu). Prochaine mesure : חלק 1 DgDYqT9CP1X.",
+      "detail": "22.11 21:20 (passage du soir) : חלק 1 DgDYqT9CP1X -> 1 like + 0 comm. + 0 saved + 0 share = 1 point. 11 vues.",
       "dernier_reel": "17964970128079548",
       "paliers": []
     },
     "hash": {
       "compte": "@hashchenim",
       "unite": "דיירים",
-      "points": 193,
+      "points": 787,
       "maj": "2026-11-22",
       "top5": [
         {
           "texte": "🔥🔥🔥",
-          "pseudo": null,
+          "pseudo": "tovim_beyachad",
           "likes": 0,
           "media": "DgCR23Sjp9e",
           "date": "2026-11-22T07:56:06Z"
         },
         {
           "texte": "הם שומעים דפיקות שקופצים",
-          "pseudo": null,
+          "pseudo": "hillimoshe7",
           "likes": 0,
           "media": "DgCR23Sjp9e",
           "date": "2026-11-22T12:42:02Z"
         }
       ],
-      "detail": "22.11 17:25 : 1 publication du fil depuis le 22.11 (חלק 1 DgCR23Sjp9e) -> 12 likes x1 + 2 comm. hors compte x3 + 5 saved x5 + 15 shares x10 = 12+6+25+150 = 193 points (100 franchi -> 1er étage construit dans חלק 2). Pseudos des commentateurs non renvoyés par l'API -> Top 5 affiché sans pseudo. Prochaine mesure : חלק 1 + חלק 2.",
+      "detail": "22.11 21:20 (passage du soir) : חלק 1 DgCR23Sjp9e (20 likes, 5 comm. hors compte, 6 saved, 38 shares) + חלק 2 DgDINTpjPdr (12 likes, 5 comm. hors compte, 7 saved, 28 shares) = 32 + 30 + 65 + 660 = 787 points. Le champ from de GET_IG_MEDIA_COMMENTS donne maintenant les pseudos.",
       "dernier_reel": "18018923948978524",
       "paliers": [
-        100
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700
       ]
     },
     "savta": {
       "compte": "@hasavta.shelanu",
       "unite": "נכדים",
-      "points": 0,
+      "points": 12,
       "maj": "2026-11-22",
       "top5": [],
-      "detail": "22.11 19:00 : aucune publication du fil depuis le 22.11 avant חלק 1 (dernier reel 19.11) -> 0 like, 0 comm., 0 saved, 0 share = 0 points. Top 5 vide (le dernier reel 19.11 n'avait que des votes « 1 » de l'ancien jeu, aucune phrase de grand-mère). Prochaine mesure : חלק 1 DgDSgqcgl93.",
+      "detail": "22.11 21:20 (passage du soir) : חלק 1 DgDSgqcgl93 -> 4 likes + 1 comm. hors compte (@kaplan_mei « בריאותתתתת ») x3 + 1 saved x5 + 0 share = 4+3+5 = 12 points. 66 vues, reach 35.",
       "dernier_reel": "18103217186405928",
       "paliers": []
     }
