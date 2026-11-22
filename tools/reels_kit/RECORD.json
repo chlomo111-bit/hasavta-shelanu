@@ -2,10 +2,42 @@
   "regle": "Compteur réel depuis le 22.11.2026 : like x1 + commentaire (hors compte) x3 + saved x5 + shares x10, sur les publications du fil publiées depuis le 22.11. Voir RUNBOOK « RECORD DU MONDE ».",
   "objectif": 10000,
   "comptes": {
-    "bateau":  {"compte": "@tovim_beyachad",   "unite": "נוסעים", "points": 0, "maj": "2026-11-22", "top5": []},
-    "ruche":   {"compte": "@hakaveret_shelanu", "unite": "דבורים", "points": 0, "maj": "2026-11-22", "top5": []},
-    "noise":   {"compte": "@the_noise_2026",   "unite": "זמרים",  "points": 0, "maj": "2026-11-22", "top5": []},
-    "hash":    {"compte": "@hashchenim",       "unite": "דיירים", "points": 0, "maj": "2026-11-22", "top5": []},
-    "savta":   {"compte": "@hasavta.shelanu",  "unite": "נכדים",  "points": 0, "maj": "2026-11-22", "top5": []}
+    "bateau": {
+      "compte": "@tovim_beyachad",
+      "unite": "נוסעים",
+      "points": 0,
+      "maj": "2026-11-22",
+      "top5": []
+    },
+    "ruche": {
+      "compte": "@hakaveret_shelanu",
+      "unite": "דבורים",
+      "points": 0,
+      "maj": "2026-11-22",
+      "top5": []
+    },
+    "noise": {
+      "compte": "@the_noise_2026",
+      "unite": "זמרים",
+      "points": 0,
+      "maj": "2026-11-22",
+      "top5": []
+    },
+    "hash": {
+      "compte": "@hashchenim",
+      "unite": "דיירים",
+      "points": 0,
+      "maj": "2026-11-22",
+      "top5": [],
+      "detail": "22.11 09:35 : 0 publication du fil avant le reel חלק 1 (DgCR23Sjp9e, 07:34 UTC) -> 0 like, 0 comm., 0 saved, 0 share = 0 point. Prochaine mesure : חלק 1.",
+      "dernier_reel": "18131170826298798"
+    },
+    "savta": {
+      "compte": "@hasavta.shelanu",
+      "unite": "נכדים",
+      "points": 0,
+      "maj": "2026-11-22",
+      "top5": []
+    }
   }
 }
