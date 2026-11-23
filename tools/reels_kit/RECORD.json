@@ -33,15 +33,15 @@
     "hash": {
       "compte": "@hashchenim",
       "unite": "דיירים",
-      "points": 787,
-      "maj": "2026-11-22",
+      "points": 809,
+      "maj": "2026-11-23",
       "top5": [
         {
-          "texte": "🔥🔥🔥",
-          "pseudo": "tovim_beyachad",
+          "texte": "מה לא ריבים",
+          "pseudo": "hayley645726",
           "likes": 0,
           "media": "DgCR23Sjp9e",
-          "date": "2026-11-22T07:56:06Z"
+          "date": "2026-11-22T15:31:03Z"
         },
         {
           "texte": "הם שומעים דפיקות שקופצים",
@@ -51,8 +51,8 @@
           "date": "2026-11-22T12:42:02Z"
         }
       ],
-      "detail": "22.11 21:20 (passage du soir) : חלק 1 DgCR23Sjp9e (20 likes, 5 comm. hors compte, 6 saved, 38 shares) + חלק 2 DgDINTpjPdr (12 likes, 5 comm. hors compte, 7 saved, 28 shares) = 32 + 30 + 65 + 660 = 787 points. Le champ from de GET_IG_MEDIA_COMMENTS donne maintenant les pseudos.",
-      "dernier_reel": "18018923948978524",
+      "detail": "23.11 09:30 (séance du matin) : חלק 1 DgCR23Sjp9e (30 likes, 5 comm. hors compte, 6 saved, 39 shares) + חלק 2 DgDINTpjPdr (14 likes, 5 comm. hors compte, 7 saved, 28 shares) = 44 + 30 + 65 + 670 = 809 points. Reel du matin חלק 3 DgE5rLtlXE_ publié 10:00 IST.",
+      "dernier_reel": "18112316875917634",
       "paliers": [
         100,
         200,
@@ -60,7 +60,8 @@
         400,
         500,
         600,
-        700
+        700,
+        800
       ]
     },
     "savta": {
