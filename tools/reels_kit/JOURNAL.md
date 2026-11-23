@@ -167,3 +167,5 @@
 - 23/11 14:15 — Ordre de Shlomo : appel final « כתבו את השם שלכם » sur tous les reels de jeu (mur de noms réels, filtre, Top 5 conservé) ; version légère pour les comptes « הידעתם ». Section ajoutée dans RUNBOOK.md (prioritaire sur la phrase de fin des prompts).
 
 - 23/11 14:25 — Précision Shlomo : le mur de noms utilise déjà les noms de tous les anciens commentaires (RUNBOOK, section APPEL FINAL).
+
+- 23/11 17:35 — Idée d'un abonné (סבתא מזל, Hanouka dans le jeu) validée par Shlomo : rappel dans le reel du soir + réponse au commentaire + story. Section « RAPPEL HANOUKA » ajoutée au RUNBOOK.

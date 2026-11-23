@@ -66,6 +66,13 @@ Fin de CHAQUE reel de jeu : « כתבו את השם שלכם בתגובות — 
 - Comptes passés au format « הידעתם » (ruche/דבורה, bateau/הקפטן, Noise/המאסטרו) : version légère, sans mur de noms ni jeu : en fin de reel, le personnage lance « כתבו שם ואני אקרא לכם בפרק הבא » et salue 1 à 3 noms réels dans le reel suivant (même filtre). Le fait du jour reste le cœur du reel.
 - Partage : un nom qui apparaît dans le reel donne envie de l'envoyer à la personne concernée (« תראה, אני בפנים! ») : c'est le moteur de partage de cette règle, à rappeler dans le contrôle viral écrit.
 
+## RAPPEL HANOUKA — סבתא מזל (@hasavta.shelanu) — idée d'un abonné, ordre de Shlomo du 23.11.2026 17:30 (PRIORITAIRE pour le reel de la séance du soir du 23.11 et les suivants jusqu'à Hanouka)
+- Un abonné a commenté : « סבתא מזל את תחגגי את חנוכה בתוך האתר? ». Réponse décidée : OUI. Hanouka 2026 : 1re bougie le soir du vendredi 04.12.2026, dernière le 12.12.
+- Reel du soir du 23.11 (le reel prévu, PAS un reel en plus) : intégrer UN moment clair où סבתא מזל répond à voix haute : « כן! נחגוג חנוכה ביחד — נדליק נרות, סופגניות וסביבונים » + « בעוד 11 ימים — סימנו ביומן ». Si le prénom de l'abonné est présent et passe le filtre du mur de noms (prénom seul, jamais le @), la grand-mère le remercie par son prénom (« תודה ___ על הרעיון »). Sous-titre lisible, 2–4 s max, sans casser le rythme ni l'épisode du jour.
+- Répondre au commentaire de l'abonné en tant que סבתא מזל (une fois, chaleureux, en hébreu) : « כמובן! נחגוג ביחד, תכתבו שם ואדליק נר על שמכם 🕯️ ». Ajouter 1 story du soir : chandelier de la grand-mère, voix de סבתא מזל, « עוד X ימים לחנוכה ».
+- N'annoncer QUE ce qui existe : bougies et fête filmées dans la maison de סבתא מזל (vidéos/stories), noms des commentateurs sur les bougies. Aucune promesse de fonction du site non construite, aucun vrai argent.
+- Du 24.11 au 04.12 : une mention courte (≤ 3 s) « עוד X ימים לחנוכה » dans les reels, une idée Hanouka par semaine (bougie au nom d'un commentateur, soufganiyot, dreidel), toujours dans la logique du mur de noms. Noter le résultat (vues, partages, commentaires « חנוכה ») dans le JOURNAL.
+
 ## Stratégie « RECORD DU MONDE » du 21.11.2026 — PRIORITAIRE SUR TOUT (remplace les épisodes « 1 או 2 » du 18.11)
 Shlomo, 21.11 22:32, après analyse du reel viral de @lifeofhyro (« THE BIGGEST BAND IN THE WORLD? ») : « applique tout, fais de nos chaînes des comptes viraux ». Constat : nos vidéos demandent au spectateur de SUIVRE une histoire ; les siennes lui demandent de PARTICIPER à un record. Le spectateur devient un joueur. Ce qui reste valable du 18.11 : contrôle viral (point 0), 1re seconde pour un inconnu, plateau 3D filmé, anti-gel, voix 1 prise, rien avant 08:00 ni pendant Shabbat, aucun vrai argent.
 
