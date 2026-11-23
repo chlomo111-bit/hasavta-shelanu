@@ -48,6 +48,13 @@ Un univers, 5 mondes. Chaque compte a son rôle :
 
 Chaque jour, chaque compte publie aussi une story « famille » de 6 à 8 s avec voix qui renvoie au reel du jour ou au vote en cours. Le dimanche, le reel « ברוכים הבאים » cite le nom des nouveaux commentateurs.
 
+## DEUX REELS PAR JOUR SUR CHAQUE COMPTE — ordre de Shlomo du 23.11.2026 (PRIORITAIRE : remplace « une seule publication du fil par jour » et le verrou 1/jour, dimanche à jeudi)
+- Chaque compte publie jusqu'à 2 reels par jour : séance du MATIN (publication ~10:00–12:00) et séance du SOIR (publication 18:00–20:00, l'existante). Écart minimum 6 h entre les deux. Anti-doublon : max 2 reels par jour, jamais 2 dans la même demi-journée. Vendredi : pas de reel (inchangé). Pas pendant Shabbat.
+- CONDITION DE SHLOMO (« il faut donner du contenu qui a de la valeur, pas une connerie ») : un reel n'est publié que s'il apporte VRAIMENT quelque chose au spectateur : une situation qu'il reconnaît et qui le fait rire ou sourire, une surprise, une vraie avancée de l'histoire (ce que les joueurs ont écrit entre dans le reel), une info qu'il ne connaissait pas. Interdit : remplissage, répétition du reel précédent avec un autre compteur, idée tirée au hasard.
+- Chaque reel du jour a SA PROPRE idée (autre situation, autre gag, autre décor) ; le soir ne refait jamais le matin. Écrire dans le contrôle viral : « qu'est-ce que le spectateur gagne en 15 s ? » + « à qui il l'envoie ? ». Pas de bonne réponse = ON NE PUBLIE PAS ce reel (mieux 1 excellent que 2 médiocres) ; le noter dans JOURNAL.md.
+- Séance du matin : mêmes règles que le soir (RECORD, compteur réel, barème, Top 5 réel, situation universelle à taguer, check_fluide, couverture lisible), mais sans passage commentaires ni stories (le soir s'en charge). Le Top 5 du matin = commentaires les plus likés des publications depuis le 22.11, pour ne pas répéter les mêmes gens que la veille au soir si d'autres existent.
+- Contrôle à J+1 : si le 2e reel du jour a un skip > 65 % ou 0 partage deux jours de suite sur un compte, ce compte repasse à 1 reel/jour (le soir) et on le note dans JOURNAL.md.
+
 ## Stratégie « RECORD DU MONDE » du 21.11.2026 — PRIORITAIRE SUR TOUT (remplace les épisodes « 1 או 2 » du 18.11)
 Shlomo, 21.11 22:32, après analyse du reel viral de @lifeofhyro (« THE BIGGEST BAND IN THE WORLD? ») : « applique tout, fais de nos chaînes des comptes viraux ». Constat : nos vidéos demandent au spectateur de SUIVRE une histoire ; les siennes lui demandent de PARTICIPER à un record. Le spectateur devient un joueur. Ce qui reste valable du 18.11 : contrôle viral (point 0), 1re seconde pour un inconnu, plateau 3D filmé, anti-gel, voix 1 prise, rien avant 08:00 ni pendant Shabbat, aucun vrai argent.
 
