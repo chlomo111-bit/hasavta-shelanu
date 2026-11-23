@@ -1,0 +1,15 @@
+# FAITS « ידעתם? עם דבורה » (compte Ruche, instagram_recoup-katar)
+Série lancée le 23.11.2026. Présentatrice : דבורה (abeille 3D à lunettes, plateau tools/dvora_2311). Voix ElevenLabs eleven_v4 : **Danit** `s0T0DT6EAPeX57MQpn3I` (garder la même chaque jour ; 1 prise par texte, atempo 1,08).
+Règles : seulement des faits confirmés par 2 sources indépendantes lues ; reformuler ; aucun chiffre inventé ; aucun conseil médical.
+
+| # | Statut | Accroche | Fait (reformulé) | Sources | Nuance |
+|---|---|---|---|---|---|
+| 1 | **UTILISÉ 23.11** | ידעתם שדבורה אחת יכולה לספר לכל הכוורת איפה הפרחים… בריקוד? | Dans le « ריקוד הזנב », l'angle de la course indique la direction (par rapport au soleil) et sa durée la distance. | NC State Extension (content.ces.ncsu.edu/honey-bee-dance-language) ; Nobel Lecture de Karl von Frisch 1973 (nobelprize.org/uploads/2018/06/frisch-lecture.pdf) | Le sens exact est discuté (rôle de l'odeur) : on dit « raconte », sans promettre de GPS parfait. |
+| 2 | à publier (demain 24.11) | ידעתם שלתמנון יש שלושה לבבות? | Deux cœurs envoient le sang aux branchies, un troisième au reste du corps. | Live Science « how many hearts does an octopus have » ; Discover Wildlife « why octopuses have three hearts » | Ne pas affirmer l'efficacité de l'hémocyanine (les sources divergent). |
+| 3 | à publier | ידעתם שדבורה אחת מייצרת רק 1/12 כפית דבש בכל חייה? | Une ouvrière produit environ 1/12 de cuillère à café de miel dans sa vie. | Indiana DNR Kids (secure.in.gov/dnr/kids/animals/insects/honeybees) ; PBS NOVA (dipsy.pbs.org/wgbh/nova/bees/buzz.html) | « 2 millions de fleurs par livre » = chiffre de la ruche entière, pas d'une abeille. |
+| 4 | à publier | ידעתם שהקקי של וומבט בצורת קובייה? | Les excréments du wombat sont cubiques ; l'explication principale : l'élasticité inégale de l'intestin. | Smithsonian Magazine ; PBS NOVA (wombats-poop-cubes) | Petite étude : dire « כנראה בגלל », pas « prouvé ». |
+| 5 | à publier | ידעתם שפרפרים טועמים עם הרגליים? | Des récepteurs chimiques sur les pattes détectent les substances des plantes sur lesquelles ils se posent. | Carleton University Biology FAQ ; WSU « Dr. Universe » (news.wsu.edu, 23.07.2026) | « טעם » = détection chimique au contact. |
+| 6 | à publier | ידעתם שבננה היא בעצם פרי יער (ברי) ותות שדה לא? | Botaniquement, la banane est une baie ; la fraise ne l'est pas. | Live Science (why bananas are berries) ; Stanford Magazine « Bananas are berries » | Définition botanique, pas culinaire. |
+| 7 | À VÉRIFIER (non publiable) | — | Candidats : miel retrouvé comestible dans des tombes égyptiennes ; cœur du colibri. | Aucune source lue (lecture Smithsonian/NatGeo/Audubon bloquée le 23.11) | Ne pas publier avant 2 sources lues. |
+
+Fait de demain annoncé dans le reel : #2 (תמנון, trois cœurs).
