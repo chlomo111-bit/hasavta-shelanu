@@ -33,7 +33,7 @@
     "hash": {
       "compte": "@hashchenim",
       "unite": "דיירים",
-      "points": 1182,
+      "points": 1703,
       "maj": "2026-11-23",
       "top5": [
         {
@@ -51,7 +51,7 @@
           "date": "2026-11-22T15:31:03Z"
         }
       ],
-      "detail": "23.11 ~17:40 IL (séance du soir) : חלק1 DgCR23Sjp9e (31 likes, 6 comm. hors compte, 6 saved, 39 shares) + חלק2 DgDINTpjPdr (14, 5, 7, 28) + חלק3 DgE5rLtlXE_ (10, 8, 5, 31) = 55 likes + 57 (19 comm.x3) + 90 (18 saved x5) + 980 (98 shares x10) = 1182 points. Publie 18:00 IL : חלק 4 DgFwoPNDyfU (המעלית).",
+      "detail": "23.11 ~21:25 IL (passage du soir) : חלק1 DgCR23Sjp9e (31 likes, 6 comm., 6 saved, 39 shares) + חלק2 DgDINTpjPdr (14, 5, 7, 28) + חלק3 DgE5rLtlXE_ (10, 8, 5, 31) + חלק4 DgFwoPNDyfU (14, 4, 5, 47) = 69 likes + 69 (23 comm.x3) + 115 (23 saved x5) + 1450 (145 shares x10) = 1703 points. Paliers 1200-1700 franchis (à annoncer/événement au prochain reel).",
       "dernier_reel": "17888963406503574",
       "paliers": [
         100,
@@ -64,13 +64,19 @@
         800,
         900,
         1000,
-        1100
+        1100,
+        1200,
+        1300,
+        1400,
+        1500,
+        1600,
+        1700
       ]
     },
     "savta": {
       "compte": "@hasavta.shelanu",
       "unite": "נכדים",
-      "points": 286,
+      "points": 311,
       "maj": "2026-11-23",
       "top5": [
         {
@@ -98,11 +104,12 @@
           "media": "18103217186405928"
         }
       ],
-      "detail": "23.11 ~18:20 IL (séance du soir) : חלק 1 DgDSgqcgl93 (75 likes, 12 comm. hors compte, 4 saved, 12 shares) + חלק 2 DgFAUiCFXLY (10, 3, 2, 0) = 85 likes + 17 comm.x3 (51) + 6 saved x5 (30) + 12 shares x10 (120) = 286 points (130 -> 286, palier 200 franchi). חלק 2 : 282 vues, reach 204, skip 55,2 %, 8,0 s, 0 partage ; חלק 1 : 1515 vues, skip 46,5 %, 9,1 s, 12 partages. PUBLIÉ 19:00 IL : חלק 3 https://www.instagram.com/reel/DgF2EIkiU21/ (id 18094429829686959).",
+      "detail": "23.11 ~21:25 IL (passage du soir) : חלק1 DgDSgqcgl93 (80 likes, 14 comm. hors compte, 5 saved, 12 shares) + חלק2 DgFAUiCFXLY (10, 3, 2, 0) + חלק3 DgF2EIkiU21 (5, 0, 2, 0) = 95 likes + 51 (17 comm.x3) + 45 (9 saved x5) + 120 (12 shares x10) = 311 points. Palier 300 franchi.",
       "dernier_reel": "18094429829686959",
       "paliers": [
         100,
-        200
+        200,
+        300
       ]
     }
   }
