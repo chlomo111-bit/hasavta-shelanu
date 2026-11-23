@@ -67,11 +67,42 @@
     "savta": {
       "compte": "@hasavta.shelanu",
       "unite": "נכדים",
-      "points": 12,
-      "maj": "2026-11-22",
-      "top5": [],
-      "detail": "22.11 21:20 (passage du soir) : חלק 1 DgDSgqcgl93 -> 4 likes + 1 comm. hors compte (@kaplan_mei « בריאותתתתת ») x3 + 1 saved x5 + 0 share = 4+3+5 = 12 points. 66 vues, reach 35.",
-      "dernier_reel": "18103217186405928",
+      "points": 130,
+      "maj": "2026-11-23",
+      "top5": [
+        {
+          "pseudo": "kaplan_mei",
+          "texte": "בריאותתתתת",
+          "likes": 2,
+          "media": "DgDSgqcgl93"
+        },
+        {
+          "pseudo": "ohad613",
+          "texte": "שב תאכל הכל טוב הוא יחכה",
+          "likes": 2,
+          "media": "DgDSgqcgl93"
+        },
+        {
+          "pseudo": "mayaspam1208",
+          "texte": "באוי תואכלי",
+          "likes": 1,
+          "media": "DgDSgqcgl93"
+        },
+        {
+          "pseudo": "mebyyali",
+          "texte": "חמסה",
+          "likes": 1,
+          "media": "DgDSgqcgl93"
+        },
+        {
+          "pseudo": "eliav_marciano123",
+          "texte": "חבל יזרק",
+          "likes": 0,
+          "media": "DgDSgqcgl93"
+        }
+      ],
+      "detail": "23.11 10:50 (séance du matin) : חלק 1 DgDSgqcgl93 -> 57 likes + 11 comm. hors compte x3 (33) + 4 saved x5 (20) + 2 shares x10 (20) = 130 points. 1103 vues, reach 816, skip 44 %, 9,2 s, 2 partages. Reel du matin חלק 2 (תרגום מסבתאית) publié ~11:00 IST. PUBLIÉ 11:00 IST : https://www.instagram.com/reel/DgFAUiCFXLY/ (id 18387486451234075).",
+      "dernier_reel": "18387486451234075",
       "paliers": []
     }
   }
