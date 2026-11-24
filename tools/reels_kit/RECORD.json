@@ -79,36 +79,42 @@
     "savta": {
       "compte": "@hasavta.shelanu",
       "unite": "נכדים",
-      "points": 311,
-      "maj": "2026-11-23",
+      "points": 333,
+      "maj": "2026-11-24",
       "top5": [
         {
-          "pseudo": "____alonii____",
-          "texte": "תיקח איתך את הזבל",
-          "likes": 0,
-          "media": "18103217186405928"
-        },
-        {
-          "pseudo": "maayan8304",
-          "texte": "סבתא אני רעב יש מרק?",
-          "likes": 0,
-          "media": "18103217186405928"
-        },
-        {
-          "pseudo": "myt44015",
-          "texte": "אתה לא ישן פה היום",
-          "likes": 0,
-          "media": "18103217186405928"
-        },
-        {
           "pseudo": "ohad613",
-          "texte": "אוהד * ואני גם יכול לבוא לאכול ?",
-          "likes": 0,
+          "texte": "אני: טוב סבתא אני חייב לזוז לטיסה אני מאחר / סבתא: שב תאכל הכל טוב הוא יחכה",
+          "likes": 2,
+          "media": "18103217186405928"
+        },
+        {
+          "pseudo": "kaplan_mei",
+          "texte": "המשפט שלה זה ״בריאותתתתת״",
+          "likes": 2,
+          "media": "18103217186405928"
+        },
+        {
+          "pseudo": "mayaspam1208",
+          "texte": "באוי תואכלי",
+          "likes": 1,
+          "media": "18103217186405928"
+        },
+        {
+          "pseudo": "mebyyali",
+          "texte": "חמסה 🪬 ❤️",
+          "likes": 1,
+          "media": "18103217186405928"
+        },
+        {
+          "pseudo": "lifeofhyro",
+          "texte": "אם אני לא נכדדדד",
+          "likes": 1,
           "media": "18103217186405928"
         }
       ],
-      "detail": "23.11 ~21:25 IL (passage du soir) : חלק1 DgDSgqcgl93 (80 likes, 14 comm. hors compte, 5 saved, 12 shares) + חלק2 DgFAUiCFXLY (10, 3, 2, 0) + חלק3 DgF2EIkiU21 (5, 0, 2, 0) = 95 likes + 51 (17 comm.x3) + 45 (9 saved x5) + 120 (12 shares x10) = 311 points. Palier 300 franchi.",
-      "dernier_reel": "18094429829686959",
+      "detail": "24.11 ~11:01 IL (séance matin) : 3 reels depuis le 22.11 = 102 likes x1 + 17 comm. hors compte (comptes frères exclus, règle du 24.11) x3 + 10 saved x5 + 13 shares x10 = 102+51+50+130 = 333 points. Palier 300 franchi (10 petits-enfants courent à la table). Publié 11:01 IL : חלק 4 DgHlZJcGUZl (idée : « שב תאכל, הוא יחכה » — phrase réelle d'@ohad613, l'avion attend).",
+      "dernier_reel": "18190990729418181",
       "paliers": [
         100,
         200,
