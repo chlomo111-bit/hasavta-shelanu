@@ -205,3 +205,5 @@
   COMPTEURS RECALCULÉS (insights lus) : סבתא 286 → **311 נכדים** (95 likes + 17 comm.×3 + 9 saved×5 + 12 shares×10) ; palier 300 franchi. השכנים 1182 → **1703 דיירים** (69 + 23×3 + 23×5 + 145×10) ; חלק 4 a déjà 47 partages ; paliers 1200→1700 franchis (à fêter au prochain reel : 5 étages d'un coup). RECORD.json mis à jour.
 
 - 24/11 08:45 — Ordre de Shlomo : (A) 1er commentaire fait par le compte qui publie, dans les 2 min ; (B) commentaires croisés différents par les autres comptes de jeu 20–60 min après. Section ajoutée au RUNBOOK. Passage commentaires de 13:47 créé (trig_017KpzpkkUXFSVB2XZLqZtw9), en plus de celui de 21:17.
+
+- 24/11 08:45 — Ordre de Shlomo : tous les commentaires et réponses des comptes de jeu uniquement en hébreu. Section LANGUE ajoutée au RUNBOOK ; contrôle des anciennes réponses lancé.

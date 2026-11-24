@@ -80,6 +80,12 @@ Fin de CHAQUE reel de jeu : « כתבו את השם שלכם בתגובות — 
 - Séance du soir et passage de l'après-midi : le passage commentaires de 13:47 exécute le volet B pour les publications du jour qui n'ont pas encore reçu leurs commentaires croisés.
 - Suivre l'effet (commentaires par publication avant/après) dans le JOURNAL ; si les vues baissent ou si Instagram signale un blocage, stopper le volet B et prévenir Shlomo.
 
+## LANGUE : TOUT EN HÉBREU — ordre de Shlomo du 24.11.2026 08:39 (PRIORITAIRE, ABSOLU, tous nos comptes de jeu)
+- Tous les comptes de jeu sont UNIQUEMENT en hébreu : réponses aux commentaires, 1er commentaire, commentaires croisés, commentaires d'appel, légendes, textes de stories, sous-titres, voix. Aucun mot en français, anglais ou arabe (sauf noms propres, marques et pseudos tels qu'écrits par les joueurs, et emojis).
+- Si un joueur écrit dans une autre langue, on répond quand même en hébreu (court et chaleureux).
+- Avant d'envoyer un commentaire ou une réponse : relis-le ; s'il contient autre chose que de l'hébreu (hors emojis, noms propres), réécris-le en hébreu.
+- Le compte anglais @amazing_place_5 est le seul à rester en anglais (non connecté).
+
 ## Stratégie « RECORD DU MONDE » du 21.11.2026 — PRIORITAIRE SUR TOUT (remplace les épisodes « 1 או 2 » du 18.11)
 Shlomo, 21.11 22:32, après analyse du reel viral de @lifeofhyro (« THE BIGGEST BAND IN THE WORLD? ») : « applique tout, fais de nos chaînes des comptes viraux ». Constat : nos vidéos demandent au spectateur de SUIVRE une histoire ; les siennes lui demandent de PARTICIPER à un record. Le spectateur devient un joueur. Ce qui reste valable du 18.11 : contrôle viral (point 0), 1re seconde pour un inconnu, plateau 3D filmé, anti-gel, voix 1 prise, rien avant 08:00 ni pendant Shabbat, aucun vrai argent.
 
