@@ -1,125 +1,125 @@
 {
-  "regle": "Compteur réel depuis le 22.11.2026 : like x1 + commentaire (hors compte) x3 + saved x5 + shares x10, sur les publications du fil publiées depuis le 22.11. Voir RUNBOOK « RECORD DU MONDE ».",
-  "objectif": 10000,
-  "comptes": {
-    "bateau": {
-      "compte": "@tovim_beyachad",
-      "unite": "נוסעים",
-      "points": 13,
-      "maj": "2026-11-24",
-      "top5": [],
-      "detail": "24.11 ~11:00 IL (séance matin) : חלק 1 DgDSIqDhtYY = 3 likes + 0 comm. joueur (le seul commentaire = @the_noise_2026, compte frère, exclu depuis la règle du 24.11) + 2 saved x5 + 0 share = 13 ; הקפטן מספר #1 DgF4KbDAsX_ = 0 ; total 13 (comptage prudent, 16 avant avec le compte frère). Le format « הקפטן מספר » ne montre plus compteur ni barème. Publié 11:30 IL : הקפטן מספר #2 (Vasa) DgHoxbQxRc6.",
-      "dernier_reel": "18134698846755566"
+ "regle": "Compteur réel depuis le 22.11.2026 : like x1 + commentaire (hors compte) x3 + saved x5 + shares x10, sur les publications du fil publiées depuis le 22.11. Voir RUNBOOK « RECORD DU MONDE ».",
+ "objectif": 10000,
+ "comptes": {
+  "bateau": {
+   "compte": "@tovim_beyachad",
+   "unite": "נוסעים",
+   "points": 13,
+   "maj": "2026-11-24",
+   "top5": [],
+   "detail": "24.11 ~11:00 IL (séance matin) : חלק 1 DgDSIqDhtYY = 3 likes + 0 comm. joueur (le seul commentaire = @the_noise_2026, compte frère, exclu depuis la règle du 24.11) + 2 saved x5 + 0 share = 13 ; הקפטן מספר #1 DgF4KbDAsX_ = 0 ; total 13 (comptage prudent, 16 avant avec le compte frère). Le format « הקפטן מספר » ne montre plus compteur ni barème. Publié 11:30 IL : הקפטן מספר #2 (Vasa) DgHoxbQxRc6.",
+   "dernier_reel": "18134698846755566"
+  },
+  "ruche": {
+   "compte": "@hakaveret_shelanu",
+   "unite": "דבורים",
+   "points": 49,
+   "maj": "2026-11-24",
+   "top5": [],
+   "detail": "24.11 ~10:30 IL (séance matin) : publications du fil depuis le 22.11 : חלק1 DgDPHd2mZSE (5 likes, 1 comm. joueur @agamhudydyr ×3, 3 saved, 0 share = 23) + חלק2 DgE8ioqDzUY (5 likes, 0 comm. joueur [@hashchenim = compte frère, non compté], 3 saved, 0 share = 20) + ידעתם#1 DgFyNSGHPoc (1 like, 0 comm., 1 saved = 6) = 49 points (comptage prudent : comptes frères exclus). Reel ידעתם#2 תמנון publié 10:30 IL (DgHe6HBidly) (le compteur n'est plus montré dans le format « ידעתם »).",
+   "dernier_reel": "18001156341047623"
+  },
+  "noise": {
+   "compte": "@the_noise_2026",
+   "unite": "זמרים",
+   "points": 18,
+   "maj": "2026-11-24",
+   "top5": [],
+   "detail": "24.11 ~12:00 IL (séance matin) : publications du fil depuis le 22.11 : חלק1 DgDYqT9CP1X (7 likes, 0 comm. joueur [@tovim_beyachad et @the_noise_2026 = comptes, exclus], 2 saved ×5 = 17) + חלק2 DgFHbDlAEjC (1 like = 1) + מאסטרו#1 DgF7ZbMGYBu (0) = 18 points (comptes frères exclus). Aucun vrai commentateur → Top 5 vide, aucun nom à saluer. Publié 12:00 IL : מאסטרו קול #2 DgHsOZqAu_G (format « ידעתם », compteur non montré dans l'image).",
+   "dernier_reel": "17990623449093219",
+   "paliers": []
+  },
+  "hash": {
+   "compte": "@hashchenim",
+   "unite": "דיירים",
+   "points": 1686,
+   "maj": "2026-11-24",
+   "top5": [
+    {
+     "texte": "משהוא שר במקלחת",
+     "pseudo": "hillimoshe7",
+     "likes": 1,
+     "media": "DgE5rLtlXE_"
     },
-    "ruche": {
-      "compte": "@hakaveret_shelanu",
-      "unite": "דבורים",
-      "points": 49,
-      "maj": "2026-11-24",
-      "top5": [],
-      "detail": "24.11 ~10:30 IL (séance matin) : publications du fil depuis le 22.11 : חלק1 DgDPHd2mZSE (5 likes, 1 comm. joueur @agamhudydyr ×3, 3 saved, 0 share = 23) + חלק2 DgE8ioqDzUY (5 likes, 0 comm. joueur [@hashchenim = compte frère, non compté], 3 saved, 0 share = 20) + ידעתם#1 DgFyNSGHPoc (1 like, 0 comm., 1 saved = 6) = 49 points (comptage prudent : comptes frères exclus). Reel ידעתם#2 תמנון publié 10:30 IL (DgHe6HBidly) (le compteur n'est plus montré dans le format « ידעתם »).",
-      "dernier_reel": "18001156341047623"
+    {
+     "texte": "מה לא ריבים",
+     "pseudo": "hayley645726",
+     "likes": 0,
+     "media": "DgCR23Sjp9e"
     },
-    "noise": {
-      "compte": "@the_noise_2026",
-      "unite": "זמרים",
-      "points": 18,
-      "maj": "2026-11-23",
-      "top5": [],
-      "detail": "23.11 12:00 IL (séance matin) : חלק 1 DgDYqT9CP1X -> 5 likes x1 + 1 comm. hors compte (@tovim_beyachad, emoji) x3 + 2 saved x5 + 0 share = 18 points. 85 vues, reach 63, skip 60 %, 5,3 s. Publié 12:00 IL : חלק 2 DgFHbDlAEjC (idée : הדוד שתופס את המיקרופון בחתונה).",
-      "dernier_reel": "18008866704007573",
-      "paliers": []
-    },
-    "hash": {
-      "compte": "@hashchenim",
-      "unite": "דיירים",
-      "points": 1686,
-      "maj": "2026-11-24",
-      "top5": [
-        {
-          "texte": "משהוא שר במקלחת",
-          "pseudo": "hillimoshe7",
-          "likes": 1,
-          "media": "DgE5rLtlXE_"
-        },
-        {
-          "texte": "מה לא ריבים",
-          "pseudo": "hayley645726",
-          "likes": 0,
-          "media": "DgCR23Sjp9e"
-        },
-        {
-          "texte": "השכן עם הסיפורים המוזרים",
-          "pseudo": "____alonii____",
-          "likes": 0,
-          "media": "DgFwoPNDyfU"
-        }
-      ],
-      "detail": "24.11 ~09:30 IL (séance matin) : 4 reels depuis le 22.11 = 76 likes x1 + 10 comm. de vrais joueurs x3 (comptes frères et @chlomo.assouline exclus, règle du 24.11) + 24 saved x5 + 146 shares x10 = 76+30+120+1460 = 1686 points (avec les comptes frères comptés comme avant : 1731). Palier 1600 franchi (5 étages construits dans le reel). Publié 09:59 IL : חלק 5 DgHeW28mf-Z.",
-      "dernier_reel": "18090744587310841",
-      "paliers": [
-        100,
-        200,
-        300,
-        400,
-        500,
-        600,
-        700,
-        800,
-        900,
-        1000,
-        1100,
-        1200,
-        1300,
-        1400,
-        1500,
-        1600
-      ]
-    },
-    "savta": {
-      "compte": "@hasavta.shelanu",
-      "unite": "נכדים",
-      "points": 333,
-      "maj": "2026-11-24",
-      "top5": [
-        {
-          "pseudo": "ohad613",
-          "texte": "אני: טוב סבתא אני חייב לזוז לטיסה אני מאחר / סבתא: שב תאכל הכל טוב הוא יחכה",
-          "likes": 2,
-          "media": "18103217186405928"
-        },
-        {
-          "pseudo": "kaplan_mei",
-          "texte": "המשפט שלה זה ״בריאותתתתת״",
-          "likes": 2,
-          "media": "18103217186405928"
-        },
-        {
-          "pseudo": "mayaspam1208",
-          "texte": "באוי תואכלי",
-          "likes": 1,
-          "media": "18103217186405928"
-        },
-        {
-          "pseudo": "mebyyali",
-          "texte": "חמסה 🪬 ❤️",
-          "likes": 1,
-          "media": "18103217186405928"
-        },
-        {
-          "pseudo": "lifeofhyro",
-          "texte": "אם אני לא נכדדדד",
-          "likes": 1,
-          "media": "18103217186405928"
-        }
-      ],
-      "detail": "24.11 ~11:01 IL (séance matin) : 3 reels depuis le 22.11 = 102 likes x1 + 17 comm. hors compte (comptes frères exclus, règle du 24.11) x3 + 10 saved x5 + 13 shares x10 = 102+51+50+130 = 333 points. Palier 300 franchi (10 petits-enfants courent à la table). Publié 11:01 IL : חלק 4 DgHlZJcGUZl (idée : « שב תאכל, הוא יחכה » — phrase réelle d'@ohad613, l'avion attend).",
-      "dernier_reel": "18190990729418181",
-      "paliers": [
-        100,
-        200,
-        300
-      ]
+    {
+     "texte": "השכן עם הסיפורים המוזרים",
+     "pseudo": "____alonii____",
+     "likes": 0,
+     "media": "DgFwoPNDyfU"
     }
+   ],
+   "detail": "24.11 ~09:30 IL (séance matin) : 4 reels depuis le 22.11 = 76 likes x1 + 10 comm. de vrais joueurs x3 (comptes frères et @chlomo.assouline exclus, règle du 24.11) + 24 saved x5 + 146 shares x10 = 76+30+120+1460 = 1686 points (avec les comptes frères comptés comme avant : 1731). Palier 1600 franchi (5 étages construits dans le reel). Publié 09:59 IL : חלק 5 DgHeW28mf-Z.",
+   "dernier_reel": "18090744587310841",
+   "paliers": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    1000,
+    1100,
+    1200,
+    1300,
+    1400,
+    1500,
+    1600
+   ]
+  },
+  "savta": {
+   "compte": "@hasavta.shelanu",
+   "unite": "נכדים",
+   "points": 333,
+   "maj": "2026-11-24",
+   "top5": [
+    {
+     "pseudo": "ohad613",
+     "texte": "אני: טוב סבתא אני חייב לזוז לטיסה אני מאחר / סבתא: שב תאכל הכל טוב הוא יחכה",
+     "likes": 2,
+     "media": "18103217186405928"
+    },
+    {
+     "pseudo": "kaplan_mei",
+     "texte": "המשפט שלה זה ״בריאותתתתת״",
+     "likes": 2,
+     "media": "18103217186405928"
+    },
+    {
+     "pseudo": "mayaspam1208",
+     "texte": "באוי תואכלי",
+     "likes": 1,
+     "media": "18103217186405928"
+    },
+    {
+     "pseudo": "mebyyali",
+     "texte": "חמסה 🪬 ❤️",
+     "likes": 1,
+     "media": "18103217186405928"
+    },
+    {
+     "pseudo": "lifeofhyro",
+     "texte": "אם אני לא נכדדדד",
+     "likes": 1,
+     "media": "18103217186405928"
+    }
+   ],
+   "detail": "24.11 ~11:01 IL (séance matin) : 3 reels depuis le 22.11 = 102 likes x1 + 17 comm. hors compte (comptes frères exclus, règle du 24.11) x3 + 10 saved x5 + 13 shares x10 = 102+51+50+130 = 333 points. Palier 300 franchi (10 petits-enfants courent à la table). Publié 11:01 IL : חלק 4 DgHlZJcGUZl (idée : « שב תאכל, הוא יחכה » — phrase réelle d'@ohad613, l'avion attend).",
+   "dernier_reel": "18190990729418181",
+   "paliers": [
+    100,
+    200,
+    300
+   ]
   }
+ }
 }
