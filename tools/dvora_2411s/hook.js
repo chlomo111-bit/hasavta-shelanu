@@ -55,7 +55,7 @@ function post(gt){
     camera.position.set(Math.sin(k*1.1)*1.0,14.4,10.0);camera.lookAt(0,14.4,0)}
   else if(t<16.6){ // 4 teaser : וומבט + cubes
     const k=t-12.5;
-    dvora(V(-.3+Math.sin(k*2)*.2,16.8+bob,0),FACE+.3+Math.sin(k*2.4)*.12,Math.sin(k*3)*.05,Math.sin(k*2)*.08,3.2,a,gt);
+    dvora(V(-.3+Math.sin(k*2)*.2,15.5+bob,0),FACE+.3+Math.sin(k*2.4)*.12,Math.sin(k*3)*.05,Math.sin(k*2)*.08,3.2,a,gt);
     wom.visible=true;wom.position.set(-.2,12.6+Math.abs(Math.sin(k*3))*.1,0);wom.rotation.y=-.5+Math.sin(k*1.2)*.25;wom.scale.setScalar(.55);
     cubes.forEach((c,i)=>{const s0=i*.5;const u=k-s0;c.visible=u>0;const f=Math.min(1,u/1.0);c.position.set(-1.7+(i%3)*.6,12.0+(1-f*f)*3-.0+(Math.floor(i/3))*.62*0,0+(i%2)*.4);c.position.y=11.5+Math.floor(i/3)*.58+(1-Math.min(1,u*1.6))*3;c.rotation.y=i*.4});
     camera.position.set(Math.sin(k*.6)*.8,13.8,10.4-.8*E(k/3));camera.lookAt(0,13.9,0)}
