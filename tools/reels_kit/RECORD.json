@@ -33,26 +33,30 @@
     "hash": {
       "compte": "@hashchenim",
       "unite": "דיירים",
-      "points": 1703,
-      "maj": "2026-11-23",
+      "points": 1686,
+      "maj": "2026-11-24",
       "top5": [
         {
           "texte": "משהוא שר במקלחת",
           "pseudo": "hillimoshe7",
           "likes": 1,
-          "media": "DgE5rLtlXE_",
-          "date": "2026-11-23T10:21:39Z"
+          "media": "DgE5rLtlXE_"
         },
         {
           "texte": "מה לא ריבים",
           "pseudo": "hayley645726",
           "likes": 0,
-          "media": "DgCR23Sjp9e",
-          "date": "2026-11-22T15:31:03Z"
+          "media": "DgCR23Sjp9e"
+        },
+        {
+          "texte": "השכן עם הסיפורים המוזרים",
+          "pseudo": "____alonii____",
+          "likes": 0,
+          "media": "DgFwoPNDyfU"
         }
       ],
-      "detail": "23.11 ~21:25 IL (passage du soir) : חלק1 DgCR23Sjp9e (31 likes, 6 comm., 6 saved, 39 shares) + חלק2 DgDINTpjPdr (14, 5, 7, 28) + חלק3 DgE5rLtlXE_ (10, 8, 5, 31) + חלק4 DgFwoPNDyfU (14, 4, 5, 47) = 69 likes + 69 (23 comm.x3) + 115 (23 saved x5) + 1450 (145 shares x10) = 1703 points. Paliers 1200-1700 franchis (à annoncer/événement au prochain reel).",
-      "dernier_reel": "17888963406503574",
+      "detail": "24.11 ~09:30 IL (séance matin) : 4 reels depuis le 22.11 = 76 likes x1 + 10 comm. de vrais joueurs x3 (comptes frères et @chlomo.assouline exclus, règle du 24.11) + 24 saved x5 + 146 shares x10 = 76+30+120+1460 = 1686 points (avec les comptes frères comptés comme avant : 1731). Palier 1600 franchi (5 étages construits dans le reel). Publié 09:59 IL : חלק 5 DgHeW28mf-Z.",
+      "dernier_reel": "18090744587310841",
       "paliers": [
         100,
         200,
@@ -69,8 +73,7 @@
         1300,
         1400,
         1500,
-        1600,
-        1700
+        1600
       ]
     },
     "savta": {
