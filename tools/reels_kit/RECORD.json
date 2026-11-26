@@ -33,8 +33,8 @@
   "hash": {
    "compte": "@hashchenim",
    "unite": "דיירים",
-   "points": 1696,
-   "maj": "2026-11-25",
+   "points": 1707,
+   "maj": "2026-11-26",
    "top5": [
     {
      "texte": "משהוא שר במקלחת",
@@ -55,7 +55,7 @@
      "media": "DgFwoPNDyfU"
     }
    ],
-   "detail": "24.11 ~09:30 IL (séance matin) : 4 reels depuis le 22.11 = 76 likes x1 + 10 comm. de vrais joueurs x3 (comptes frères et @chlomo.assouline exclus, règle du 24.11) + 24 saved x5 + 146 shares x10 = 76+30+120+1460 = 1686 points (avec les comptes frères comptés comme avant : 1731). Palier 1600 franchi (5 étages construits dans le reel). Publié 09:59 IL : חלק 5 DgHeW28mf-Z. | 24.11 ~17:20 IL (séance 2, sans reel : anti-doublon, חלק 5 déjà publié 09:59) : 5 reels = 77 likes + 11 comm. joueurs x3 + 24 saved x5 + 146 shares x10 = 1690 points (+4 : 1 like, הילי +3). Pas de nouveau palier (1700). | 25.11 ~09:25 IL (séance matin) : 5 reels = 78 likes + 11 comm. joueurs x3 + 24 saved x5 + 146 shares x10 = 1691 points (+1 like ; comptes frères et @chlomo.assouline exclus). Pas de palier (1700). Publié 10:01 IL : חלק 6 DgKDTpYAEOd (id 17894512908458104). | 25.11 ~17:20 IL (séance du soir, SANS reel : anti-doublon, חלק 6 déjà publié 10:01) : 6 reels = 80 likes + 12 comm. joueurs x3 + 24 saved x5 + 146 shares x10 = 1696 points (+5 : 2 likes, הילי +3 ; comptes frères et @chlomo.assouline exclus). Pas de palier (1700). 2 stories publiées (compteur + Top 5).",
+   "detail": "24.11 ~09:30 IL (séance matin) : 4 reels depuis le 22.11 = 76 likes x1 + 10 comm. de vrais joueurs x3 (comptes frères et @chlomo.assouline exclus, règle du 24.11) + 24 saved x5 + 146 shares x10 = 76+30+120+1460 = 1686 points (avec les comptes frères comptés comme avant : 1731). Palier 1600 franchi (5 étages construits dans le reel). Publié 09:59 IL : חלק 5 DgHeW28mf-Z. | 24.11 ~17:20 IL (séance 2, sans reel : anti-doublon, חלק 5 déjà publié 09:59) : 5 reels = 77 likes + 11 comm. joueurs x3 + 24 saved x5 + 146 shares x10 = 1690 points (+4 : 1 like, הילי +3). Pas de nouveau palier (1700). | 25.11 ~09:25 IL (séance matin) : 5 reels = 78 likes + 11 comm. joueurs x3 + 24 saved x5 + 146 shares x10 = 1691 points (+1 like ; comptes frères et @chlomo.assouline exclus). Pas de palier (1700). Publié 10:01 IL : חלק 6 DgKDTpYAEOd (id 17894512908458104). | 25.11 ~17:20 IL (séance du soir, SANS reel : anti-doublon, חלק 6 déjà publié 10:01) : 6 reels = 80 likes + 12 comm. joueurs x3 + 24 saved x5 + 146 shares x10 = 1696 points (+5 : 2 likes, הילי +3 ; comptes frères et @chlomo.assouline exclus). Pas de palier (1700). 2 stories publiées (compteur + Top 5). | 26.11 ~09:30 IL (séance matin, SANS reel : règle J+1 déclenchée, חלק 5 et חלק 6 du matin = 0 partage deux jours de suite → retour à 1 reel/jour, le soir) : 6 reels = 82 likes + 15 comm. joueurs x3 (dont הדר ×3 « הדר/בבקשה/עוקב » et הילי, comptes frères et @chlomo.assouline exclus) + 24 saved x5 + 146 shares x10 = 82+45+120+1460 = 1707 points (+11). PALIER 1700 FRANCHI (événement visible attendu dans le prochain reel : nouvel étage). Chiffres חלק 6 : 189 vues, reach 154, skip 56,4 %, 8,5 s regardées, 0 partage, 0 saved.",
    "dernier_reel": "17894512908458104",
    "paliers": [
     100,
@@ -73,7 +73,8 @@
     1300,
     1400,
     1500,
-    1600
+    1600,
+    1700
    ]
   },
   "savta": {
