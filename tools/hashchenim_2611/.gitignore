@@ -1,0 +1,5 @@
+clips/*/
+clips/log_*
+*.wav
+out.mp4
+sout.mp4
